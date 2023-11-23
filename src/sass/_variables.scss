@@ -4,3 +4,16 @@ $white-color: #efede8;
 $black-color: #040404;
 $orange-1-color: #ef8964;
 $beige-color: #efa082;
+$success-color: #3cbf61;
+$error-color: #d80027;
+$gray-color-02: rgba(239, 237, 232, 0.2);
+$gray-color-03: rgba(239, 237, 232, 0.3);
+$gray-color-05: rgba(239, 237, 232, 0.5);
+$gray-color-06: rgba(239, 237, 232, 0.6);
+
+// inputs
+$border-radius: 12px;
+$border-input: 1px solid $gray-color-03;
+$border-active: 1px solid $orange-color;
+$border-success: 1px solid $success-color;
+$border-error: 1px solid $error-color;
