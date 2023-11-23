@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/PowerPulse/static/css/main.e2494871.css",
-    "main.js": "/PowerPulse/static/js/main.e4e56c97.js",
-    "static/css/24.033569b6.chunk.css": "/PowerPulse/static/css/24.033569b6.chunk.css",
+    "main.css": "/PowerPulse/static/css/main.7ddf9b25.css",
+    "main.js": "/PowerPulse/static/js/main.1db36678.js",
+    "static/css/24.5dfe6f65.chunk.css": "/PowerPulse/static/css/24.5dfe6f65.chunk.css",
     "static/js/24.cae2e545.chunk.js": "/PowerPulse/static/js/24.cae2e545.chunk.js",
     "static/js/622.3efee9a7.chunk.js": "/PowerPulse/static/js/622.3efee9a7.chunk.js",
     "static/js/75.48f0aff5.chunk.js": "/PowerPulse/static/js/75.48f0aff5.chunk.js",
+    "static/media/Roboto-Regular.ttf": "/PowerPulse/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
     "index.html": "/PowerPulse/index.html",
-    "main.e2494871.css.map": "/PowerPulse/static/css/main.e2494871.css.map",
-    "main.e4e56c97.js.map": "/PowerPulse/static/js/main.e4e56c97.js.map",
-    "24.033569b6.chunk.css.map": "/PowerPulse/static/css/24.033569b6.chunk.css.map",
+    "main.7ddf9b25.css.map": "/PowerPulse/static/css/main.7ddf9b25.css.map",
+    "main.1db36678.js.map": "/PowerPulse/static/js/main.1db36678.js.map",
+    "24.5dfe6f65.chunk.css.map": "/PowerPulse/static/css/24.5dfe6f65.chunk.css.map",
     "24.cae2e545.chunk.js.map": "/PowerPulse/static/js/24.cae2e545.chunk.js.map",
     "622.3efee9a7.chunk.js.map": "/PowerPulse/static/js/622.3efee9a7.chunk.js.map",
     "75.48f0aff5.chunk.js.map": "/PowerPulse/static/js/75.48f0aff5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2494871.css",
-    "static/js/main.e4e56c97.js"
+    "static/css/main.7ddf9b25.css",
+    "static/js/main.1db36678.js"
   ]
 }
