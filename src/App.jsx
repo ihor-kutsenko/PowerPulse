@@ -1,16 +1,24 @@
-export const App = () => {
+import { Route, Routes } from 'react-router-dom';
+
+import { appRoutes } from 'routes/routes';
+
+import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
+
+import SharedLayout from 'components/SharedLayout/SharedLayout';
+
+const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          {appRoutes.map(({ path, element }) => (
+            <Route key={path} path={path} element={element} />
+          ))}
+        </Route>
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </div>
   );
 };
+
+export default App;
