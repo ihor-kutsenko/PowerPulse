@@ -26,3 +26,23 @@ $bg-tablet-1x: '../../images/HomeBgImg/bg-tablet-1x.jpg';
 $bg-tablet-2x: '../../images/HomeBgImg/bg-tablet-2x.jpg';
 $bg-desktop-1x: '../../images/HomeBgImg/bg-desktop-1x.jpg';
 $bg-desktop-2x: '../../images/HomeBgImg/bg-desktop-2x.jpg';
+
+// gradient
+$bg-mobile-home-gradient: linear-gradient(
+    170deg,
+    #040404 3.66%,
+    rgba(4, 4, 4, 0) 19.15%
+  ),
+  linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%);
+$bg-desktop-home-gradient: linear-gradient(
+  80deg,
+  #040404 -2.45%,
+  rgba(4, 4, 4, 0) 68.17%
+);
+
+$bg-mobile-sign-in-gradient: linear-gradient(
+    168deg,
+    #040404 14.75%,
+    rgba(4, 4, 4, 0) 52.97%
+  ),
+  linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%);

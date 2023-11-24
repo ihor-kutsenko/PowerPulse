@@ -1,7 +1,6 @@
 @import '../../sass/styles.scss';
 
 .wrapper_bg {
-  background-image: url($bg-mobile-1x);
   background-repeat: no-repeat;
   background-size: contain;
   background-position-y: bottom;
@@ -10,32 +9,56 @@
   margin-top: -252px;
   margin-left: 75px;
 
-  @include retina {
-    background-image: url($bg-mobile-2x);
+  &.home {
+    background-image: $bg-mobile-home-gradient, url($bg-mobile-1x);
+    @include retina {
+      background-image: $bg-mobile-home-gradient, url($bg-mobile-2x);
+    }
+    @include tablet {
+      background-image: $bg-mobile-home-gradient, url($bg-tablet-1x);
+      @include retina {
+        background-image: $bg-mobile-home-gradient, url($bg-tablet-2x);
+      }
+    }
+    @include desktop {
+      background-image: $bg-desktop-home-gradient, url($bg-desktop-1x);
+      @include retina {
+        background-image: $bg-desktop-home-gradient, url($bg-desktop-2x);
+      }
+    }
+  }
+
+  &.auth {
+    background-image: $bg-mobile-sign-in-gradient, url($bg-mobile-1x);
+    @include retina {
+      background-image: $bg-mobile-sign-in-gradient, url($bg-mobile-2x);
+    }
+    @include tablet {
+      background-image: $bg-mobile-home-gradient, url($bg-tablet-1x);
+      @include retina {
+        background-image: $bg-mobile-home-gradient, url($bg-tablet-2x);
+      }
+    }
+    @include desktop {
+      background-image: $bg-desktop-home-gradient, url($bg-desktop-1x);
+      @include retina {
+        background-image: $bg-desktop-home-gradient, url($bg-desktop-2x);
+      }
+    }
   }
 
   @include tablet {
-    background-image: url($bg-tablet-1x);
     width: 437px;
     height: 893px;
     margin-top: 46px;
     margin-left: 90px;
-
-    @include retina {
-      background-image: url($bg-tablet-2x);
-    }
   }
 
   @include desktop {
-    background-image: url($bg-desktop-1x);
     background-size: 100%;
     width: 670px;
     height: 800px;
     margin-left: 76px;
     margin-top: -17px;
-
-    @include retina {
-      background-image: url($bg-desktop-2x);
-    }
   }
 }

@@ -1,5 +1,6 @@
 import Container from 'components/Container/Container';
 import styles from './WelcomePage.module.scss';
+import style from '../../components/HomeBG/HomeBG.module.scss';
 import SectionUserGateway from 'components/SectionUserGateway/SectionUserGateway';
 import HomeBG from 'components/HomeBG/HomeBG';
 
@@ -17,7 +18,7 @@ const WelcomePage = () => {
           </div>
         </div>
 
-        <HomeBG>
+        <HomeBG className={style.home}>
           <div></div>
         </HomeBG>
       </SectionUserGateway>
