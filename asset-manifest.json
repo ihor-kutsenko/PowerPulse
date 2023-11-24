@@ -1,22 +1,27 @@
 {
   "files": {
-    "main.css": "/PowerPulse/static/css/main.7ddf9b25.css",
-    "main.js": "/PowerPulse/static/js/main.1db36678.js",
-    "static/css/24.5dfe6f65.chunk.css": "/PowerPulse/static/css/24.5dfe6f65.chunk.css",
-    "static/js/24.cae2e545.chunk.js": "/PowerPulse/static/js/24.cae2e545.chunk.js",
-    "static/js/622.3efee9a7.chunk.js": "/PowerPulse/static/js/622.3efee9a7.chunk.js",
-    "static/js/75.48f0aff5.chunk.js": "/PowerPulse/static/js/75.48f0aff5.chunk.js",
+    "main.css": "/PowerPulse/static/css/main.bdc5c68d.css",
+    "main.js": "/PowerPulse/static/js/main.7801f3fb.js",
+    "static/css/24.76b2107b.chunk.css": "/PowerPulse/static/css/24.76b2107b.chunk.css",
+    "static/js/24.921a8641.chunk.js": "/PowerPulse/static/js/24.921a8641.chunk.js",
+    "static/js/622.ab9480ec.chunk.js": "/PowerPulse/static/js/622.ab9480ec.chunk.js",
+    "static/js/75.ec8be311.chunk.js": "/PowerPulse/static/js/75.ec8be311.chunk.js",
     "static/media/Roboto-Regular.ttf": "/PowerPulse/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
+    "static/media/bg-desktop-2x.jpg": "/PowerPulse/static/media/bg-desktop-2x.0c21d751decf12fd2ebd.jpg",
+    "static/media/bg-tablet-2x.jpg": "/PowerPulse/static/media/bg-tablet-2x.fdc54f336c5b444ca190.jpg",
+    "static/media/bg-desktop-1x.jpg": "/PowerPulse/static/media/bg-desktop-1x.c9acaca7a7639e509259.jpg",
+    "static/media/bg-mobile-2x.jpg": "/PowerPulse/static/media/bg-mobile-2x.4f023a9f634a4b18300f.jpg",
+    "static/media/bg-tablet-1x.jpg": "/PowerPulse/static/media/bg-tablet-1x.3f8d16726976f0b86306.jpg",
     "index.html": "/PowerPulse/index.html",
-    "main.7ddf9b25.css.map": "/PowerPulse/static/css/main.7ddf9b25.css.map",
-    "main.1db36678.js.map": "/PowerPulse/static/js/main.1db36678.js.map",
-    "24.5dfe6f65.chunk.css.map": "/PowerPulse/static/css/24.5dfe6f65.chunk.css.map",
-    "24.cae2e545.chunk.js.map": "/PowerPulse/static/js/24.cae2e545.chunk.js.map",
-    "622.3efee9a7.chunk.js.map": "/PowerPulse/static/js/622.3efee9a7.chunk.js.map",
-    "75.48f0aff5.chunk.js.map": "/PowerPulse/static/js/75.48f0aff5.chunk.js.map"
+    "main.bdc5c68d.css.map": "/PowerPulse/static/css/main.bdc5c68d.css.map",
+    "main.7801f3fb.js.map": "/PowerPulse/static/js/main.7801f3fb.js.map",
+    "24.76b2107b.chunk.css.map": "/PowerPulse/static/css/24.76b2107b.chunk.css.map",
+    "24.921a8641.chunk.js.map": "/PowerPulse/static/js/24.921a8641.chunk.js.map",
+    "622.ab9480ec.chunk.js.map": "/PowerPulse/static/js/622.ab9480ec.chunk.js.map",
+    "75.ec8be311.chunk.js.map": "/PowerPulse/static/js/75.ec8be311.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ddf9b25.css",
-    "static/js/main.1db36678.js"
+    "static/css/main.bdc5c68d.css",
+    "static/js/main.7801f3fb.js"
   ]
 }
