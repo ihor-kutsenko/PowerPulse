@@ -1,6 +1,35 @@
 @import '../../sass/styles.scss';
 
+.title_container {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 65px;
+  height: 250px;
+  gap: 40px;
+
+  @include tablet {
+    position: relative;
+    max-width: 240px;
+    margin-top: 108px;
+    gap: 64px;
+  }
+  @include desktop {
+    max-width: 770px;
+    margin-top: 120px;
+    gap: 64px;
+  }
+}
 .title {
-  font-size: 32px;
-  text-align: center;
+  width: 335px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  @include font(38px, 500, 1.05, 0.38px);
+  color: $white-color;
+
+  @include tablet {
+    width: 598px;
+    @include font(70px, 500, 1.11, 0.7px);
+  }
 }
