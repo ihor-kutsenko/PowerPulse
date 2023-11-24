@@ -1,8 +1,9 @@
+import { NavLink } from 'react-router-dom';
 import Container from 'components/Container/Container';
-import styles from './WelcomePage.module.scss';
-import style from '../../components/HomeBG/HomeBG.module.scss';
 import SectionUserGateway from 'components/SectionUserGateway/SectionUserGateway';
 import HomeBG from 'components/HomeBG/HomeBG';
+import styles from './WelcomePage.module.scss';
+import style from '../../components/HomeBG/HomeBG.module.scss';
 
 const WelcomePage = () => {
   return (
@@ -12,9 +13,19 @@ const WelcomePage = () => {
           <h1 className={styles.title}>
             Transforming your body shape with Power Pulse
           </h1>
-          <div>
-            <button>Sign Up</button>
-            <button>Sign In</button>
+          <div className={styles.navLink_wrapper}>
+            <NavLink
+              to="/sign-up"
+              className={`${styles.navLink} ${styles.sign_up}`}
+            >
+              Sign Up
+            </NavLink>
+            <NavLink
+              to="/sign-in"
+              className={`${styles.navLink} ${styles.sign_in}`}
+            >
+              Sign In
+            </NavLink>
           </div>
         </div>
 
