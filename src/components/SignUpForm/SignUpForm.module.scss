@@ -1,0 +1,143 @@
+@import '../../sass/styles.scss';
+
+.form {
+  width: 100%;
+  max-width: 335px;
+
+  @include tablet {
+    max-width: 364px;
+  }
+}
+
+.formWrapper {
+  margin-bottom: 28px;
+
+  @include tablet {
+    margin-bottom: 64px;
+  }
+}
+
+.fieldWrapper {
+  position: relative;
+
+  &.error input {
+    border: $border-error;
+  }
+  &.success input {
+    border: $border-success;
+  }
+  &.success svg[data-status='success'] {
+    display: block;
+  }
+  &.error svg[data-status='error'] {
+    display: block;
+  }
+  &.error .svgError {
+    display: block;
+  }
+  &:not(:last-child):not(.error):not(.success) {
+    margin-bottom: 14px;
+  }
+
+  @include tablet {
+    &:not(:last-child):not(.error):not(.success) {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.field {
+  width: 100%;
+  padding: 14px;
+  border: $border-input;
+  border-radius: $border-radius;
+  color: $white-color;
+  background-color: transparent;
+  @include font(14px, 400, 1.29, 0);
+  margin-bottom: 2px;
+  outline: none;
+
+  @include hover {
+    border: $border-active;
+  }
+  &::placeholder {
+    @include font(14px, 400, 1.29, 0);
+    color: $gray-color-06;
+
+    @include tablet {
+      @include font(16px, 400, 1.5, 0);
+    }
+  }
+  @include tablet {
+    @include font(16px, 400, 1.5, 0);
+    margin-bottom: 4px;
+  }
+}
+
+.messageWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+
+  @include tablet {
+    margin-bottom: 4px;
+  }
+}
+
+.svgError {
+  display: none;
+  width: 16px;
+  height: 16px;
+  fill: $error-color;
+}
+
+.svgSuccess {
+  width: 16px;
+  height: 16px;
+  fill: $error-color;
+}
+
+.errorMessage {
+  margin-left: 4px;
+  font-feature-settings: 'clig' off, 'liga' off;
+  @include font(12px, 400, 1.16, 0.12px);
+  color: $error-color;
+}
+
+.successMessage {
+  margin-left: 4px;
+  font-feature-settings: 'clig' off, 'liga' off;
+  @include font(12px, 400, 1.16, 0.12px);
+  color: $success-color;
+}
+
+.buttonEye {
+  position: absolute;
+  top: 15px;
+  left: 90%;
+  background-color: inherit;
+  border: none;
+}
+
+.svgEye {
+  width: 20px;
+  height: 20px;
+  stroke: $white-color;
+}
+
+.button {
+  padding: 12px 40px;
+  gap: 10px;
+  @include font(16px, 500, 1.13, 0);
+  border-radius: $border-radius;
+  background-color: $orange-color;
+  color: $white-color;
+  @include hover {
+    background-color: $orange-1-color;
+  }
+
+  @include tablet {
+    padding: 16px 60px;
+    @include font(20px, 500, 1.2, 0);
+  }
+}
