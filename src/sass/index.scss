@@ -46,3 +46,9 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+// remove  browser styles for inputs when autocomplete is enabled
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 50px $black-color inset;
+  -webkit-text-fill-color: $white-color;
+}
