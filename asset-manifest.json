@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/PowerPulse/static/css/main.87ba24ce.css",
+    "main.css": "/PowerPulse/static/css/main.aea70bdb.css",
     "main.js": "/PowerPulse/static/js/main.97acb42b.js",
     "static/css/24.c37af0bb.chunk.css": "/PowerPulse/static/css/24.c37af0bb.chunk.css",
     "static/js/24.9b570385.chunk.js": "/PowerPulse/static/js/24.9b570385.chunk.js",
@@ -17,7 +17,7 @@
     "static/media/bg-tablet-1x.jpg": "/PowerPulse/static/media/bg-tablet-1x.3f8d16726976f0b86306.jpg",
     "static/media/sprite.svg": "/PowerPulse/static/media/sprite.1349f0844272f41521ea45d520bec657.svg",
     "index.html": "/PowerPulse/index.html",
-    "main.87ba24ce.css.map": "/PowerPulse/static/css/main.87ba24ce.css.map",
+    "main.aea70bdb.css.map": "/PowerPulse/static/css/main.aea70bdb.css.map",
     "main.97acb42b.js.map": "/PowerPulse/static/js/main.97acb42b.js.map",
     "24.c37af0bb.chunk.css.map": "/PowerPulse/static/css/24.c37af0bb.chunk.css.map",
     "24.9b570385.chunk.js.map": "/PowerPulse/static/js/24.9b570385.chunk.js.map",
@@ -28,7 +28,7 @@
     "17.bab32dde.chunk.js.map": "/PowerPulse/static/js/17.bab32dde.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.87ba24ce.css",
+    "static/css/main.aea70bdb.css",
     "static/js/main.97acb42b.js"
   ]
 }
