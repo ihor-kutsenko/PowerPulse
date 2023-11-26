@@ -10,21 +10,18 @@
   margin-left: 55px;
 
   &.home {
-    background-image: $bg-mobile-home-gradient, lightgray 50%,
-      url($bg-mobile-1x);
+    background-image: $bg-mobile-home-gradient, url($bg-mobile-1x);
     @include retina {
-      background-image: url($bg-mobile-2x);
+      background-image: $bg-mobile-home-gradient, url($bg-mobile-2x);
     }
     @include tablet {
-      background-image: $bg-mobile-home-gradient, lightgray 50%,
-        url($bg-tablet-1x);
+      background-image: url($bg-tablet-1x);
       @include retina {
         background-image: url($bg-tablet-2x);
       }
     }
     @include desktop {
-      background-image: $bg-desktop-home-gradient, lightgray 50%,
-        url($bg-desktop-1x);
+      background-image: $bg-desktop-home-gradient, url($bg-desktop-1x);
       margin-left: 44px;
       @include retina {
         background-image: url($bg-desktop-2x);
@@ -33,21 +30,18 @@
   }
 
   &.auth {
-    background-image: $bg-mobile-sign-in-gradient, lightgray 50%,
-      url($bg-mobile-1x);
+    background-image: $bg-mobile-sign-in-gradient, url($bg-mobile-1x);
     @include retina {
-      background-image: url($bg-mobile-2x);
+      background-image: $bg-mobile-sign-in-gradient, url($bg-mobile-2x);
     }
     @include tablet {
-      background-image: $bg-mobile-home-gradient, lightgray 50%,
-        url($bg-tablet-1x);
+      background-image: $bg-mobile-home-gradient, url($bg-tablet-1x);
       @include retina {
-        background-image: url($bg-tablet-2x);
+        background-image: $bg-mobile-home-gradient, url($bg-tablet-2x);
       }
     }
     @include desktop {
-      background-image: $bg-desktop-home-gradient, lightgray 50%,
-        url($bg-desktop-1x);
+      background-image: $bg-desktop-home-gradient, url($bg-desktop-1x);
       @include retina {
         background-image: url($bg-desktop-2x);
       }
