@@ -6,43 +6,50 @@
   background-position-y: bottom;
   width: 298px;
   height: 565px;
-  margin-top: -91px;
-  margin-left: 75px;
+  margin-top: -288px;
+  margin-left: 55px;
 
   &.home {
-    background-image: $bg-mobile-home-gradient, url($bg-mobile-1x);
+    background-image: $bg-mobile-home-gradient, lightgray 50%,
+      url($bg-mobile-1x);
     @include retina {
-      background-image: $bg-mobile-home-gradient, url($bg-mobile-2x);
+      background-image: url($bg-mobile-2x);
     }
     @include tablet {
-      background-image: $bg-mobile-home-gradient, url($bg-tablet-1x);
+      background-image: $bg-mobile-home-gradient, lightgray 50%,
+        url($bg-tablet-1x);
       @include retina {
-        background-image: $bg-mobile-home-gradient, url($bg-tablet-2x);
+        background-image: url($bg-tablet-2x);
       }
     }
     @include desktop {
-      background-image: $bg-desktop-home-gradient, url($bg-desktop-1x);
+      background-image: $bg-desktop-home-gradient, lightgray 50%,
+        url($bg-desktop-1x);
+      margin-left: 44px;
       @include retina {
-        background-image: $bg-desktop-home-gradient, url($bg-desktop-2x);
+        background-image: url($bg-desktop-2x);
       }
     }
   }
 
   &.auth {
-    background-image: $bg-mobile-sign-in-gradient, url($bg-mobile-1x);
+    background-image: $bg-mobile-sign-in-gradient, lightgray 50%,
+      url($bg-mobile-1x);
     @include retina {
-      background-image: $bg-mobile-sign-in-gradient, url($bg-mobile-2x);
+      background-image: url($bg-mobile-2x);
     }
     @include tablet {
-      background-image: $bg-mobile-home-gradient, url($bg-tablet-1x);
+      background-image: $bg-mobile-home-gradient, lightgray 50%,
+        url($bg-tablet-1x);
       @include retina {
-        background-image: $bg-mobile-home-gradient, url($bg-tablet-2x);
+        background-image: url($bg-tablet-2x);
       }
     }
     @include desktop {
-      background-image: $bg-desktop-home-gradient, url($bg-desktop-1x);
+      background-image: $bg-desktop-home-gradient, lightgray 50%,
+        url($bg-desktop-1x);
       @include retina {
-        background-image: $bg-desktop-home-gradient, url($bg-desktop-2x);
+        background-image: url($bg-desktop-2x);
       }
     }
   }
@@ -50,15 +57,15 @@
   @include tablet {
     width: 437px;
     height: 893px;
-    margin-top: 46px;
-    margin-left: 90px;
+    margin-top: -544px;
+    margin-left: 300px;
   }
 
   @include desktop {
     background-size: 100%;
     width: 670px;
     height: 800px;
-    margin-left: 76px;
-    margin-top: -56px;
+    margin-left: 145px;
+    margin-top: -158px;
   }
 }

@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Container from 'components/Container/Container';
 import SectionUserGateway from 'components/SectionUserGateway/SectionUserGateway';
 import HomeBG from 'components/HomeBG/HomeBG';
@@ -14,18 +14,18 @@ const WelcomePage = () => {
             Transforming your body shape with Power Pulse
           </h1>
           <div className={styles.navLink_wrapper}>
-            <NavLink
+            <Link
               to="/sign-up"
               className={`${styles.navLink} ${styles.sign_up}`}
             >
               Sign Up
-            </NavLink>
-            <NavLink
+            </Link>
+            <Link
               to="/sign-in"
               className={`${styles.navLink} ${styles.sign_in}`}
             >
               Sign In
-            </NavLink>
+            </Link>
           </div>
         </div>
 

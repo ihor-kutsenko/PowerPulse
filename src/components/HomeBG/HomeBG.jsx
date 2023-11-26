@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 const HomeBG = ({ children, className }) => {
   const wrapperBgClass = `${styles.wrapper_bg} ${className || ''}`;
+
   return <div className={wrapperBgClass}>{children}</div>;
 };
 

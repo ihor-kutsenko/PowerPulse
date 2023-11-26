@@ -1,0 +1,47 @@
+@import '../../sass/styles.scss';
+
+.wrapperTitle {
+  margin-bottom: 28px;
+
+  @include tablet {
+    margin-bottom: 32px;
+  }
+}
+
+.title {
+  margin-bottom: 14px;
+
+  @include tablet {
+    margin-bottom: 16px;
+  }
+}
+
+.text {
+  width: 335px;
+  font-family: 'Roboto';
+  @include font(14px, 400, 1.29, 0);
+  color: $gray-color-03;
+
+  @include tablet {
+    width: 496px;
+    @include font(16px, 400, 1.5, 0);
+  }
+}
+
+.textWrapper {
+  margin-top: 12px;
+  display: flex;
+}
+
+.textHint {
+  margin-right: 4px;
+  padding-left: 4px;
+  @include font(12px, 400, 1.5, 0);
+  color: $gray-color-03;
+}
+
+.textLink {
+  @include font(12px, 400, 1.5, 0);
+  text-decoration-line: underline;
+  color: $white-color;
+}

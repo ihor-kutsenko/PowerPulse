@@ -9,10 +9,10 @@ function Svg({ className, iconId, onClick }) {
   );
 }
 
+export default Svg;
+
 Svg.propTypes = {
   className: PropTypes.string,
   iconId: PropTypes.string.isRequired,
   onClick: PropTypes.func,
 };
-
-export default Svg;
