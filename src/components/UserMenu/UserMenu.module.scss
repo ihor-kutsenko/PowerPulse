@@ -1,0 +1,91 @@
+@import '../../sass/styles.scss';
+
+.user_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  padding: 8px;
+  background-color: $black-color;
+}
+
+.user_navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  @include max-tablet {
+    display: none;
+  }
+
+  .user_link {
+    padding: 10px 27px;
+    border: $border-input;
+    border-radius: $border-radius;
+    @include font(16px, 400, 1.33, 0);
+    @include hover {
+      background-color: $orange-color;
+    }
+  }
+}
+
+.user_data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-left: 30px;
+
+  .icon_settings {
+    width: 24px;
+    height: 24px;
+    stroke: $gray-color-03;
+
+    @include tablet {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
+
+.user_avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid $orange-color;
+}
+
+.btn_logout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  @include font(16px, 400, 1.33, 0);
+  color: $white-color;
+  background-color: $black-color;
+  @include max-tablet {
+    display: none;
+  }
+
+  .icon_logout {
+    width: 24px;
+    height: 24px;
+    stroke: $gray-color-03;
+
+    @include tablet {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
+
+.icon_avatar {
+  width: 46px;
+  height: 46px;
+  fill: $gray-color-03;
+}
