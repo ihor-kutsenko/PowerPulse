@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/PowerPulse/static/css/main.8fd9a41c.css",
-    "main.js": "/PowerPulse/static/js/main.f2b3b19a.js",
+    "main.css": "/PowerPulse/static/css/main.6cfe1f2b.css",
+    "main.js": "/PowerPulse/static/js/main.6e33af14.js",
     "static/css/24.c37af0bb.chunk.css": "/PowerPulse/static/css/24.c37af0bb.chunk.css",
     "static/js/24.9b570385.chunk.js": "/PowerPulse/static/js/24.9b570385.chunk.js",
     "static/css/816.e2bd6a10.chunk.css": "/PowerPulse/static/css/816.e2bd6a10.chunk.css",
-    "static/js/816.289d4c66.chunk.js": "/PowerPulse/static/js/816.289d4c66.chunk.js",
+    "static/js/816.852b46ca.chunk.js": "/PowerPulse/static/js/816.852b46ca.chunk.js",
     "static/css/498.e2bd6a10.chunk.css": "/PowerPulse/static/css/498.e2bd6a10.chunk.css",
-    "static/js/498.a42aa3f3.chunk.js": "/PowerPulse/static/js/498.a42aa3f3.chunk.js",
+    "static/js/498.4b4449ec.chunk.js": "/PowerPulse/static/js/498.4b4449ec.chunk.js",
     "static/js/17.bab32dde.chunk.js": "/PowerPulse/static/js/17.bab32dde.chunk.js",
     "static/media/Roboto-Regular.ttf": "/PowerPulse/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
     "static/media/bg-desktop-2x.jpg": "/PowerPulse/static/media/bg-desktop-2x.0c21d751decf12fd2ebd.jpg",
@@ -17,18 +17,18 @@
     "static/media/sprite.svg": "/PowerPulse/static/media/sprite.795d85eccb4445397e446ff5b55d52aa.svg",
     "static/media/bg-tablet-1x.jpg": "/PowerPulse/static/media/bg-tablet-1x.3f8d16726976f0b86306.jpg",
     "index.html": "/PowerPulse/index.html",
-    "main.8fd9a41c.css.map": "/PowerPulse/static/css/main.8fd9a41c.css.map",
-    "main.f2b3b19a.js.map": "/PowerPulse/static/js/main.f2b3b19a.js.map",
+    "main.6cfe1f2b.css.map": "/PowerPulse/static/css/main.6cfe1f2b.css.map",
+    "main.6e33af14.js.map": "/PowerPulse/static/js/main.6e33af14.js.map",
     "24.c37af0bb.chunk.css.map": "/PowerPulse/static/css/24.c37af0bb.chunk.css.map",
     "24.9b570385.chunk.js.map": "/PowerPulse/static/js/24.9b570385.chunk.js.map",
     "816.e2bd6a10.chunk.css.map": "/PowerPulse/static/css/816.e2bd6a10.chunk.css.map",
-    "816.289d4c66.chunk.js.map": "/PowerPulse/static/js/816.289d4c66.chunk.js.map",
+    "816.852b46ca.chunk.js.map": "/PowerPulse/static/js/816.852b46ca.chunk.js.map",
     "498.e2bd6a10.chunk.css.map": "/PowerPulse/static/css/498.e2bd6a10.chunk.css.map",
-    "498.a42aa3f3.chunk.js.map": "/PowerPulse/static/js/498.a42aa3f3.chunk.js.map",
+    "498.4b4449ec.chunk.js.map": "/PowerPulse/static/js/498.4b4449ec.chunk.js.map",
     "17.bab32dde.chunk.js.map": "/PowerPulse/static/js/17.bab32dde.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8fd9a41c.css",
-    "static/js/main.f2b3b19a.js"
+    "static/css/main.6cfe1f2b.css",
+    "static/js/main.6e33af14.js"
   ]
 }
