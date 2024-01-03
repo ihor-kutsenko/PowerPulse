@@ -2,7 +2,7 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { useState } from 'react';
 
 import Svg from 'components/Svg/Svg';
-import Button from 'components/Button/Button';
+import Button from 'components/Buttons/Button';
 import signInSchema from 'schema/signInSchema';
 import styles from '../SignUpForm/SignUpForm.module.scss';
 

@@ -1,0 +1,23 @@
+@import '../../../sass/styles.scss';
+
+.btn_logout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  @include font(16px, 400, 1.33, 0);
+  color: $white-color;
+  background-color: $black-color;
+
+  .icon_logout {
+    width: 24px;
+    height: 24px;
+    stroke: $gray-color-03;
+
+    @include tablet {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}

@@ -2,6 +2,7 @@ import styles from './UserMenu.module.scss';
 import { Link } from 'react-router-dom';
 
 import Svg from 'components/Svg/Svg';
+import LogoutBtn from 'components/Buttons/LogoutBtn/LogoutBtn';
 
 const UserMenu = () => {
   const avatarLogo = (
@@ -19,10 +20,7 @@ const UserMenu = () => {
           <Svg iconId="icon-settings" className={styles.icon_settings} />
         </Link>
         <div className={styles.user_avatar}>{avatarLogo}</div>
-        <button className={styles.btn_logout}>
-          <span>Logout</span>
-          <Svg iconId="icon-logout" className={styles.icon_logout} />
-        </button>
+        <LogoutBtn className={styles.logoutBtn} />
       </div>
     </div>
   );

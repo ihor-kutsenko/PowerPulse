@@ -59,33 +59,14 @@
   border: 1px solid $orange-color;
 }
 
-.btn_logout {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  padding: 10px;
-  @include font(16px, 400, 1.33, 0);
-  color: $white-color;
-  background-color: $black-color;
-  @include max-tablet {
-    display: none;
-  }
-
-  .icon_logout {
-    width: 24px;
-    height: 24px;
-    stroke: $gray-color-03;
-
-    @include tablet {
-      width: 28px;
-      height: 28px;
-    }
-  }
-}
-
 .icon_avatar {
   width: 46px;
   height: 46px;
   fill: $gray-color-03;
+}
+
+.logoutBtn {
+  @include max-tablet {
+    display: none;
+  }
 }
