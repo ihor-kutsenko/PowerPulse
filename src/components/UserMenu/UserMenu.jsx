@@ -20,7 +20,7 @@ const UserMenu = () => {
           <Svg iconId="icon-settings" className={styles.icon_settings} />
         </Link>
         <div className={styles.user_avatar}>{avatarLogo}</div>
-        <LogoutBtn className={styles.logoutBtn} />
+        <LogoutBtn className={styles.logout_btn} />
       </div>
     </div>
   );

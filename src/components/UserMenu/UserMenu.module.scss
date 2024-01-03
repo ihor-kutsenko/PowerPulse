@@ -47,6 +47,11 @@
       height: 28px;
     }
   }
+  .logout_btn {
+    @include max-tablet {
+      display: none;
+    }
+  }
 }
 
 .user_avatar {
@@ -63,10 +68,4 @@
   width: 46px;
   height: 46px;
   fill: $gray-color-03;
-}
-
-.logoutBtn {
-  @include max-tablet {
-    display: none;
-  }
 }
