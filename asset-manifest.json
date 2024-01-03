@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/PowerPulse/static/css/main.6cfe1f2b.css",
-    "main.js": "/PowerPulse/static/js/main.6e33af14.js",
+    "main.css": "/PowerPulse/static/css/main.7e77e291.css",
+    "main.js": "/PowerPulse/static/js/main.38899509.js",
     "static/css/24.c37af0bb.chunk.css": "/PowerPulse/static/css/24.c37af0bb.chunk.css",
     "static/js/24.9b570385.chunk.js": "/PowerPulse/static/js/24.9b570385.chunk.js",
     "static/css/816.e2bd6a10.chunk.css": "/PowerPulse/static/css/816.e2bd6a10.chunk.css",
@@ -14,11 +14,11 @@
     "static/media/bg-tablet-2x.jpg": "/PowerPulse/static/media/bg-tablet-2x.fdc54f336c5b444ca190.jpg",
     "static/media/bg-desktop-1x.jpg": "/PowerPulse/static/media/bg-desktop-1x.c9acaca7a7639e509259.jpg",
     "static/media/bg-mobile-2x.jpg": "/PowerPulse/static/media/bg-mobile-2x.4f023a9f634a4b18300f.jpg",
-    "static/media/sprite.svg": "/PowerPulse/static/media/sprite.795d85eccb4445397e446ff5b55d52aa.svg",
+    "static/media/sprite.svg": "/PowerPulse/static/media/sprite.23a08666fb3e46798e26e3e756eeeeaa.svg",
     "static/media/bg-tablet-1x.jpg": "/PowerPulse/static/media/bg-tablet-1x.3f8d16726976f0b86306.jpg",
     "index.html": "/PowerPulse/index.html",
-    "main.6cfe1f2b.css.map": "/PowerPulse/static/css/main.6cfe1f2b.css.map",
-    "main.6e33af14.js.map": "/PowerPulse/static/js/main.6e33af14.js.map",
+    "main.7e77e291.css.map": "/PowerPulse/static/css/main.7e77e291.css.map",
+    "main.38899509.js.map": "/PowerPulse/static/js/main.38899509.js.map",
     "24.c37af0bb.chunk.css.map": "/PowerPulse/static/css/24.c37af0bb.chunk.css.map",
     "24.9b570385.chunk.js.map": "/PowerPulse/static/js/24.9b570385.chunk.js.map",
     "816.e2bd6a10.chunk.css.map": "/PowerPulse/static/css/816.e2bd6a10.chunk.css.map",
@@ -28,7 +28,7 @@
     "17.bab32dde.chunk.js.map": "/PowerPulse/static/js/17.bab32dde.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6cfe1f2b.css",
-    "static/js/main.6e33af14.js"
+    "static/css/main.7e77e291.css",
+    "static/js/main.38899509.js"
   ]
 }

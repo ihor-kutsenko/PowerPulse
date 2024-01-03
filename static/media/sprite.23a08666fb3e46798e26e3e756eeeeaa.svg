@@ -86,5 +86,10 @@
 			</path>
 		</symbol>
 
+		<symbol id="icon-mobile-menu" viewBox="0 0 32 32">
+			<path fill="none" stroke="#e6533c" style="stroke: var(--color3, #e6533c)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M4 16h16M4 8h24M4 24h24">
+			</path>
+		</symbol>
+
 		
 </svg>
