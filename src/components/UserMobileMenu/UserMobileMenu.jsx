@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 
 import Svg from 'components/Svg/Svg';
 import LogoutBtn from 'components/Buttons/LogoutBtn/LogoutBtn';
+
+import {
+  DIARY_ROUTE,
+  PRODUCTS_ROUTE,
+  EXERCISES_ROUTE,
+  PROFILE_ROUTE,
+} from 'routes/constants';
 import styles from './UserMobileMenu.module.scss';
 
 const UserMobileMenu = ({ isOpen }) => {
@@ -52,9 +59,27 @@ const UserMobileMenu = ({ isOpen }) => {
           <Svg iconId="icon-close" className={styles.menu__iconClose} />
         </button>
         <nav className={styles.menu__navigation}>
-          <Link className={styles.menu__navigation_link}>Diary</Link>
-          <Link className={styles.menu__navigation_link}>Products</Link>
-          <Link className={styles.menu__navigation_link}>Exercises</Link>
+          <Link
+            className={styles.menu__navigation_link}
+            to={DIARY_ROUTE}
+            onClick={closeMenu}
+          >
+            Diary
+          </Link>
+          <Link
+            className={styles.menu__navigation_link}
+            to={PRODUCTS_ROUTE}
+            onClick={closeMenu}
+          >
+            Products
+          </Link>
+          <Link
+            className={styles.menu__navigation_link}
+            to={PROFILE_ROUTE}
+            onClick={closeMenu}
+          >
+            Exercises
+          </Link>
         </nav>
         <LogoutBtn className={styles.menu__btnLogout} whiteIcon={true} />
       </div>

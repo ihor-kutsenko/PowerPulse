@@ -5,7 +5,7 @@ import SectionUserGateway from 'components/SectionUserGateway/SectionUserGateway
 import HomeBG from 'components/HomeBG/HomeBG';
 import style from '../../components/HomeBG/HomeBG.module.scss';
 
-import { WELCOME_PAGE_ROUTE } from 'routes/routes';
+import { WELCOME_PAGE_ROUTE } from 'routes/constants';
 
 const NotFoundPage = () => {
   return (

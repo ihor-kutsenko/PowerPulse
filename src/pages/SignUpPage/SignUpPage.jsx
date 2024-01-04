@@ -5,7 +5,7 @@ import SectionUserGateway from 'components/SectionUserGateway/SectionUserGateway
 import HomeBG from 'components/HomeBG/HomeBG';
 import SignUpForm from 'components/SignUpForm/SignUpForm';
 import Title from 'components/Title/Title';
-import { SIGN_IN_ROUTE } from 'routes/routes';
+import { SIGN_IN_ROUTE } from 'routes/constants';
 
 import style from '../../components/HomeBG/HomeBG.module.scss';
 import styles from './SignUpPage.module.scss';

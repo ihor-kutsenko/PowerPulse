@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
+
 import Container from 'components/Container/Container';
 import SectionUserGateway from 'components/SectionUserGateway/SectionUserGateway';
 import HomeBG from 'components/HomeBG/HomeBG';
+
+import { SIGN_UP_ROUTE, SIGN_IN_ROUTE } from 'routes/constants';
 import styles from './WelcomePage.module.scss';
 import style from '../../components/HomeBG/HomeBG.module.scss';
 
@@ -15,13 +18,13 @@ const WelcomePage = () => {
           </h1>
           <div className={styles.navLink_wrapper}>
             <Link
-              to="/sign-up"
+              to={SIGN_UP_ROUTE}
               className={`${styles.navLink} ${styles.sign_up}`}
             >
               Sign Up
             </Link>
             <Link
-              to="/sign-in"
+              to={SIGN_IN_ROUTE}
               className={`${styles.navLink} ${styles.sign_in}`}
             >
               Sign In

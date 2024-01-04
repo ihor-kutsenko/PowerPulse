@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { appRoutes } from 'routes/routes';
+import { publicRoutes, privateRoutes } from 'routes/routes';
 
 import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
 
@@ -11,7 +11,12 @@ const App = () => {
     <div>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          {appRoutes.map(({ path, element }) => (
+          {publicRoutes.map(({ path, element }) => (
+            <Route key={path} path={path} element={element} />
+          ))}
+        </Route>
+        <Route path="/" element={<SharedLayout />}>
+          {privateRoutes.map(({ path, element }) => (
             <Route key={path} path={path} element={element} />
           ))}
         </Route>
