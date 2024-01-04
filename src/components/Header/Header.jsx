@@ -14,14 +14,16 @@ const Header = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <Link to="/" className={styles.link}>
-        <Svg iconId={'icon-logo'} className={styles.logo} />
-      </Link>
-      <div className={styles.user_container}>
-        <UserMenu />
-        <BurgerBtn onClick={onClickBurgerBtn} />
-        <UserMobileMenu isOpen={isOpen} />
+    <div style={{ borderBottom: '1px solid rgba(239, 237, 232, 0.20)' }}>
+      <div className={styles.container}>
+        <Link to="/" className={styles.link}>
+          <Svg iconId={'icon-logo'} className={styles.logo} />
+        </Link>
+        <div className={styles.user_container}>
+          <UserMenu />
+          <BurgerBtn onClick={onClickBurgerBtn} />
+          <UserMobileMenu isOpen={isOpen} />
+        </div>
       </div>
     </div>
   );

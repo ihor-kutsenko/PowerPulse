@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 25px 18px;
+  padding: 12px 18px;
   margin: 0 auto;
   background-color: $black-color;
 
@@ -14,12 +14,12 @@
   }
 
   @include tablet {
-    padding: 32px 32px;
+    padding: 20px 32px;
     width: 768px;
   }
 
   @include desktop {
-    padding: 32px 96px;
+    padding: 20px 96px;
     width: 1440px;
   }
 }

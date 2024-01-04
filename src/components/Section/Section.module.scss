@@ -1,0 +1,13 @@
+@import '../../sass/styles.scss';
+
+.section {
+  padding: 40px 20px 80px;
+
+  @include tablet {
+    padding: 72px 32px 32px;
+  }
+
+  @include desktop {
+    padding: 72px 96px 46px;
+  }
+}
