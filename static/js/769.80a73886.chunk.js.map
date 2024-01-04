@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/769.80a73886.chunk.js","mappings":"2JAIA,UAJwB,WACtB,OAAOA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,qBACd,C","sources":["pages/ProfileUserPage/ProfileUserPage.jsx"],"sourcesContent":["const ProfileUserPage = () => {\r\n  return <div>Profile User Page</div>;\r\n};\r\n\r\nexport default ProfileUserPage;\r\n"],"names":["_jsx","children"],"sourceRoot":""}
