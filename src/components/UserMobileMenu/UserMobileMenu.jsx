@@ -4,12 +4,7 @@ import { Link } from 'react-router-dom';
 import Svg from 'components/Svg/Svg';
 import LogoutBtn from 'components/Buttons/LogoutBtn/LogoutBtn';
 
-import {
-  DIARY_ROUTE,
-  PRODUCTS_ROUTE,
-  EXERCISES_ROUTE,
-  PROFILE_ROUTE,
-} from 'routes/constants';
+import { DIARY_ROUTE, PRODUCTS_ROUTE, EXERCISES_ROUTE } from 'routes/constants';
 import styles from './UserMobileMenu.module.scss';
 
 const UserMobileMenu = ({ isOpen }) => {
@@ -75,7 +70,7 @@ const UserMobileMenu = ({ isOpen }) => {
           </Link>
           <Link
             className={styles.menu__navigation_link}
-            to={PROFILE_ROUTE}
+            to={EXERCISES_ROUTE}
             onClick={closeMenu}
           >
             Exercises
