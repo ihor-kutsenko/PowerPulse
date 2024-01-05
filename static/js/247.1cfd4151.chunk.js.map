@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/247.1cfd4151.chunk.js","mappings":"2JAIA,UAJkB,WAChB,OAAOA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,cACd,C","sources":["pages/DiaryPage/DiaryPage.jsx"],"sourcesContent":["const DiaryPage = () => {\r\n  return <div>Diary Page</div>;\r\n};\r\n\r\nexport default DiaryPage;\r\n"],"names":["_jsx","children"],"sourceRoot":""}
