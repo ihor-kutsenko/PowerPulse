@@ -1,0 +1,61 @@
+@import '../../sass/styles.scss';
+
+.statistics {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px;
+    max-width: 165px;
+    height: 96px;
+    border-radius: $border-radius;
+    border: $border-input;
+    overflow: hidden;
+
+    @include tablet {
+      padding: 18px;
+      min-width: 187px;
+      min-height: 116px;
+    }
+  }
+
+  &__titleWrapper {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    fill: $orange-1-color;
+  }
+
+  &__title {
+    font-family: Roboto;
+    min-width: 100px;
+    color: $gray-color-04;
+    @include font(12px, 400, 1.33, 0);
+
+    @include tablet {
+      @include font(12px, 400, 1.5, 0);
+    }
+  }
+
+  &____value {
+    color: $white-color;
+    @include font(18px, 700, 1.11, 0);
+
+    @include tablet {
+      @include font(24px, 700, 1.33, 0);
+    }
+  }
+}
+
+.statisticsPrimaryItem {
+  background: $orange-color;
+}
+
+.statisticsPrimaryTitle {
+  color: $gray-color-08;
+}
