@@ -1,5 +1,7 @@
+import Section from 'components/Section/Section';
+
 const ExercisesPage = () => {
-  return <div>Exercises Page</div>;
+  return <Section>Exercises Page</Section>;
 };
 
 export default ExercisesPage;

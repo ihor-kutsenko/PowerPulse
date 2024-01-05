@@ -1,5 +1,7 @@
+import Section from 'components/Section/Section';
+
 const ProductsPage = () => {
-  return <div>Products page</div>;
+  return <Section>Products page</Section>;
 };
 
 export default ProductsPage;

@@ -1,5 +1,7 @@
+import Section from 'components/Section/Section';
+
 const DiaryPage = () => {
-  return <div>Diary Page</div>;
+  return <Section>Diary Page</Section>;
 };
 
 export default DiaryPage;

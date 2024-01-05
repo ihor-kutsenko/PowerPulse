@@ -1,0 +1,10 @@
+@import '../../sass/styles.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  @include desktop {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

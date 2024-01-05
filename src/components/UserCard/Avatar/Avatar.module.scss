@@ -1,0 +1,68 @@
+@import '../../../sass/styles.scss';
+
+.avatar {
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 90px;
+    border-radius: 100px;
+    border: $border-active;
+    @include tablet {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+
+.icon_upload {
+  position: relative;
+  top: -13px;
+  left: 0px;
+  width: 24px;
+  height: 24px;
+
+  @include tablet {
+    top: -18px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.iconAvatar {
+  width: 62px;
+  height: 62px;
+  fill: rgba(48, 48, 48, 0.3);
+  @include tablet {
+    width: 102px;
+    height: 102px;
+  }
+}
+
+.text_userName {
+  font-family: Roboto;
+  @include font(18px, 400, 1.11, 0);
+
+  @include tablet {
+    @include font(24px, 400, 1.17, 0);
+  }
+}
+
+.text_user {
+  font-family: Roboto;
+  @include font(14px, 400, 1.29, 0);
+  color: $gray-color-05;
+}
