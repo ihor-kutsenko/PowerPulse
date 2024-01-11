@@ -1,12 +1,24 @@
 import { Formik, Field, Form } from 'formik';
 
 import Button from 'components/Buttons/Button';
+import RadioButton from './RadioButton.jsx/RadioButton';
+
+import { bloodOptions } from './RadioButton.jsx/radioOptions';
 import styles from './UserForm.module.scss';
 
 const UserForm = () => {
+  const initialValues = {
+    name: '',
+    email: '',
+    height: '',
+    currentWeight: '',
+    desiredWeight: '',
+    birthday: '',
+    blood: '',
+  };
   return (
     <div className={styles.form__container}>
-      <Formik>
+      <Formik initialValues={initialValues}>
         {formik => (
           <Form>
             {/* Top Field Input */}
@@ -101,10 +113,19 @@ const UserForm = () => {
               <div className={styles.radioContainer}>
                 {/* Radio blood inputs */}
                 <div className={styles.radioBloodContainer}>
-                  <input type="radio" />
-                  <input type="radio" />
-                  <input type="radio" />
-                  <input type="radio" />
+                  {bloodOptions.map(option => (
+                    <RadioButton
+                      key={option.id}
+                      id={option.id}
+                      name="blood"
+                      value={option.value}
+                      label={option.label}
+                      checked={formik.values.blood === option.value}
+                      onChange={() =>
+                        formik.setFieldValue('blood', option.value)
+                      }
+                    />
+                  ))}
                 </div>
                 {/* Radio sex inputs */}
                 <div className={styles.radioSexContainer}>

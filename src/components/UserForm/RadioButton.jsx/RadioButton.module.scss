@@ -1,0 +1,67 @@
+@import '../../../sass/styles.scss';
+
+.radio {
+  position: relative;
+
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  &__label {
+    margin-right: 9px;
+    padding: 0 0 0 25px;
+    font-family: 'Roboto';
+    @include font(14px, 400, 1.7, 0);
+    cursor: pointer;
+    color: $white-color;
+
+    @include tablet {
+      margin-right: 12px;
+      @include font(16px, 400, 1.5, 0);
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 3px;
+      left: 0;
+      width: 18px;
+      height: 18px;
+      border: $border-radio-btn-before;
+      background-color: transparent;
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 7px;
+      left: 4px;
+      z-index: 2;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: $border-radio-btn-after;
+      background-color: $orange-color;
+      opacity: 0;
+    }
+  }
+}
+
+.radio__input:checked + .radio__label::before {
+  border-color: $orange-color;
+}
+
+.radio__input:checked + .radio__label::after {
+  opacity: 1;
+}
