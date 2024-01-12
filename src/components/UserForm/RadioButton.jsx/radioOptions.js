@@ -4,3 +4,8 @@ export const bloodOptions = [
   { id: '3', value: 3, label: '3' },
   { id: '4', value: 4, label: '4' },
 ];
+
+export const sexOptions = [
+  { id: 'male', value: 'male', label: 'Male' },
+  { id: 'female', value: 'female', label: 'Female' },
+];
