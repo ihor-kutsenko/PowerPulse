@@ -3,7 +3,11 @@ import { Formik, Field, Form } from 'formik';
 import Button from 'components/Buttons/Button';
 import RadioButton from './RadioButton.jsx/RadioButton';
 
-import { bloodOptions, sexOptions } from './RadioButton.jsx/radioOptions';
+import {
+  bloodOptions,
+  sexOptions,
+  levelOptions,
+} from './RadioButton.jsx/radioOptions';
 import styles from './UserForm.module.scss';
 
 const UserForm = () => {
@@ -16,6 +20,7 @@ const UserForm = () => {
     birthday: '',
     blood: '',
     sex: '',
+    levelActivity: '',
   };
   return (
     <div className={styles.form__container}>
@@ -145,12 +150,19 @@ const UserForm = () => {
               </div>
               {/* {level Actively} */}
               <div className={styles.levelActivity__wrapper}>
-                <p>Level Activity</p>
-                <input type="radio" />
-                <input type="radio" />
-                <input type="radio" />
-                <input type="radio" />
-                <input type="radio" />
+                {levelOptions.map(option => (
+                  <RadioButton
+                    key={option.id}
+                    id={option.id}
+                    name="levelActivity"
+                    value={option.value}
+                    label={option.label}
+                    checked={formik.values.levelActivity === option.value}
+                    onChange={() =>
+                      formik.setFieldValue('levelActivity', option.value)
+                    }
+                  />
+                ))}
               </div>
             </div>
             <Button className={styles.btn_save} type="submit" text="Save" />
