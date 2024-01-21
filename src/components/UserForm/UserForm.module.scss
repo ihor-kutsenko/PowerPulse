@@ -1,1 +1,174 @@
 @import '../../sass/styles.scss';
+.form {
+  &__container {
+    @include desktop {
+      padding-right: 64px;
+    }
+  }
+
+  &__topFieldContainer {
+    margin-top: 20px;
+    @include tablet {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-top: 40px;
+      width: 100%;
+      gap: 14px;
+    }
+  }
+
+  &__topFieldWrapper {
+    position: relative;
+    margin-bottom: 14px;
+    width: 100%;
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  &__labelInput {
+    font-family: 'Roboto';
+    @include font(12px, 400, 1.5, 0);
+    color: $gray-color-05;
+
+    @include tablet {
+      @include font(14px, 400, 1.29, 0);
+    }
+  }
+
+  &__input {
+    margin-top: 4px;
+    align-items: center;
+    width: 100%;
+    padding: 14px;
+    gap: 10px;
+    font-family: 'Roboto';
+    line-height: 1.28;
+    border-radius: $border-radius;
+    border: $border-input;
+    background-color: transparent;
+    color: $white-color;
+    outline: none;
+    transition: border-color $transition;
+
+    @include tablet {
+      margin-bottom: 8px;
+    }
+    @include desktop {
+      @include font(16px, 400, 1.5, 0);
+    }
+  }
+}
+
+.input {
+  &__container {
+    width: 100%;
+    gap: 14px;
+
+    @include tablet {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+
+  &__wrapper {
+    display: inline-flex;
+    align-items: flex-end;
+    margin-bottom: 14px;
+    width: 100%;
+    gap: 14px;
+  }
+
+  &__fieldContainer {
+    position: relative;
+    width: 50%;
+  }
+
+  &__field {
+    margin-top: 4px;
+    align-items: center;
+    width: 100%;
+    padding: 14px;
+    gap: 10px;
+    font-family: 'Roboto';
+    line-height: 1.28;
+    border-radius: $border-radius;
+    border: $border-input;
+    background-color: transparent;
+    color: $white-color;
+    outline: none;
+    transition: border-color $transition;
+
+    @include tablet {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.titleBlood {
+  margin-bottom: 4px;
+  font-family: 'Roboto';
+  @include font(12px, 400, 1.5, 0);
+  color: $gray-color-05;
+
+  @include tablet {
+    margin-bottom: 8px;
+    @include font(14px, 400, 1.29, 0);
+  }
+}
+
+.radio {
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    @include desktop {
+      flex-direction: column;
+    }
+  }
+
+  &__container {
+    display: flex;
+  }
+
+  &__bloodContainer {
+    display: flex;
+    margin-right: 20px;
+
+    @include tablet {
+      margin-right: 32px;
+    }
+  }
+
+  &__sexContainer {
+    display: flex;
+  }
+
+  &__levelActivityContainer {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    @include tablet {
+      margin-top: 32px;
+      margin-bottom: 38px;
+    }
+    @include desktop {
+      margin-bottom: 48px;
+    }
+  }
+}
+
+.btn_save {
+  width: 115px;
+  padding: 12px 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: $border-radius;
+  background: $orange-color;
+
+  @include tablet {
+    width: 144px;
+    padding: 16px 50px;
+  }
+}

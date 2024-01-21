@@ -30,7 +30,7 @@ const UserForm = () => {
             {/* Top Field Input */}
             <div className={styles.form__topFieldContainer}>
               <div className={styles.form__topFieldWrapper}>
-                <label className={styles.labelInput} htmlFor="name">
+                <label className={styles.form__labelInput} htmlFor="name">
                   Name
                 </label>
                 <Field
@@ -42,7 +42,7 @@ const UserForm = () => {
                 />
               </div>
               <div className={styles.form__topFieldWrapper}>
-                <label className={styles.labelInput} htmlFor="email">
+                <label className={styles.form__labelInput} htmlFor="email">
                   Email
                 </label>
                 <Field
@@ -60,7 +60,7 @@ const UserForm = () => {
             <div className={styles.input__container}>
               <div className={styles.input__wrapper}>
                 <div className={styles.input__fieldContainer}>
-                  <label className={styles.labelInput} htmlFor="height">
+                  <label className={styles.form__labelInput} htmlFor="height">
                     Height
                   </label>
                   <Field
@@ -72,7 +72,10 @@ const UserForm = () => {
                   />
                 </div>
                 <div className={styles.input__fieldContainer}>
-                  <label className={styles.labelInput} htmlFor="currentWeight">
+                  <label
+                    className={styles.form__labelInput}
+                    htmlFor="currentWeight"
+                  >
                     CurrentWeight
                   </label>
                   <Field
@@ -87,7 +90,10 @@ const UserForm = () => {
 
               <div className={styles.input__wrapper}>
                 <div className={styles.input__fieldContainer}>
-                  <label className={styles.labelInput} htmlFor="desiredWeight">
+                  <label
+                    className={styles.form__labelInput}
+                    htmlFor="desiredWeight"
+                  >
                     DesiredWeight
                   </label>
                   <Field
@@ -99,7 +105,7 @@ const UserForm = () => {
                   />
                 </div>
                 <div className={styles.input__fieldContainer}>
-                  <label className={styles.labelInput} htmlFor="birthday">
+                  <label className={styles.form__labelInput} htmlFor="birthday">
                     Birthday
                   </label>
                   <Field
@@ -116,9 +122,9 @@ const UserForm = () => {
             {/* Radio inputs */}
             <p className={styles.titleBlood}>Blood</p>
             <div className={styles.radio__wrapper}>
-              <div className={styles.radioContainer}>
+              <div className={styles.radio__container}>
                 {/* Radio blood inputs */}
-                <div className={styles.radioBloodContainer}>
+                <div className={styles.radio__bloodContainer}>
                   {bloodOptions.map(option => (
                     <RadioButton
                       key={option.id}
@@ -134,7 +140,7 @@ const UserForm = () => {
                   ))}
                 </div>
                 {/* Radio sex inputs */}
-                <div className={styles.radioSexContainer}>
+                <div className={styles.radio__sexContainer}>
                   {sexOptions.map(option => (
                     <RadioButton
                       key={option.id}
@@ -149,7 +155,7 @@ const UserForm = () => {
                 </div>
               </div>
               {/* {level Actively} */}
-              <div className={styles.levelActivity__wrapper}>
+              <div className={styles.radio__levelActivityContainer}>
                 {levelOptions.map(option => (
                   <RadioButton
                     key={option.id}
