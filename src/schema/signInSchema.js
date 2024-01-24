@@ -1,8 +1,9 @@
-import * as Yup from 'yup';
+import * as yup from 'yup';
 
-const signInSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email format').required('Required field!'),
-  password: Yup.string()
+const signInSchema = yup.object().shape({
+  email: yup.string().email('Invalid email format').required('Required field!'),
+  password: yup
+    .string()
     .min(6, 'Must contain minimum 6 symbols!')
     .required('Required field!'),
 });

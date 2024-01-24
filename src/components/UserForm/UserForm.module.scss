@@ -22,6 +22,13 @@
     position: relative;
     margin-bottom: 14px;
     width: 100%;
+
+    &.error input {
+      border: $border-error;
+    }
+    &.success input {
+      border: $border-success;
+    }
     @include tablet {
       width: 50%;
     }
@@ -59,6 +66,10 @@
       @include font(16px, 400, 1.5, 0);
     }
   }
+
+  &__inputEmail {
+    color: $gray-color-06;
+  }
 }
 
 .input {
@@ -84,6 +95,13 @@
   &__fieldContainer {
     position: relative;
     width: 50%;
+
+    &.error input {
+      border: $border-error;
+    }
+    &.success input {
+      border: $border-success;
+    }
   }
 
   &__field {

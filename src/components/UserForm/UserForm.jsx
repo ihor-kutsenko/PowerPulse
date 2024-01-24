@@ -2,18 +2,22 @@ import { Formik, Field, Form } from 'formik';
 
 import Button from 'components/Buttons/Button';
 import RadioButton from './RadioButton.jsx/RadioButton';
+import ErrorMessages from './ErrorMessages/ErrorMessages';
 
 import {
   bloodOptions,
   sexOptions,
   levelOptions,
 } from './RadioButton.jsx/radioOptions';
+
+import userFormSchema from 'schema/userFormSchema';
+
 import styles from './UserForm.module.scss';
 
 const UserForm = () => {
   const initialValues = {
     name: '',
-    email: '',
+    email: 'user@example.com',
     height: '',
     currentWeight: '',
     desiredWeight: '',
@@ -24,12 +28,20 @@ const UserForm = () => {
   };
   return (
     <div className={styles.form__container}>
-      <Formik initialValues={initialValues}>
+      <Formik initialValues={initialValues} validationSchema={userFormSchema}>
         {formik => (
           <Form>
             {/* Top Field Input */}
             <div className={styles.form__topFieldContainer}>
-              <div className={styles.form__topFieldWrapper}>
+              <div
+                className={`${styles.form__topFieldWrapper} ${
+                  formik.touched.name && formik.errors.name
+                    ? `${styles.error}`
+                    : formik.touched.name && !formik.errors.name
+                    ? `${styles.success}`
+                    : ''
+                }`}
+              >
                 <label className={styles.form__labelInput} htmlFor="name">
                   Name
                 </label>
@@ -40,13 +52,14 @@ const UserForm = () => {
                   id="name"
                   placeholder="Your name"
                 />
+                <ErrorMessages nameField="name" />
               </div>
               <div className={styles.form__topFieldWrapper}>
                 <label className={styles.form__labelInput} htmlFor="email">
                   Email
                 </label>
                 <Field
-                  className={styles.form__input}
+                  className={`${styles.form__input} ${styles.form__inputEmail}`}
                   type="text"
                   name="email"
                   id="email"
@@ -56,10 +69,18 @@ const UserForm = () => {
               </div>
             </div>
 
-            {/* Iputs - height, weight, birthday */}
+            {/* Inputs - height, weight, birthday */}
             <div className={styles.input__container}>
               <div className={styles.input__wrapper}>
-                <div className={styles.input__fieldContainer}>
+                <div
+                  className={`${styles.input__fieldContainer} ${
+                    formik.touched.height && formik.errors.height
+                      ? `${styles.error}`
+                      : formik.touched.height && !formik.errors.height
+                      ? `${styles.success}`
+                      : ''
+                  }`}
+                >
                   <label className={styles.form__labelInput} htmlFor="height">
                     Height
                   </label>
@@ -70,8 +91,18 @@ const UserForm = () => {
                     id="height"
                     placeholder=""
                   />
+                  <ErrorMessages nameField="height" />
                 </div>
-                <div className={styles.input__fieldContainer}>
+                <div
+                  className={`${styles.input__fieldContainer} ${
+                    formik.touched.currentWeight && formik.errors.currentWeight
+                      ? `${styles.error}`
+                      : formik.touched.currentWeight &&
+                        !formik.errors.currentWeight
+                      ? `${styles.success}`
+                      : ''
+                  }`}
+                >
                   <label
                     className={styles.form__labelInput}
                     htmlFor="currentWeight"
@@ -85,11 +116,21 @@ const UserForm = () => {
                     id="currentWeight"
                     placeholder=""
                   />
+                  <ErrorMessages nameField="currentWeight" />
                 </div>
               </div>
 
               <div className={styles.input__wrapper}>
-                <div className={styles.input__fieldContainer}>
+                <div
+                  className={`${styles.input__fieldContainer} ${
+                    formik.touched.desiredWeight && formik.errors.desiredWeight
+                      ? `${styles.error}`
+                      : formik.touched.desiredWeight &&
+                        !formik.errors.desiredWeight
+                      ? `${styles.success}`
+                      : ''
+                  }`}
+                >
                   <label
                     className={styles.form__labelInput}
                     htmlFor="desiredWeight"
@@ -103,8 +144,17 @@ const UserForm = () => {
                     id="desiredWeight"
                     placeholder=""
                   />
+                  <ErrorMessages nameField="desiredWeight" />
                 </div>
-                <div className={styles.input__fieldContainer}>
+                <div
+                  className={`${styles.input__fieldContainer} ${
+                    formik.touched.birthday && formik.errors.birthday
+                      ? `${styles.error}`
+                      : formik.touched.birthday && !formik.errors.birthday
+                      ? `${styles.success}`
+                      : ''
+                  }`}
+                >
                   <label className={styles.form__labelInput} htmlFor="birthday">
                     Birthday
                   </label>
@@ -115,6 +165,7 @@ const UserForm = () => {
                     id="birthday"
                     placeholder=""
                   />
+                  <ErrorMessages nameField="birthday" />
                 </div>
               </div>
             </div>
