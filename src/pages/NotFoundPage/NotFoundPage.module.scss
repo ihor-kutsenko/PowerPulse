@@ -1,0 +1,8 @@
+@import '../../sass/styles.scss';
+.container {
+  padding-top: 50px;
+  gap: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+}
