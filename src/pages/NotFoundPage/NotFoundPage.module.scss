@@ -1,8 +1,87 @@
 @import '../../sass/styles.scss';
-.container {
-  padding-top: 50px;
-  gap: 50px;
-  display: flex;
-  flex-direction: column;
-  width: 240px;
+.container_left {
+  padding: 25px 20px;
+  width: 64%;
+  height: 820px;
+  float: left;
+  background: $orange-color;
+
+  @include tablet {
+    padding: 32px;
+    width: 420px;
+    height: 1024px;
+  }
+  @include desktop {
+    padding: 33px 96px;
+    width: 670px;
+    height: 802px;
+  }
+}
+
+.logo {
+  width: 126px;
+  height: 13px;
+
+  @include tablet {
+    width: 152px;
+    height: 17px;
+  }
+}
+
+.title {
+  margin-top: 213px;
+  margin-bottom: 14px;
+  font-family: 'Roboto';
+  @include font(66px, 500, 1, 0.66px);
+
+  @include tablet {
+    margin-top: 260px;
+    margin-bottom: 28px;
+    @include font(160px, 500, 0.94, 1.6px);
+  }
+  @include desktop {
+    margin-top: 172px;
+  }
+}
+
+.text {
+  margin-bottom: 40px;
+  @include font(14px, 400, 1.28, 0);
+
+  @include tablet {
+    margin-bottom: 44px;
+    @include font(16px, 400, 1.5, 0);
+  }
+}
+
+.link {
+  padding: 12px 40px;
+  border-radius: $border-radius;
+  border: $border-input;
+  @include font(16px, 500, 1.12, 0);
+  @include hover {
+    background-color: $orange-1-color;
+  }
+
+  @include tablet {
+    padding: 16px 60px;
+    @include font(20px, 500, 1.2, 0);
+  }
+}
+
+.container_right {
+  padding-top: 453px;
+  padding-left: 50px;
+
+  @include tablet {
+    padding-top: 533px;
+    padding-left: 20px;
+  }
+  @include max-tablet {
+    width: 36%;
+  }
+  @include desktop {
+    padding-top: 20px;
+    padding-left: 50px;
+  }
 }
