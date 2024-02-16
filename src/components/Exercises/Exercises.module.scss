@@ -1,0 +1,12 @@
+@import '../../sass/styles.scss';
+
+.wrapper {
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.title {
+  margin-bottom: 20px;
+}
