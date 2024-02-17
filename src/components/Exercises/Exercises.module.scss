@@ -1,9 +1,12 @@
 @import '../../sass/styles.scss';
 
 .wrapper {
+  margin-bottom: 28px;
+
   @include tablet {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 64px;
   }
 }
 

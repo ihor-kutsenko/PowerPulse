@@ -1,22 +1,16 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 
 import styles from './ExercisesNavigation.module.scss';
 
-const ExercisesNavigation = () => {
-  const [activeButton, setActiveButton] = useState('Body parts');
-
-  const handleButtonClick = buttonName => {
-    setActiveButton(buttonName);
-  };
-
+const ExercisesNavigation = ({ activeFilter, handleFilterClick }) => {
   return (
     <ul className={styles.exercises_list}>
       <li>
         <button
           className={`${styles.exercises_btn} ${
-            activeButton === 'Body parts' ? styles.active : ''
+            activeFilter === 'Body parts' ? styles.active : ''
           } `}
-          onClick={() => handleButtonClick('Body parts')}
+          onClick={() => handleFilterClick('Body parts')}
         >
           Body parts
         </button>
@@ -24,9 +18,9 @@ const ExercisesNavigation = () => {
       <li>
         <button
           className={`${styles.exercises_btn} ${
-            activeButton === 'Muscles' ? styles.active : ''
+            activeFilter === 'Muscles' ? styles.active : ''
           }`}
-          onClick={() => handleButtonClick('Muscles')}
+          onClick={() => handleFilterClick('Muscles')}
         >
           Muscles
         </button>
@@ -34,9 +28,9 @@ const ExercisesNavigation = () => {
       <li>
         <button
           className={`${styles.exercises_btn} ${
-            activeButton === 'Equipment' ? styles.active : ''
+            activeFilter === 'Equipment' ? styles.active : ''
           }`}
-          onClick={() => handleButtonClick('Equipment')}
+          onClick={() => handleFilterClick('Equipment')}
         >
           Equipment
         </button>

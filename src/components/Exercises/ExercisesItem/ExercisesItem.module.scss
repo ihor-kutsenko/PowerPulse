@@ -1,0 +1,62 @@
+@import '../../../sass/styles.scss';
+
+.exercises_item {
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 20px;
+
+  @include tablet {
+    margin-bottom: 32px;
+  }
+}
+
+.exercises_img {
+  display: block;
+  width: 100%;
+  height: 206px;
+  height: auto;
+  border: 1px $white-color;
+  border-radius: $border-radius;
+  filter: brightness(40%);
+
+  @include mobile {
+    object-fit: cover;
+    width: 335px;
+    height: 206px;
+  }
+  @include tablet {
+    width: 224px;
+  }
+  @include desktop {
+    width: 236px;
+  }
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  @include font(20px, 400, 1.2, 0);
+  color: $white-color;
+
+  @include tablet {
+    @include font(24px, 400, 1.33, 0);
+  }
+}
+
+.text {
+  @include font(12px, 400, 1.5, 0);
+  color: $gray-color-04;
+}
