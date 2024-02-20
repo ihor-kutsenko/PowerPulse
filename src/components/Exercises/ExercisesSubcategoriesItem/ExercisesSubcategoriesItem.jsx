@@ -1,7 +1,7 @@
-import styles from './ExercisesItem.module.scss';
+import styles from './ExercisesSubcategoriesItem.module.scss';
 
-const ExercisesItem = ({ exercisesItem }) => {
-  const { name, filter, imgURL } = exercisesItem;
+const ExercisesSubcategoriesItem = ({ ExercisesSubcategoriesItem }) => {
+  const { name, filter, imgURL } = ExercisesSubcategoriesItem;
   return (
     <li className={styles.exercises_item}>
       <img src={imgURL} alt={name} className={styles.exercises_img} />
@@ -13,4 +13,4 @@ const ExercisesItem = ({ exercisesItem }) => {
   );
 };
 
-export default ExercisesItem;
+export default ExercisesSubcategoriesItem;

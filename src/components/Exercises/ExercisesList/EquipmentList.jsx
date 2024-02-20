@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import ExercisesItem from '../ExercisesItem/ExercisesItem';
+import ExercisesSubcategoriesItem from '../ExercisesSubcategoriesItem/ExercisesSubcategoriesItem';
 import Pagination from 'components/Pagination/Pagination';
 import PaginationContainer from 'components/Pagination/PaginationContainer';
 import useItemsPerPage from 'components/Pagination/PaginationHooks';
@@ -29,9 +29,9 @@ const EquipmentList = ({ exercises, handleFilterClick }) => {
     <PaginationContainer>
       <ul className={styles.exercises_list}>
         {currentItems.map(item => (
-          <ExercisesItem
+          <ExercisesSubcategoriesItem
             key={item._id.$oid}
-            exercisesItem={item}
+            ExercisesSubcategoriesItem={item}
             handleFilterClick={handleFilterClick}
           />
         ))}

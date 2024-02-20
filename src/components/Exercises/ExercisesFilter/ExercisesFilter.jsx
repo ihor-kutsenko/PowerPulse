@@ -1,8 +1,6 @@
-// import React, { useState } from 'react';
+import styles from './ExercisesFilter.module.scss';
 
-import styles from './ExercisesNavigation.module.scss';
-
-const ExercisesNavigation = ({ activeFilter, handleFilterClick }) => {
+const ExercisesFilter = ({ activeFilter, handleFilterClick }) => {
   return (
     <ul className={styles.exercises_list}>
       <li>
@@ -39,4 +37,4 @@ const ExercisesNavigation = ({ activeFilter, handleFilterClick }) => {
   );
 };
 
-export default ExercisesNavigation;
+export default ExercisesFilter;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import Title from 'components/Title/Title';
-import ExercisesNavigation from './ExercisesNavigation/ExercisesNavigation';
+import ExercisesFilter from './ExercisesFilter/ExercisesFilter';
 import BodyPartList from './ExercisesList/BodyPartList';
 import MuscleList from './ExercisesList/MuscleList';
 import EquipmentList from './ExercisesList/EquipmentList';
@@ -20,7 +20,7 @@ const Exercises = () => {
     <>
       <div className={styles.wrapper}>
         <Title text="Exercises" className={styles.title} />
-        <ExercisesNavigation
+        <ExercisesFilter
           activeFilter={activeFilter}
           handleFilterClick={handleFilterClick}
         />
