@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 import Title from 'components/Title/Title';
-import ExercisesFilter from './ExercisesFilter/ExercisesFilter';
-import BodyPartList from './ExercisesList/BodyPartList';
-import MuscleList from './ExercisesList/MuscleList';
-import EquipmentList from './ExercisesList/EquipmentList';
+import ExercisesCategories from './ExercisesCategories/ExercisesCategories';
+import BodyPartList from './ExercisesSubcategoriesList/BodyPartList';
+import MuscleList from './ExercisesSubcategoriesList/MuscleList';
+import EquipmentList from './ExercisesSubcategoriesList/EquipmentList';
 
 import filters from '../../data/filters.json';
 import styles from './Exercises.module.scss';
@@ -20,7 +20,7 @@ const Exercises = () => {
     <>
       <div className={styles.wrapper}>
         <Title text="Exercises" className={styles.title} />
-        <ExercisesFilter
+        <ExercisesCategories
           activeFilter={activeFilter}
           handleFilterClick={handleFilterClick}
         />

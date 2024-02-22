@@ -1,6 +1,6 @@
-import styles from './ExercisesFilter.module.scss';
+import styles from './ExercisesCategories.module.scss';
 
-const ExercisesFilter = ({ activeFilter, handleFilterClick }) => {
+const ExercisesCategories = ({ activeFilter, handleFilterClick }) => {
   return (
     <ul className={styles.exercises_list}>
       <li>
@@ -37,4 +37,4 @@ const ExercisesFilter = ({ activeFilter, handleFilterClick }) => {
   );
 };
 
-export default ExercisesFilter;
+export default ExercisesCategories;
