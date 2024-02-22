@@ -1,3 +1,4 @@
+import capitalizedWord from 'utils/capitalizedWord';
 import styles from './ExercisesSubcategoriesItem.module.scss';
 
 const ExercisesSubcategoriesItem = ({ ExercisesSubcategoriesItem }) => {
@@ -6,7 +7,7 @@ const ExercisesSubcategoriesItem = ({ ExercisesSubcategoriesItem }) => {
     <li className={styles.exercises_item}>
       <img src={imgURL} alt={name} className={styles.exercises_img} />
       <div className={styles.container}>
-        <h3 className={styles.title}>{name}</h3>
+        <h3 className={styles.title}>{capitalizedWord(name)}</h3>
         <p className={styles.text}>{filter}</p>
       </div>
     </li>
