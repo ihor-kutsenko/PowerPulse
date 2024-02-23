@@ -1,13 +1,17 @@
-import { useState } from 'react';
-
 import ExercisesSubcategoriesItem from '../ExercisesSubcategoriesItem/ExercisesSubcategoriesItem';
 import Pagination from 'components/Pagination/Pagination';
 import PaginationContainer from 'components/Pagination/PaginationContainer';
 import useItemsPerPage from 'components/Pagination/PaginationHooks';
-import styles from './ExercisesList.module.scss';
 
-const BodyPartList = ({ exercises, handleFilterClick }) => {
-  const [currentPage, setCurrentPage] = useState(1);
+import styles from './ExercisesSubcategoriesList.module.scss';
+
+const ExercisesSubcategoriesList = ({
+  exercises,
+  filter,
+  handleFilterClick,
+  currentPage,
+  setCurrentPage,
+}) => {
   const itemsPerPage = useItemsPerPage();
 
   const handlePageChange = newPage => {
@@ -15,7 +19,7 @@ const BodyPartList = ({ exercises, handleFilterClick }) => {
   };
 
   const filteredExercises = exercises.filter(
-    exercise => exercise.filter === 'Body parts'
+    exercise => exercise.filter === filter
   );
 
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -48,4 +52,4 @@ const BodyPartList = ({ exercises, handleFilterClick }) => {
   );
 };
 
-export default BodyPartList;
+export default ExercisesSubcategoriesList;

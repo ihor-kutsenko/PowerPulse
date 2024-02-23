@@ -42,12 +42,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  width: 100%;
   height: auto;
 }
 
 .title {
+  text-align: center;
   @include font(20px, 400, 1.2, 0);
   color: $white-color;
 
