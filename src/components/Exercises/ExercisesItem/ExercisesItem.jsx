@@ -1,31 +1,41 @@
 import Svg from 'components/Svg/Svg';
+import styles from './ExercisesItem.module.scss';
 
 const ExercisesItem = ({ exercise }) => {
   return (
-    <div>
-      <div>
-        <p>workout</p>
-        <button>
+    <div className={styles.exercisesItem_wrapper}>
+      <div className={styles.exercisesItem_topWrapper}>
+        <p className={styles.exercisesItem_text}>workout</p>
+        <button className={styles.exercisesItem_btnStart}>
           Start
-          <Svg iconId={'icon-arrow-right'} />
+          <Svg
+            iconId={'icon-arrow-right'}
+            className={styles.exercisesItem_iconArrowRight}
+          />
         </button>
       </div>
-      <div>
-        <Svg iconId={'icon-run'} />
-        <h3>{exercise.name}</h3>
+      <div className={styles.exercisesItem_nameWrapper}>
+        <Svg iconId={'icon-run'} className={styles.exercisesItem_iconRun} />
+        <h3 className={styles.exercisesItem_title}>{exercise.name}</h3>
       </div>
-      <ul>
-        <li>
+      <ul className={styles.exercisesItem_bottomList}>
+        <li className={styles.exercisesItem_item}>
           Burned calories:
-          <span>{exercise.burnedCalories}</span>
+          <span className={styles.exercisesItem_itemText}>
+            {exercise.burnedCalories}
+          </span>
         </li>
-        <li>
+        <li className={styles.exercisesItem_item}>
           Body pat:
-          <span>{exercise.bodyPart}</span>
+          <span className={styles.exercisesItem_itemText}>
+            {exercise.bodyPart}
+          </span>
         </li>
-        <li>
+        <li className={styles.exercisesItem_item}>
           Target:
-          <span>{exercise.target}</span>
+          <span className={styles.exercisesItem_itemText}>
+            {exercise.target}
+          </span>
         </li>
       </ul>
     </div>

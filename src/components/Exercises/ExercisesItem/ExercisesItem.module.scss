@@ -1,0 +1,94 @@
+@import '../../../sass/styles.scss';
+
+.exercisesItem {
+  &_wrapper {
+    width: 305px;
+    margin-bottom: 20px;
+    padding: 16px;
+    border-radius: $border-radius;
+    border: $border-input;
+    @include desktop {
+      width: 405px;
+    }
+  }
+
+  &_topWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 33px;
+    @include tablet {
+      margin-bottom: 25px;
+    }
+  }
+
+  &_text {
+    padding: 5px 7px;
+    border-radius: 4px;
+    @include font(12px, 700, 1.5, 0);
+    text-transform: uppercase;
+    background: rgba(239, 237, 232, 0.05);
+  }
+
+  &_btnStart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include font(14px, 400, 1.28, 0);
+    color: $orange-color;
+    border: none;
+    @include hover {
+      color: $white-color;
+      transition: $transition;
+    }
+    @include tablet {
+      @include font(16px, 400, 1.28, 0);
+    }
+  }
+
+  &_iconArrowRight {
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    stroke: $orange-color;
+  }
+
+  &_nameWrapper {
+    display: flex;
+    margin-bottom: 8px;
+  }
+
+  &_iconRun {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+  }
+
+  &_title {
+    // min-width: 240px;
+    @include font(20px, 400, 1.2, 0);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+    @include tablet {
+      @include font(24px, 400, 1.2, 0);
+    }
+  }
+
+  &_bottomList {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 16px;
+    @include font(12px, 400, 1.5, 0);
+    color: $gray-color-04;
+  }
+
+  &_itemText {
+    margin-left: 4px;
+    color: $white-color;
+    text-transform: capitalize;
+  }
+}
