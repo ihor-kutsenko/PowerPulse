@@ -4,7 +4,11 @@
   position: relative;
   cursor: pointer;
   margin-bottom: 20px;
+  filter: brightness(40%);
 
+  @include hover {
+    filter: brightness(100%);
+  }
   @include tablet {
     margin-bottom: 32px;
   }
@@ -17,7 +21,6 @@
   height: auto;
   border: 1px $white-color;
   border-radius: $border-radius;
-  filter: brightness(40%);
 
   @include mobile {
     object-fit: cover;
