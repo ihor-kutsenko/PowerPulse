@@ -1,9 +1,12 @@
+import { useNavigate } from 'react-router-dom';
+
 import ExercisesSubcategoriesItem from '../ExercisesSubcategoriesItem/ExercisesSubcategoriesItem';
 import Pagination from 'components/Pagination/Pagination';
 import PaginationContainer from 'components/Pagination/PaginationContainer';
 import useItemsPerPage from 'components/Pagination/PaginationHooks';
 
 import styles from './ExercisesSubcategoriesList.module.scss';
+import { EXERCISES_ROUTE } from 'routes/constants';
 
 const ExercisesSubcategoriesList = ({
   exercises,
@@ -12,6 +15,8 @@ const ExercisesSubcategoriesList = ({
   currentPage,
   setCurrentPage,
 }) => {
+  const navigate = useNavigate();
+
   const itemsPerPage = useItemsPerPage();
 
   const handlePageChange = newPage => {
@@ -28,7 +33,9 @@ const ExercisesSubcategoriesList = ({
     indexOfFirstItem,
     indexOfLastItem
   );
-
+  const handleSubcategoryClick = id => {
+    navigate(`${EXERCISES_ROUTE}/${id}`);
+  };
   return (
     <PaginationContainer>
       <ul className={styles.exercises_list}>
@@ -37,6 +44,7 @@ const ExercisesSubcategoriesList = ({
             key={item._id.$oid}
             ExercisesSubcategoriesItem={item}
             handleFilterClick={handleFilterClick}
+            onClick={() => handleSubcategoryClick(item._id.$oid)}
           />
         ))}
       </ul>

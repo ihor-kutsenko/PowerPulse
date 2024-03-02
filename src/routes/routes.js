@@ -58,4 +58,8 @@ export const privateRoutes = [
     path: EXERCISES_ROUTE,
     element: <ExercisesPage />,
   },
+  {
+    path: EXERCISES_ROUTE + '/:id',
+    element: <ExercisesPage />,
+  },
 ];
