@@ -6,10 +6,18 @@ import styles from './ExercisesSubcategoriesItem.module.scss';
 const ExercisesSubcategoriesItem = ({
   ExercisesSubcategoriesItem,
   onClick,
+  setActiveFilter,
 }) => {
   const { _id, name, filter, imgURL } = ExercisesSubcategoriesItem;
+
+  const handleSubcategoryClick = () => {
+    console.log('Clicked subcategory:', name);
+    setActiveFilter(name);
+    onClick();
+  };
+
   return (
-    <li className={styles.exercises_item} onClick={onClick}>
+    <li className={styles.exercises_item} onClick={handleSubcategoryClick}>
       <Link to={`${EXERCISES_ROUTE}/${_id.$oid}`}>
         <img src={imgURL} alt={name} className={styles.exercises_img} />
         <div className={styles.container}>

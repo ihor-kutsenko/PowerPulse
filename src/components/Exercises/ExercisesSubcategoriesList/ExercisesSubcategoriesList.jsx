@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+// import { useState } from 'react';
 
 import ExercisesSubcategoriesItem from '../ExercisesSubcategoriesItem/ExercisesSubcategoriesItem';
 import Pagination from 'components/Pagination/Pagination';
@@ -14,6 +15,7 @@ const ExercisesSubcategoriesList = ({
   handleFilterClick,
   currentPage,
   setCurrentPage,
+  setActiveFilter,
 }) => {
   const navigate = useNavigate();
 
@@ -33,9 +35,13 @@ const ExercisesSubcategoriesList = ({
     indexOfFirstItem,
     indexOfLastItem
   );
-  const handleSubcategoryClick = id => {
-    navigate(`${EXERCISES_ROUTE}/${id}`);
+  const handleSubcategoryClick = name => {
+    console.log('Clicked subcategory:', name);
+    setActiveFilter(name);
+    setCurrentPage(1);
+    navigate(`${EXERCISES_ROUTE}/${name}`);
   };
+
   return (
     <PaginationContainer>
       <ul className={styles.exercises_list}>
@@ -44,7 +50,8 @@ const ExercisesSubcategoriesList = ({
             key={item._id.$oid}
             ExercisesSubcategoriesItem={item}
             handleFilterClick={handleFilterClick}
-            onClick={() => handleSubcategoryClick(item._id.$oid)}
+            onClick={() => handleSubcategoryClick(item.name)}
+            setActiveFilter={setActiveFilter}
           />
         ))}
       </ul>
