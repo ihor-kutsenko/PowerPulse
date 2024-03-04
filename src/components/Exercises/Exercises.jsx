@@ -36,15 +36,16 @@ const Exercises = () => {
   }, [location.pathname]);
 
   useEffect(() => {
-    console.log('Active filter updated:', activeFilter);
     setCurrentPage(1);
   }, [activeFilter]);
-  console.log(activeFilter);
 
   return (
     <>
       <div className={styles.wrapper}>
-        <Title text="Exercises" className={styles.title} />
+        <Title
+          text={path === EXERCISES_ROUTE ? 'Exercises' : activeFilter}
+          className={styles.title}
+        />
         <ExercisesCategories
           activeFilter={activeFilter}
           handleFilterClick={handleFilterClick}

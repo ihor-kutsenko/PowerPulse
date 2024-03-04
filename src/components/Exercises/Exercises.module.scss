@@ -12,4 +12,7 @@
 
 .title {
   margin-bottom: 20px;
+  &::first-letter {
+    text-transform: uppercase;
+  }
 }

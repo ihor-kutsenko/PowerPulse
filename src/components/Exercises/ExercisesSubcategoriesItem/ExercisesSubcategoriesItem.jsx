@@ -11,7 +11,6 @@ const ExercisesSubcategoriesItem = ({
   const { _id, name, filter, imgURL } = ExercisesSubcategoriesItem;
 
   const handleSubcategoryClick = () => {
-    console.log('Clicked subcategory:', name);
     setActiveFilter(name);
     onClick();
   };

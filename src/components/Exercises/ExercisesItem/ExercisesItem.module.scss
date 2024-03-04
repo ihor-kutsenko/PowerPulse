@@ -64,7 +64,6 @@
   }
 
   &_title {
-    // min-width: 240px;
     @include font(20px, 400, 1.2, 0);
     overflow: hidden;
     text-overflow: ellipsis;

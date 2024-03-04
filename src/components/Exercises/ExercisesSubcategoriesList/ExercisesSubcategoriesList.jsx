@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-// import { useState } from 'react';
 
 import ExercisesSubcategoriesItem from '../ExercisesSubcategoriesItem/ExercisesSubcategoriesItem';
 import Pagination from 'components/Pagination/Pagination';
@@ -35,8 +34,8 @@ const ExercisesSubcategoriesList = ({
     indexOfFirstItem,
     indexOfLastItem
   );
+
   const handleSubcategoryClick = name => {
-    console.log('Clicked subcategory:', name);
     setActiveFilter(name);
     setCurrentPage(1);
     navigate(`${EXERCISES_ROUTE}/${name}`);
