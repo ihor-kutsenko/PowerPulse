@@ -13,8 +13,8 @@ const ExercisesList = ({ activeFilter }) => {
   });
 
   return (
-    <div className={styles.list}>
-      <div>
+    <div>
+      <div className={styles.exercise_container}>
         {filteredExercises.map(exercise => (
           <ExercisesItem key={exercise._id.$oid} exercise={exercise} />
         ))}

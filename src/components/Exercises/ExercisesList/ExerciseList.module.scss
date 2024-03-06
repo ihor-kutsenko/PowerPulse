@@ -1,5 +1,33 @@
 @import '../../../sass/styles.scss';
 
-.list {
-  display: flex;
+.exercise_container {
+  @include tablet {
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 500px;
+    gap: 32px 16px;
+    scrollbar-width: thin;
+    scrollbar-color: $orange-1-color $gray-color-02;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $orange-1-color;
+      border-radius: $border-radius;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: $gray-color-02;
+      border-radius: $border-radius;
+    }
+  }
+
+  @include desktop {
+    width: 850px;
+  }
 }
