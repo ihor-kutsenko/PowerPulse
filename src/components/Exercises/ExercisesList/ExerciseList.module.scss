@@ -31,3 +31,12 @@
     width: 850px;
   }
 }
+
+.img_bg {
+  display: none;
+  @include desktop {
+    display: block;
+    margin-left: 900px;
+    margin-top: -667px;
+  }
+}

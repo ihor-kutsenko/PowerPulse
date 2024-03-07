@@ -1,5 +1,7 @@
-import exercises from '../../../data/exercises.json';
 import ExercisesItem from '../ExercisesItem/ExercisesItem';
+import exercises from '../../../data/exercises.json';
+import bg from '../../../images/exercise-list-bg.jpg';
+
 import styles from './ExerciseList.module.scss';
 
 const ExercisesList = ({ activeFilter }) => {
@@ -13,12 +15,13 @@ const ExercisesList = ({ activeFilter }) => {
   });
 
   return (
-    <div>
+    <div className={styles.list}>
       <div className={styles.exercise_container}>
         {filteredExercises.map(exercise => (
           <ExercisesItem key={exercise._id.$oid} exercise={exercise} />
         ))}
       </div>
+      <img src={bg} alt="imag" className={styles.img_bg} />
     </div>
   );
 };
