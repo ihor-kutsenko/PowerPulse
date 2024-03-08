@@ -1,12 +1,17 @@
 import Svg from 'components/Svg/Svg';
 import styles from './ExercisesItem.module.scss';
 
-const ExercisesItem = ({ exercise }) => {
+const ExercisesItem = ({ exercise, toggleModal }) => {
   return (
     <div className={styles.exercisesItem_wrapper}>
       <div className={styles.exercisesItem_topWrapper}>
         <p className={styles.exercisesItem_text}>workout</p>
-        <button className={styles.exercisesItem_btnStart}>
+        <button
+          className={styles.exercisesItem_btnStart}
+          onClick={() => {
+            toggleModal();
+          }}
+        >
           Start
           <Svg
             iconId={'icon-arrow-right'}
