@@ -1,7 +1,17 @@
+import { useState } from 'react';
+
+import BasicModalWindow from 'components/ModalWindows/BasicModalWindow/BasicModalWindow';
+import AddExercisesSuccess from 'components/ModalWindows/AddExercisesSuccess/AddExercisesSuccess';
 import Svg from 'components/Svg/Svg';
 import styles from './ExercisesItem.module.scss';
+import AddExercises from 'components/ModalWindows/AddExercises/AddExercises';
 
-const ExercisesItem = ({ exercise, toggleModal }) => {
+const ExercisesItem = ({ exercise }) => {
+  const [modalSuccess, setModalSuccess] = useState(false);
+  const [modalExercise, setModalExercise] = useState(false);
+
+  const handleModalExercise = () => setModalExercise(!modalExercise);
+  const handleModalSuccess = () => setModalSuccess(!modalSuccess);
   return (
     <div className={styles.exercisesItem_wrapper}>
       <div className={styles.exercisesItem_topWrapper}>
@@ -9,7 +19,7 @@ const ExercisesItem = ({ exercise, toggleModal }) => {
         <button
           className={styles.exercisesItem_btnStart}
           onClick={() => {
-            toggleModal();
+            handleModalExercise();
           }}
         >
           Start
@@ -43,6 +53,16 @@ const ExercisesItem = ({ exercise, toggleModal }) => {
           </span>
         </li>
       </ul>
+      {modalExercise && (
+        <BasicModalWindow onClose={handleModalExercise}>
+          <AddExercises exercise={exercise} />
+        </BasicModalWindow>
+      )}
+      {modalSuccess && (
+        <BasicModalWindow onClose={handleModalSuccess}>
+          <AddExercisesSuccess />
+        </BasicModalWindow>
+      )}
     </div>
   );
 };

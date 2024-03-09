@@ -3,7 +3,6 @@ import { useState } from 'react';
 import Section from 'components/Section/Section';
 import BasicModalWindow from 'components/ModalWindows/BasicModalWindow/BasicModalWindow';
 import AddExercisesSuccess from 'components/ModalWindows/AddExercisesSuccess/AddExercisesSuccess';
-// import ExercisesList from 'components/Exercises/ExercisesList/ExercisesList';
 
 const DiaryPage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -20,7 +19,6 @@ const DiaryPage = () => {
           <AddExercisesSuccess />
         </BasicModalWindow>
       )}
-      {/* <ExercisesList /> */}
     </Section>
   );
 };
