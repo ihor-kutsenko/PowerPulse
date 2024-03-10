@@ -9,29 +9,41 @@ const AddExercises = ({ exercise }) => {
       <div className={styles.wrapper}>
         <div className={styles.left_side}>
           <div className={styles.img_wrapper}>
-            <img src={exercise.gifUrl} alt="Exercise example" />
+            <img
+              src={exercise.gifUrl}
+              alt="Exercise example"
+              className={styles.img_gif}
+            />
           </div>
-          <p></p>
-          <p>Timer: {exercise.time}</p>
+          <p className={styles.time}>Time</p>
+          <div className={styles.timer_wrapper}>Timer: {exercise.time}</div>
         </div>
 
         <div className={styles.info_wrapper}>
-          <ul>
-            <li>
-              <p>Name:</p>
-              <strong>{capitalizedWord(exercise.name)}</strong>
+          <ul className={styles.info_list}>
+            <li className={styles.info_item}>
+              <p className={styles.info_text}>Name:</p>
+              <strong className={styles.info_title}>
+                {capitalizedWord(exercise.name)}
+              </strong>
             </li>
-            <li>
-              <p>Body part:</p>
-              <strong>{capitalizedWord(exercise.bodyPart)}</strong>
+            <li className={styles.info_item}>
+              <p className={styles.info_text}>Body part:</p>
+              <strong className={styles.info_title}>
+                {capitalizedWord(exercise.bodyPart)}
+              </strong>
             </li>
-            <li>
-              <p>Target:</p>
-              <strong>{capitalizedWord(exercise.target)}</strong>
+            <li className={styles.info_item}>
+              <p className={styles.info_text}>Target:</p>
+              <strong className={styles.info_title}>
+                {capitalizedWord(exercise.target)}
+              </strong>
             </li>
-            <li>
-              <p>Equipment:</p>
-              <strong>{capitalizedWord(exercise.equipment)}</strong>
+            <li className={styles.info_item}>
+              <p className={styles.info_text}>Equipment:</p>
+              <strong className={styles.info_title}>
+                {capitalizedWord(exercise.equipment)}
+              </strong>
             </li>
           </ul>
           <Button
