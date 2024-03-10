@@ -6,26 +6,31 @@ import styles from './BasicModalWindow.module.scss';
 
 const modalRoot = document.querySelector('#root-modal');
 
-const BasicModalWindow = ({ children, onClose }) => {
+const BasicModalWindow = ({ children, handleModalToggle }) => {
   useEffect(() => {
-    window.addEventListener('keydown', closeModal);
-    return () => {
-      window.removeEventListener('keydown', closeModal);
+    const handleKeyDown = event => {
+      if (event.code === 'Escape') {
+        handleModalToggle();
+      }
     };
-  });
 
-  const closeModal = ({ target, currentTarget, code }) => {
-    if (target === currentTarget || code === 'Escape') {
-      onClose();
-      document.body.style.overflow = 'visible';
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [handleModalToggle]);
+
+  const handleBackdropClick = event => {
+    if (event.currentTarget === event.target) {
+      handleModalToggle();
     }
   };
-  document.body.style.overflow = 'hidden';
 
   return createPortal(
-    <div className={styles.overlay} onClick={closeModal}>
+    <div className={styles.overlay} onClick={handleBackdropClick}>
       <div className={styles.modal_wrapper}>
-        <button className={styles.btn_close} onClick={onClose}>
+        <button className={styles.btn_close} onClick={handleModalToggle}>
           <Svg iconId={'icon-close'} className={styles.icon_close} />
         </button>
         {children}

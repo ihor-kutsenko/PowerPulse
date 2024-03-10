@@ -15,7 +15,7 @@ const DiaryPage = () => {
         Click on Button
       </button>
       {showModal && (
-        <BasicModalWindow onClose={toggleModal}>
+        <BasicModalWindow handleModalToggle={toggleModal}>
           <AddExercisesSuccess />
         </BasicModalWindow>
       )}

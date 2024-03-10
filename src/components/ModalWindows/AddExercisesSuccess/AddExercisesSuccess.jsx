@@ -4,10 +4,10 @@ import Button from 'components/Buttons/Button';
 import Svg from 'components/Svg/Svg';
 import like from '../../../images/like-2x.png';
 
-import { EXERCISES_ROUTE, DIARY_ROUTE } from 'routes/constants';
+import { DIARY_ROUTE } from 'routes/constants';
 import styles from './AddExercisesSuccess.module.scss';
 
-const AddExercisesSuccess = ({ closeModal }) => {
+const AddExercisesSuccess = ({ handleModalSuccess }) => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -23,14 +23,15 @@ const AddExercisesSuccess = ({ closeModal }) => {
             <span className={styles.span}>150</span>
           </p>
         </div>
-        <Link to={EXERCISES_ROUTE} onClick={closeModal}>
-          <Button
-            text="Next exercise"
-            type="button"
-            className={styles.btn_next}
-          />
-        </Link>
-        <Link to={DIARY_ROUTE} onClick={closeModal}>
+
+        <Button
+          text="Next exercise"
+          type="button"
+          className={styles.btn_next}
+          onClick={handleModalSuccess}
+        />
+
+        <Link to={DIARY_ROUTE} onClick={handleModalSuccess}>
           <p className={styles.text}>
             To the diary
             <Svg iconId={'icon-arrow-right'} className={styles.icon_right} />

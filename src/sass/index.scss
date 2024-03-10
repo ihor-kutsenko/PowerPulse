@@ -52,3 +52,8 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 50px $black-color inset;
   -webkit-text-fill-color: $white-color;
 }
+
+.body-scroll-lock {
+  height: 100vh;
+  overflow-y: hidden;
+}

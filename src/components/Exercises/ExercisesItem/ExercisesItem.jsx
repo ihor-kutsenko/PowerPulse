@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 import BasicModalWindow from 'components/ModalWindows/BasicModalWindow/BasicModalWindow';
+import AddExercises from 'components/ModalWindows/AddExercises/AddExercises';
 import AddExercisesSuccess from 'components/ModalWindows/AddExercisesSuccess/AddExercisesSuccess';
 import Svg from 'components/Svg/Svg';
 import styles from './ExercisesItem.module.scss';
-import AddExercises from 'components/ModalWindows/AddExercises/AddExercises';
 
 const ExercisesItem = ({ exercise }) => {
   const [modalSuccess, setModalSuccess] = useState(false);
@@ -12,6 +12,7 @@ const ExercisesItem = ({ exercise }) => {
 
   const handleModalExercise = () => setModalExercise(!modalExercise);
   const handleModalSuccess = () => setModalSuccess(!modalSuccess);
+
   return (
     <div className={styles.exercisesItem_wrapper}>
       <div className={styles.exercisesItem_topWrapper}>
@@ -29,6 +30,7 @@ const ExercisesItem = ({ exercise }) => {
           />
         </button>
       </div>
+
       <div className={styles.exercisesItem_nameWrapper}>
         <Svg iconId={'icon-run'} className={styles.exercisesItem_iconRun} />
         <h3 className={styles.exercisesItem_title}>{exercise.name}</h3>
@@ -54,13 +56,17 @@ const ExercisesItem = ({ exercise }) => {
         </li>
       </ul>
       {modalExercise && (
-        <BasicModalWindow onClose={handleModalExercise}>
-          <AddExercises exercise={exercise} />
+        <BasicModalWindow handleModalToggle={handleModalExercise}>
+          <AddExercises
+            exercise={exercise}
+            handleModalExercise={handleModalExercise}
+            handleModalSuccess={handleModalSuccess}
+          />
         </BasicModalWindow>
       )}
       {modalSuccess && (
-        <BasicModalWindow onClose={handleModalSuccess}>
-          <AddExercisesSuccess />
+        <BasicModalWindow handleModalToggle={handleModalSuccess}>
+          <AddExercisesSuccess handleModalSuccess={handleModalSuccess} />
         </BasicModalWindow>
       )}
     </div>

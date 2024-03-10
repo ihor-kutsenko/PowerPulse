@@ -1,25 +1,11 @@
-// import { useState } from 'react';
-
 import ExercisesItem from '../ExercisesItem/ExercisesItem';
-// import BasicModalWindow from 'components/ModalWindows/BasicModalWindow/BasicModalWindow';
-// import AddExercisesSuccess from 'components/ModalWindows/AddExercisesSuccess/AddExercisesSuccess';
+
 import exercises from '../../../data/exercises.json';
 import bg from '../../../images/exercise-list-bg.jpg';
 
 import styles from './ExerciseList.module.scss';
 
 const ExercisesList = ({ activeFilter }) => {
-  // const [showModal, setShowModal] = useState(false);
-  // const toggleModal = () => setShowModal(!showModal);
-
-  // const [modalData, setModalData] = useState(null);
-  // const openModalToggle = el => {
-  //   setModalData(el);
-  // };
-
-  // const closeModal = () => {
-  //   setModalData(null);
-  // };
   const filteredExercises = exercises.filter(exercise => {
     const matchCondition =
       exercise.bodyPart === activeFilter ||
@@ -31,11 +17,6 @@ const ExercisesList = ({ activeFilter }) => {
 
   return (
     <>
-      {/* {showModal && (
-        <BasicModalWindow onClose={toggleModal}>
-          <AddExercisesSuccess />
-        </BasicModalWindow>
-      )} */}
       <div className={styles.list}>
         <div className={styles.exercise_container}>
           {filteredExercises.map(exercise => (

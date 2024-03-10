@@ -3,7 +3,16 @@ import Button from 'components/Buttons/Button';
 import capitalizedWord from 'utils/capitalizedWord';
 import styles from './AddExercises.module.scss';
 
-const AddExercises = ({ exercise }) => {
+const AddExercises = ({
+  exercise,
+  handleModalExercise,
+  handleModalSuccess,
+}) => {
+  const handleAddToDiary = () => {
+    handleModalExercise();
+    handleModalSuccess();
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -50,6 +59,7 @@ const AddExercises = ({ exercise }) => {
             text="Add to diary"
             type="submit"
             className={styles.btn_add}
+            onClick={handleAddToDiary}
           />
         </div>
       </div>
