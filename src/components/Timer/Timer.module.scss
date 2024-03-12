@@ -1,0 +1,41 @@
+@import '../../sass/styles.scss';
+
+.btn_wrapper {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn_timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  width: 24px;
+  height: 24px;
+  background-color: $orange-color;
+  border-radius: 8px;
+  border: none;
+}
+
+.icon_timer {
+  width: 7px;
+  height: 8px;
+}
+
+.text {
+  margin-top: 8px;
+  @include font(14px, 400, 1.5, 0);
+  text-align: center;
+  color: $gray-color-03;
+
+  @include tablet {
+    margin-bottom: 0;
+  }
+}
+
+.calories {
+  margin-left: 8px;
+  color: $orange-color;
+}

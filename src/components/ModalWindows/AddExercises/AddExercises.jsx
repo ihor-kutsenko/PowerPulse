@@ -1,4 +1,7 @@
+import { useState } from 'react';
+
 import Button from 'components/Buttons/Button';
+import Timer from 'components/Timer/Timer';
 
 import capitalizedWord from 'utils/capitalizedWord';
 import styles from './AddExercises.module.scss';
@@ -8,6 +11,9 @@ const AddExercises = ({
   handleModalExercise,
   handleModalSuccess,
 }) => {
+  const [dynamicCalories, setDynamicCalories] = useState('');
+  const [exerciseTime, setExerciseTime] = useState(0);
+
   const handleAddToDiary = () => {
     handleModalExercise();
     handleModalSuccess();
@@ -25,7 +31,16 @@ const AddExercises = ({
             />
           </div>
           <p className={styles.time}>Time</p>
-          <div className={styles.timer_wrapper}>Timer: {exercise.time}</div>
+          <div className={styles.timer_wrapper}>
+            <Timer
+              time={exercise.time}
+              burnedCalories={exercise.burnedCalories}
+              dynamicCalories={dynamicCalories}
+              setDynamicCalories={setDynamicCalories}
+              exerciseTime={exerciseTime}
+              setExerciseTime={setExerciseTime}
+            />
+          </div>
         </div>
 
         <div className={styles.info_wrapper}>
