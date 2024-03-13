@@ -4,9 +4,9 @@ import ExercisesSubcategoriesItem from '../ExercisesSubcategoriesItem/ExercisesS
 import Pagination from 'components/Pagination/Pagination';
 import PaginationContainer from 'components/Pagination/PaginationContainer';
 import useItemsPerPage from 'components/Pagination/PaginationHooks';
+import { EXERCISES_ROUTE } from 'routes/constants';
 
 import styles from './ExercisesSubcategoriesList.module.scss';
-import { EXERCISES_ROUTE } from 'routes/constants';
 
 const ExercisesSubcategoriesList = ({
   exercises,

@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
+
 import { EXERCISES_ROUTE } from 'routes/constants';
 import capitalizedWord from 'utils/capitalizedWord';
+
 import styles from './ExercisesSubcategoriesItem.module.scss';
 
 const ExercisesSubcategoriesItem = ({

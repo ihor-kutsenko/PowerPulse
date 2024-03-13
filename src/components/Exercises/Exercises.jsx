@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { EXERCISES_ROUTE } from 'routes/constants';
-
 import Title from 'components/Title/Title';
 import ExercisesCategories from './ExercisesCategories/ExercisesCategories';
 import ExercisesSubcategoriesList from './ExercisesSubcategoriesList/ExercisesSubcategoriesList';
 import ExercisesList from './ExercisesList/ExercisesList';
 
+import { EXERCISES_ROUTE } from 'routes/constants';
 import filters from '../../data/filters.json';
 import styles from './Exercises.module.scss';
 

@@ -4,6 +4,7 @@ import BasicModalWindow from 'components/ModalWindows/BasicModalWindow/BasicModa
 import AddExercises from 'components/ModalWindows/AddExercises/AddExercises';
 import AddExercisesSuccess from 'components/ModalWindows/AddExercisesSuccess/AddExercisesSuccess';
 import Svg from 'components/Svg/Svg';
+
 import styles from './ExercisesItem.module.scss';
 
 const ExercisesItem = ({ exercise }) => {
