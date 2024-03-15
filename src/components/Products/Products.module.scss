@@ -1,1 +1,7 @@
 @import '../../sass/styles.scss';
+
+.wrapper_products {
+  @include desktop {
+    display: flex;
+  }
+}
