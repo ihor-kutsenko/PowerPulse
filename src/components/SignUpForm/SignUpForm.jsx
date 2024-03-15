@@ -164,7 +164,7 @@ const SignUpForm = () => {
                 </button>
               </div>
             </div>
-            <Button type="submit" text="Sign In" className={styles.button} />
+            <Button type="submit" text="Sign Up" className={styles.button} />
           </Form>
         )}
       </Formik>
