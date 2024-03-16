@@ -35,6 +35,11 @@
     background: transparent;
     border-radius: $border-radius;
     border: $border-input;
+    &:focus-visible {
+      outline: none;
+      border-color: $orange-color;
+      background: transparent;
+    }
     @include tablet {
       height: 52px;
       @include font(16px, 400, 1.5, 0);
