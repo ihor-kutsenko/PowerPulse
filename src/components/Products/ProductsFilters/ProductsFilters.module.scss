@@ -46,6 +46,31 @@
     }
   }
 
+  &_btnSearch,
+  &_btnCancel {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+    padding: 0px;
+    border-color: transparent;
+    background: transparent;
+  }
+
+  &_btnCancel {
+    right: 40px;
+  }
+
+  &_iconSearch,
+  &_iconCancel {
+    width: 18px;
+    height: 18px;
+  }
+
+  &_iconCancel {
+    stroke: $orange-color;
+  }
+
   &_SelectWrapper {
     display: flex;
     justify-content: center;
@@ -73,6 +98,7 @@
 
     & option {
       width: 146px;
+      border-radius: 12px;
       @include font(14px, 400, 1.29, 0);
       text-transform: capitalize;
       background: #1c1c1c;
@@ -81,10 +107,16 @@
         @include font(16px, 400, 1.5, 0);
       }
     }
+    &:focus-visible {
+      outline: none;
+      border-color: $border-input;
+      background: transparent;
+    }
   }
 
   &_selectRecommended {
     width: 173px;
+
     @include tablet {
       width: 204px;
     }

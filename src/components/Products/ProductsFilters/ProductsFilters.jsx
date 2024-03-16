@@ -1,7 +1,19 @@
+import Svg from 'components/Svg/Svg';
 import categories from '../../../data/productsCategories.json';
 import styles from './ProductsFilters.module.scss';
+import { useFormik } from 'formik';
 
 const ProductsFilters = () => {
+  const formik = useFormik({
+    initialValues: {
+      search: '',
+    },
+  });
+
+  const handleSearchChange = event => {
+    formik.setFieldValue('search', event.target.value);
+  };
+
   return (
     <>
       <form className={styles.filterForm}>
@@ -11,7 +23,27 @@ const ProductsFilters = () => {
             name="search"
             placeholder="Search"
             className={styles.filterForm_SearchField}
+            value={formik.values.search}
+            onChange={handleSearchChange}
           />
+          <button className={styles.filterForm_btnSearch} type="submit">
+            <Svg
+              iconId={'icon-Search'}
+              className={styles.filterForm_iconSearch}
+            />
+          </button>
+
+          {formik.values.search !== '' && (
+            <button
+              className={styles.filterForm_btnCancel}
+              onClick={() => formik.setFieldValue('search', '')}
+            >
+              <Svg
+                iconId={'icon-close'}
+                className={styles.filterForm_iconCancel}
+              />
+            </button>
+          )}
         </div>
         <div className={styles.filterForm_SelectWrapper}>
           <select name="category" className={styles.filterForm_selectCategory}>
