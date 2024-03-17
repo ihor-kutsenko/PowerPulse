@@ -42,7 +42,17 @@
   display: none;
   @include desktop {
     display: block;
-    margin-left: 900px;
+    margin-left: 905px;
     margin-top: -667px;
+  }
+}
+
+.img_bgProducts {
+  display: none;
+  @include desktop {
+    display: block;
+    margin-left: 955px;
+    margin-top: -656px;
+    height: 716px;
   }
 }
