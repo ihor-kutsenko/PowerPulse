@@ -3,7 +3,7 @@ import categories from '../../../data/productsCategories.json';
 import styles from './ProductsFilters.module.scss';
 import { useFormik } from 'formik';
 
-const ProductsFilters = () => {
+const ProductsFilters = ({ setSelectedCategory }) => {
   const formik = useFormik({
     initialValues: {
       search: '',
@@ -12,6 +12,10 @@ const ProductsFilters = () => {
 
   const handleSearchChange = event => {
     formik.setFieldValue('search', event.target.value);
+  };
+
+  const handleCategoryChange = event => {
+    setSelectedCategory(event.target.value);
   };
 
   return (
@@ -46,7 +50,11 @@ const ProductsFilters = () => {
           )}
         </div>
         <div className={styles.filterForm_SelectWrapper}>
-          <select name="category" className={styles.filterForm_selectCategory}>
+          <select
+            name="category"
+            className={styles.filterForm_selectCategory}
+            onChange={handleCategoryChange}
+          >
             <option value="">Categories</option>
             {categories.map(category => (
               <option key={category} value={category}>
