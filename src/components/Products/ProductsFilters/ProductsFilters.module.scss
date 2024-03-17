@@ -8,6 +8,7 @@
   margin-block: 40px;
   width: 335px;
   gap: 16px;
+  z-index: 1;
   @include tablet {
     flex-direction: row;
     margin-block: 32px;

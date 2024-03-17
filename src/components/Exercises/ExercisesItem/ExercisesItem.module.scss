@@ -49,7 +49,6 @@
     width: 16px;
     height: 16px;
     margin-left: 8px;
-    stroke: $orange-color;
   }
 
   &_nameWrapper {
@@ -79,10 +78,21 @@
 
   &_bottomList {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     column-gap: 16px;
     @include font(12px, 400, 1.5, 0);
     color: $gray-color-04;
+    flex-wrap: wrap;
+  }
+
+  &_item {
+    max-width: 130px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    @include desktop {
+      max-width: 190px;
+    }
   }
 
   &_itemText {
