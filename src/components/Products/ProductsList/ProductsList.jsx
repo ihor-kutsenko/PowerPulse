@@ -7,7 +7,7 @@ import products from '../../../data/products.json';
 
 import styles from '../../Exercises/ExercisesList//ExerciseList.module.scss';
 
-const ProductsList = ({ selectedCategory, searchTerm }) => {
+const ProductsList = ({ selectedCategory, searchTerm, recommended }) => {
   const location = useLocation();
 
   const filteredProducts = products.filter(product => {
@@ -16,21 +16,37 @@ const ProductsList = ({ selectedCategory, searchTerm }) => {
     const searchMatch =
       !searchTerm ||
       product.title.toLowerCase().includes(searchTerm.toLowerCase());
-    return categoryMatch && searchMatch;
+
+    let recommendedMatch = true;
+    if (recommended !== '') {
+      const isRecommended = recommended === 'true';
+      recommendedMatch = isRecommended
+        ? product.groupBloodNotAllowed['1']
+        : !product.groupBloodNotAllowed['1'];
+    }
+
+    return categoryMatch && searchMatch && recommendedMatch;
   });
 
   useEffect(() => {
-    if ((selectedCategory || searchTerm) && location.pathname !== '/products') {
+    if (
+      (selectedCategory || searchTerm || recommended) &&
+      location.pathname !== '/products'
+    ) {
       window.location.href = '/products';
     }
-  }, [selectedCategory, searchTerm, location]);
+  }, [selectedCategory, searchTerm, recommended, location]);
 
   return (
     <>
       <div className={styles.list}>
         <div className={styles.exercise_container}>
           {filteredProducts.map(product => (
-            <ProductsItem key={product._id.$oid} product={product} />
+            <ProductsItem
+              key={product._id.$oid}
+              product={product}
+              recommended={recommended}
+            />
           ))}
         </div>
         <img src={bg} alt="imag" className={styles.img_bgProducts} />

@@ -2,16 +2,25 @@ import Svg from 'components/Svg/Svg';
 import styles from '../../Exercises/ExercisesItem/ExercisesItem.module.scss';
 
 const ProductsItem = ({ product }) => {
+  const userBloodGroup = 1;
+  const isRecommended = product.groupBloodNotAllowed[userBloodGroup.toString()];
+
   return (
     <div className={styles.exercisesItem_wrapper}>
       <div className={styles.exercisesItem_topWrapper}>
         <p className={styles.exercisesItem_text}>diet</p>
-        <button
-          className={styles.exercisesItem_btnStart}
-          // onClick={() => {
-          //   handleModalExercise();
-          // }}
-        >
+        {isRecommended ? (
+          <div className={styles.productRecommended}>
+            <p className={styles.productRecommendedTrue}></p>
+            <p>Recommended</p>
+          </div>
+        ) : (
+          <div className={styles.productRecommended}>
+            <p className={styles.productRecommendedFalse}></p>
+            <p>Not recommended</p>
+          </div>
+        )}
+        <button className={styles.exercisesItem_btnStart}>
           Add
           <Svg
             iconId={'icon-arrow-right'}

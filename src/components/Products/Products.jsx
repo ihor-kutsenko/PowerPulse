@@ -10,6 +10,7 @@ import styles from './Products.module.scss';
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
+  const [recommended, setRecommended] = useState('');
 
   return (
     <>
@@ -18,11 +19,13 @@ const Products = () => {
         <ProductsFilters
           setSelectedCategory={setSelectedCategory}
           setSearchTerm={setSearchTerm}
+          setRecommended={setRecommended}
         />
       </div>
       <ProductsList
         selectedCategory={selectedCategory}
         searchTerm={searchTerm}
+        recommended={recommended}
       />
     </>
   );
