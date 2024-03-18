@@ -9,14 +9,21 @@ import styles from './Products.module.scss';
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
 
   return (
     <>
       <div className={styles.wrapper_products}>
         <Title text="Products" className={styles.title} />
-        <ProductsFilters setSelectedCategory={setSelectedCategory} />
+        <ProductsFilters
+          setSelectedCategory={setSelectedCategory}
+          setSearchTerm={setSearchTerm}
+        />
       </div>
-      <ProductsList selectedCategory={selectedCategory} />
+      <ProductsList
+        selectedCategory={selectedCategory}
+        searchTerm={searchTerm}
+      />
     </>
   );
 };

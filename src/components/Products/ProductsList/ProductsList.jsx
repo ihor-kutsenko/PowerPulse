@@ -7,17 +7,24 @@ import products from '../../../data/products.json';
 
 import styles from '../../Exercises/ExercisesList//ExerciseList.module.scss';
 
-const ProductsList = ({ selectedCategory }) => {
+const ProductsList = ({ selectedCategory, searchTerm }) => {
   const location = useLocation();
-  const filteredProducts = selectedCategory
-    ? products.filter(product => product.category === selectedCategory)
-    : products;
+
+  const filteredProducts = products.filter(product => {
+    const categoryMatch =
+      !selectedCategory || product.category === selectedCategory;
+    const searchMatch =
+      !searchTerm ||
+      product.title.toLowerCase().includes(searchTerm.toLowerCase());
+    return categoryMatch && searchMatch;
+  });
 
   useEffect(() => {
-    if (selectedCategory && location.pathname !== '/products') {
+    if ((selectedCategory || searchTerm) && location.pathname !== '/products') {
       window.location.href = '/products';
     }
-  }, [selectedCategory, location]);
+  }, [selectedCategory, searchTerm, location]);
+
   return (
     <>
       <div className={styles.list}>

@@ -3,7 +3,7 @@ import categories from '../../../data/productsCategories.json';
 import styles from './ProductsFilters.module.scss';
 import { useFormik } from 'formik';
 
-const ProductsFilters = ({ setSelectedCategory }) => {
+const ProductsFilters = ({ setSelectedCategory, setSearchTerm }) => {
   const formik = useFormik({
     initialValues: {
       search: '',
@@ -18,6 +18,15 @@ const ProductsFilters = ({ setSelectedCategory }) => {
     setSelectedCategory(event.target.value);
   };
 
+  const handleSearchClear = () => {
+    formik.setFieldValue('search', '');
+    setSearchTerm('');
+  };
+
+  const handleSearchClick = () => {
+    setSearchTerm(formik.values.search);
+  };
+
   return (
     <>
       <form className={styles.filterForm}>
@@ -30,7 +39,11 @@ const ProductsFilters = ({ setSelectedCategory }) => {
             value={formik.values.search}
             onChange={handleSearchChange}
           />
-          <button className={styles.filterForm_btnSearch} type="submit">
+          <button
+            className={styles.filterForm_btnSearch}
+            type="button"
+            onClick={handleSearchClick}
+          >
             <Svg
               iconId={'icon-Search'}
               className={styles.filterForm_iconSearch}
@@ -40,7 +53,7 @@ const ProductsFilters = ({ setSelectedCategory }) => {
           {formik.values.search !== '' && (
             <button
               className={styles.filterForm_btnCancel}
-              onClick={() => formik.setFieldValue('search', '')}
+              onClick={handleSearchClear}
             >
               <Svg
                 iconId={'icon-close'}
