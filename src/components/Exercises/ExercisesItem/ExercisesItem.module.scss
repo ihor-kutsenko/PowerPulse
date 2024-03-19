@@ -101,3 +101,27 @@
     text-transform: capitalize;
   }
 }
+
+// ProductsItem
+.productRecommended {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 16px;
+  gap: 8px;
+  color: $white-color;
+  @include font(12px, 400, 1.5, 0);
+}
+.productRecommendedTrue {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #419b09;
+}
+
+.productRecommendedFalse {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #e9101d;
+}
