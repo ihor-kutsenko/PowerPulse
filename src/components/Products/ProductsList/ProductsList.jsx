@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import ProductsItem from '../ProductsItem/ProductsItem';
+import ProductsNotFound from '../ProductsNotFound/ProductsNotFound';
 import bg from '../../../images/products-list-bg.jpg';
 import products from '../../../data/products.json';
 
@@ -41,6 +42,7 @@ const ProductsList = ({ selectedCategory, searchTerm, recommended }) => {
     <>
       <div className={styles.list}>
         <div className={styles.exercise_container}>
+          {filteredProducts.length === 0 && <ProductsNotFound />}
           {filteredProducts.map(product => (
             <ProductsItem
               key={product._id.$oid}

@@ -1,0 +1,26 @@
+@import '../../../sass/styles.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: 24px;
+  gap: 16px;
+
+  @include tablet {
+    padding-top: 84px;
+    width: 580px;
+  }
+}
+
+.text {
+  @include font(14px, 400, 1.29, 0);
+  color: $gray-color-03;
+
+  @include tablet {
+    @include font(16px, 400, 1.5, 0);
+  }
+}
+
+.warningText {
+  color: $orange-color;
+}
