@@ -1,37 +1,28 @@
 import { Link } from 'react-router-dom';
-
 import Button from 'components/Buttons/Button';
 import Svg from 'components/Svg/Svg';
-import like from '../../../images/like-2x.png';
+import mango from '../../../images/mango.png';
 
 import { DIARY_ROUTE } from 'routes/constants';
-import styles from './AddExercisesSuccess.module.scss';
+import styles from './AddProductSuccess.module.scss';
 
-const AddExercisesSuccess = ({ handleModalSuccess }) => {
+const AddProductSuccess = () => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.img_wrapper}>
-          <img src={like} alt="Like" className={styles.img} />
+          <img src={mango} alt="Mango" className={styles.img} />
           <p className={styles.title}>Well done</p>
+
           <p className={styles.text}>
-            Your time:
-            <span className={styles.span}>3 minutes</span>
-          </p>
-          <p className={styles.text}>
-            Burned calories:
+            Calories:
             <span className={styles.span}>150</span>
           </p>
         </div>
 
-        <Button
-          text="Next exercise"
-          type="button"
-          className={styles.btn_next}
-          onClick={handleModalSuccess}
-        />
+        <Button text="Next product" type="button" className={styles.btn_next} />
 
-        <Link to={DIARY_ROUTE} onClick={handleModalSuccess}>
+        <Link to={DIARY_ROUTE}>
           <div className={styles.link_wrapper}>
             <p className={styles.text}>
               To the diary
@@ -44,4 +35,4 @@ const AddExercisesSuccess = ({ handleModalSuccess }) => {
   );
 };
 
-export default AddExercisesSuccess;
+export default AddProductSuccess;
