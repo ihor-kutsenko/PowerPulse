@@ -1,0 +1,109 @@
+@import '../../../sass/styles.scss';
+
+.container {
+  padding: 48px 24px;
+  @include tablet {
+    padding: 48px 32px;
+  }
+}
+
+.input {
+  &_container {
+    @include max-mobile {
+      margin-bottom: 24px;
+    }
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__gramsWrapper {
+    &.error input {
+      border: $border-error;
+    }
+    &.success input {
+      border: $border-success;
+    }
+  }
+
+  &_product,
+  &_grams {
+    width: 287px;
+    height: 34px;
+    padding: 8px 14px;
+    border-radius: $border-radius;
+    border: $border-active;
+    color: $gray-color-03;
+    background-color: inherit;
+    @include tablet {
+      width: 244px;
+      height: 40px;
+    }
+  }
+
+  &_grams {
+    color: $white-color;
+    gap: 10px;
+    margin-bottom: 8px;
+    @include tablet {
+      width: 155px;
+      height: 40px;
+    }
+    &::placeholder {
+      color: $gray-color-03;
+      text-align: right;
+    }
+  }
+}
+
+.text {
+  margin-bottom: 24px;
+  @include font(12px, 400, 1.5, 0);
+  color: $gray-color-03;
+  @include tablet {
+    margin-bottom: 64px;
+  }
+
+  &_value {
+    color: $white-color;
+  }
+}
+
+.btn {
+  &_wrapper {
+    display: flex;
+    gap: 14px;
+  }
+
+  &_add,
+  &_cancel {
+    padding: 12px 36px;
+    @include font(16px, 500, 1.13, 0);
+    border-radius: $border-radius;
+    color: $white-color;
+    background-color: $orange-color;
+    @include tablet {
+      padding: 14px 32px;
+    }
+  }
+
+  &_add {
+    @include hover {
+      background-color: $orange-1-color;
+    }
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  &_cancel {
+    background-color: transparent;
+    border: $border-input;
+    @include tablet {
+      padding: 14px 40px;
+    }
+  }
+}
