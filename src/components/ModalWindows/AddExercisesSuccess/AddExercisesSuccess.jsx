@@ -7,7 +7,7 @@ import like from '../../../images/like-2x.png';
 import { DIARY_ROUTE } from 'routes/constants';
 import styles from './AddExercisesSuccess.module.scss';
 
-const AddExercisesSuccess = ({ handleModalSuccess }) => {
+const AddExercisesSuccess = ({ handleModalSuccess, selectedExercise }) => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -16,11 +16,11 @@ const AddExercisesSuccess = ({ handleModalSuccess }) => {
           <p className={styles.title}>Well done</p>
           <p className={styles.text}>
             Your time:
-            <span className={styles.span}>3 minutes</span>
+            <span className={styles.span}>{selectedExercise.time}</span>
           </p>
           <p className={styles.text}>
             Burned calories:
-            <span className={styles.span}>150</span>
+            <span className={styles.span}>{selectedExercise.calories}</span>
           </p>
         </div>
 

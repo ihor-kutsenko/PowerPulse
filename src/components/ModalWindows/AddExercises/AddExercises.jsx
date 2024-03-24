@@ -10,13 +10,20 @@ const AddExercises = ({
   exercise,
   handleModalExercise,
   handleModalSuccess,
+  handleSelectedExercise,
 }) => {
   const [dynamicCalories, setDynamicCalories] = useState('');
   const [exerciseTime, setExerciseTime] = useState(0);
 
   const handleAddToDiary = () => {
+    const exerciseToDiary = {
+      exercise: exercise._id,
+      time: exerciseTime,
+      calories: dynamicCalories,
+    };
     handleModalExercise();
     handleModalSuccess();
+    handleSelectedExercise(exerciseToDiary);
   };
 
   return (

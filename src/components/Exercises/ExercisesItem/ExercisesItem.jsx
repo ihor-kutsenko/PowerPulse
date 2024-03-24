@@ -10,9 +10,14 @@ import styles from './ExercisesItem.module.scss';
 const ExercisesItem = ({ exercise }) => {
   const [modalSuccess, setModalSuccess] = useState(false);
   const [modalExercise, setModalExercise] = useState(false);
+  const [selectedExercise, setSelectedExercise] = useState('');
 
   const handleModalExercise = () => setModalExercise(!modalExercise);
   const handleModalSuccess = () => setModalSuccess(!modalSuccess);
+
+  const handleSelectedExercise = data => {
+    setSelectedExercise(data);
+  };
 
   return (
     <div className={styles.exercisesItem_wrapper}>
@@ -62,12 +67,16 @@ const ExercisesItem = ({ exercise }) => {
             exercise={exercise}
             handleModalExercise={handleModalExercise}
             handleModalSuccess={handleModalSuccess}
+            handleSelectedExercise={handleSelectedExercise}
           />
         </BasicModalWindow>
       )}
       {modalSuccess && (
         <BasicModalWindow handleModalToggle={handleModalSuccess}>
-          <AddExercisesSuccess handleModalSuccess={handleModalSuccess} />
+          <AddExercisesSuccess
+            handleModalSuccess={handleModalSuccess}
+            selectedExercise={selectedExercise}
+          />
         </BasicModalWindow>
       )}
     </div>

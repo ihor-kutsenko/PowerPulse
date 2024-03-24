@@ -6,7 +6,7 @@ import mango from '../../../images/mango.png';
 import { DIARY_ROUTE } from 'routes/constants';
 import styles from './AddProductSuccess.module.scss';
 
-const AddProductSuccess = () => {
+const AddProductSuccess = ({ handleModalSuccess, selectedProduct }) => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -16,13 +16,18 @@ const AddProductSuccess = () => {
 
           <p className={styles.text}>
             Calories:
-            <span className={styles.span}>150</span>
+            <span className={styles.span}>{selectedProduct.calories}</span>
           </p>
         </div>
 
-        <Button text="Next product" type="button" className={styles.btn_next} />
+        <Button
+          text="Next product"
+          type="button"
+          className={styles.btn_next}
+          onClick={handleModalSuccess}
+        />
 
-        <Link to={DIARY_ROUTE}>
+        <Link to={DIARY_ROUTE} onClick={handleModalSuccess}>
           <div className={styles.link_wrapper}>
             <p className={styles.text}>
               To the diary
