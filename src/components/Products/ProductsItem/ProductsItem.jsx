@@ -1,7 +1,17 @@
+import { useState } from 'react';
+
 import Svg from 'components/Svg/Svg';
 import styles from '../../Exercises/ExercisesItem/ExercisesItem.module.scss';
+import BasicModalWindow from 'components/ModalWindows/BasicModalWindow/BasicModalWindow';
+import AddProduct from 'components/ModalWindows/AddProduct/AddProduct';
 
 const ProductsItem = ({ product }) => {
+  const [modalSuccess, setModalSuccess] = useState(false);
+  const [modalProduct, setModalProduct] = useState(false);
+
+  const handleModalProduct = () => setModalProduct(!modalProduct);
+  const handleModalSuccess = () => setModalSuccess(!modalSuccess);
+
   const userBloodGroup = 1;
   const isRecommended = product.groupBloodNotAllowed[userBloodGroup.toString()];
 
@@ -20,7 +30,12 @@ const ProductsItem = ({ product }) => {
             <p>Not recommended</p>
           </div>
         )}
-        <button className={styles.exercisesItem_btnStart}>
+        <button
+          className={styles.exercisesItem_btnStart}
+          onClick={() => {
+            handleModalProduct();
+          }}
+        >
           Add
           <Svg
             iconId={'icon-arrow-right'}
@@ -53,6 +68,16 @@ const ProductsItem = ({ product }) => {
           </span>
         </li>
       </ul>
+
+      {modalProduct && (
+        <BasicModalWindow handleModalToggle={handleModalProduct}>
+          <AddProduct
+            product={product}
+            handleModalProduct={handleModalProduct}
+            handleModalSuccess={handleModalSuccess}
+          />
+        </BasicModalWindow>
+      )}
     </div>
   );
 };
