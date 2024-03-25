@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import Button from 'components/Buttons/Button';
 import Timer from 'components/Timer/Timer';
-
+import formatDate from 'utils/formatDate';
 import capitalizedWord from 'utils/capitalizedWord';
 import styles from './AddExercises.module.scss';
 
@@ -15,8 +15,11 @@ const AddExercises = ({
   const [dynamicCalories, setDynamicCalories] = useState('');
   const [exerciseTime, setExerciseTime] = useState(0);
 
+  const formattedDate = formatDate(new Date());
+
   const handleAddToDiary = () => {
     const exerciseToDiary = {
+      date: formattedDate,
       exercise: exercise._id,
       time: exerciseTime,
       calories: dynamicCalories,

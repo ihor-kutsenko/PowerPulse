@@ -2,7 +2,9 @@ import { Formik, Form, Field } from 'formik';
 
 import AddProductInputSchema from 'schema/addProductInputSchema';
 import ErrorMessages from 'components/UserForm/ErrorMessages/ErrorMessages';
+
 import capitalizedWord from 'utils/capitalizedWord';
+import formatDate from 'utils/formatDate';
 import styles from './AddProduct.module.scss';
 
 const AddProduct = ({
@@ -18,8 +20,11 @@ const AddProduct = ({
   const calculateCalories = amount =>
     Math.round((amount * product.calories) / 100);
 
+  const formattedDate = formatDate(new Date());
+
   const handleAddToDiary = values => {
     const productToDiary = {
+      date: formattedDate,
       product: product._id,
       amount: values.amount,
       calories: calculateCalories(values.amount),
