@@ -1,5 +1,5 @@
 import styles from './UserMenu.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import Svg from 'components/Svg/Svg';
 import LogoutBtn from 'components/Buttons/LogoutBtn/LogoutBtn';
@@ -12,19 +12,33 @@ import {
 } from 'routes/constants';
 
 const UserMenu = () => {
+  const { pathname } = useLocation();
+  const isActive = route => {
+    return pathname === route ? styles.active : '';
+  };
+
   const avatarLogo = (
     <Svg iconId="icon-avatar" className={styles.icon_avatar} />
   );
   return (
     <div className={styles.user_container}>
       <nav className={styles.user_navigation}>
-        <Link className={styles.user_link} to={DIARY_ROUTE}>
+        <Link
+          className={`${styles.user_link} ${isActive(DIARY_ROUTE)}`}
+          to={DIARY_ROUTE}
+        >
           Diary
         </Link>
-        <Link className={styles.user_link} to={PRODUCTS_ROUTE}>
+        <Link
+          className={`${styles.user_link} ${isActive(PRODUCTS_ROUTE)}`}
+          to={PRODUCTS_ROUTE}
+        >
           Products
         </Link>
-        <Link className={styles.user_link} to={EXERCISES_ROUTE}>
+        <Link
+          className={`${styles.user_link} ${isActive(EXERCISES_ROUTE)}`}
+          to={EXERCISES_ROUTE}
+        >
           Exercises
         </Link>
       </nav>
