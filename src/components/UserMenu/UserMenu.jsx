@@ -14,7 +14,9 @@ import {
 const UserMenu = () => {
   const { pathname } = useLocation();
   const isActive = route => {
-    return pathname === route ? styles.active : '';
+    return pathname === route || pathname.includes(`${route}/`)
+      ? styles.active
+      : '';
   };
 
   const avatarLogo = (
