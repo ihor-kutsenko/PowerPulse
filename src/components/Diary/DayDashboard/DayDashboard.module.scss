@@ -1,0 +1,66 @@
+@import '../../../sass/styles.scss';
+
+.dashboard_wrapper {
+  margin-top: 40px;
+  @include tablet {
+    margin-top: 64px;
+    max-width: 532px;
+    // order: 2;
+  }
+  @include desktop {
+    margin-top: 48px;
+    max-width: 390px;
+    // order: 3;
+  }
+}
+
+.dashboard_list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  column-gap: 13px;
+  row-gap: 20px;
+  @include tablet {
+    flex-direction: column;
+    margin-bottom: 32px;
+    column-gap: 16px;
+    row-gap: 16px;
+    max-width: 532px;
+    max-height: 248px;
+  }
+  @include desktop {
+    flex-direction: row;
+    margin-bottom: 48px;
+    max-height: 500px;
+  }
+}
+
+.warning {
+  &_wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  &_icon {
+    width: 24px;
+    height: 24px;
+    fill: $beige-color;
+    stroke: $white-color;
+    stroke-width: 0;
+  }
+
+  &_text {
+    max-width: 303px;
+    font-family: 'Roboto';
+    @include font(14px, 400, 1.29, 0);
+    color: $gray-color-03;
+    @include tablet {
+      max-width: 500px;
+      @include font(16px, 400, 1.5, 0);
+    }
+    @include desktop {
+      max-width: 358px;
+    }
+  }
+}

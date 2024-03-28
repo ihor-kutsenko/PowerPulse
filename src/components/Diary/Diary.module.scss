@@ -1,0 +1,12 @@
+@import '../../sass/styles.scss';
+
+.wrapper_diary {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper_calendar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
