@@ -29,8 +29,8 @@
 .warning {
   &__wrapper {
     display: flex;
-    gap: 8px;
     align-items: flex-start;
+    gap: 8px;
     margin-bottom: 40px;
 
     @include tablet {

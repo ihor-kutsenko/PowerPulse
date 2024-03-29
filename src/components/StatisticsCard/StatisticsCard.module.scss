@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 12px;
-    max-width: 165px;
+    max-width: 156px;
     height: 96px;
     border-radius: $border-radius;
     border: $border-input;
@@ -21,8 +21,8 @@
 
   &__titleWrapper {
     display: flex;
-    gap: 8px;
     align-items: center;
+    gap: 8px;
   }
 
   &__icon {
@@ -32,8 +32,8 @@
   }
 
   &__title {
-    font-family: Roboto;
     min-width: 100px;
+    font-family: Roboto;
     color: $gray-color-04;
     @include font(12px, 400, 1.33, 0);
 
