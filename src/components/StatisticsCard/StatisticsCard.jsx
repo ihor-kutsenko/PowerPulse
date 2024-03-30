@@ -8,14 +8,22 @@ const StatisticsCard = ({
   statisticsIcon,
   statisticsValue,
   statisticsPrimary,
+  fulfilledNorm = '',
 }) => {
+  const statClasses = [
+    styles.statistics__wrapper,
+    statisticsPrimary && styles.statisticsPrimaryItem,
+  ];
+
+  if (fulfilledNorm === 'positive') {
+    statClasses.push(styles.statisticItemPositive);
+  } else if (fulfilledNorm === 'negative') {
+    statClasses.push(styles.statisticItemNegative);
+  }
+
   return (
     <>
-      <div
-        className={`${styles.statistics__wrapper} ${
-          statisticsPrimary && styles.statisticsPrimaryItem
-        }`}
-      >
+      <div className={statClasses.join(' ')}>
         <div className={styles.statistics__titleWrapper}>
           <Svg className={styles.statistics__icon} iconId={statisticsIcon} />
           <p

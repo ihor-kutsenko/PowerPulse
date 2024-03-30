@@ -59,3 +59,11 @@
 .statisticsPrimaryTitle {
   color: $gray-color-08;
 }
+
+.statisticItemPositive {
+  border: $border-success;
+}
+
+.statisticItemNegative {
+  border: 1px solid #e9101d;
+}

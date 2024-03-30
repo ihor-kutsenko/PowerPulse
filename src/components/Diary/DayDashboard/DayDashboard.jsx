@@ -4,40 +4,57 @@ import Svg from 'components/Svg/Svg';
 import styles from './DayDashboard.module.scss';
 
 const DayDashboard = () => {
+  let dailyCalorieIntake = 2200;
+  let dailyPhysicalActivity = 110;
+  let caloriesConsumed = 2300;
+  let caloriesBurned = 855;
+  let caloriesRemaining = dailyCalorieIntake - caloriesConsumed;
+  let sportsRemaining = 30;
+
+  const isCaloriesRemaining =
+    caloriesConsumed < dailyCalorieIntake ? `positive` : `negative`;
+  const isSportsRemaining = sportsRemaining > 0 ? `positive` : `negative`;
+
   return (
     <div className={styles.dashboard_wrapper}>
       <ul className={styles.dashboard_list}>
         <StatisticsCard
           statisticsName={'Daily calorie intake'}
           statisticsIcon={'icon-fluent-food'}
-          statisticsValue={'2200'}
+          statisticsValue={`${dailyCalorieIntake}`}
           statisticsPrimary={true}
         />
         <StatisticsCard
           statisticsName={'Daily physical activity'}
           statisticsIcon={'icon-dumbbell'}
-          statisticsValue={'110 min'}
+          statisticsValue={`${dailyPhysicalActivity} min`}
           statisticsPrimary={true}
         />
         <StatisticsCard
           statisticsName={'Calories consumed'}
           statisticsIcon={'icon-apple'}
-          statisticsValue={'707'}
+          statisticsValue={`${caloriesConsumed}`}
         />
         <StatisticsCard
           statisticsName={'Calories burned'}
           statisticsIcon={'icon-calories'}
-          statisticsValue={'855'}
+          statisticsValue={`${caloriesBurned}`}
         />
         <StatisticsCard
           statisticsName={'Calories remaining'}
           statisticsIcon={'icon-bubble'}
-          statisticsValue={'1493'}
+          statisticsValue={`${caloriesRemaining}`}
+          fulfilledNorm={isCaloriesRemaining}
         />
         <StatisticsCard
           statisticsName={'Sports remaining'}
           statisticsIcon={'icon-runner'}
-          statisticsValue={'85 min'}
+          statisticsValue={
+            isSportsRemaining === 'positive'
+              ? `+${sportsRemaining} min`
+              : `${sportsRemaining} min`
+          }
+          fulfilledNorm={isSportsRemaining}
         />
       </ul>
       <div className={styles.warning_wrapper}>
