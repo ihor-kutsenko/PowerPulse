@@ -1,5 +1,6 @@
 import Title from 'components/Title/Title';
 import DayDashboard from './DayDashboard/DayDashboard';
+import DayProducts from './DayProducts/DayProducts';
 import styles from './Diary.module.scss';
 
 const Diary = () => {
@@ -13,6 +14,7 @@ const Diary = () => {
 
         <div className={styles.section_diary}>
           <DayDashboard />
+          <DayProducts />
         </div>
       </div>
     </>
