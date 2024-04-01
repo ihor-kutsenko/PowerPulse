@@ -1,0 +1,19 @@
+@import '../../../sass/styles.scss';
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 335px;
+  @include tablet {
+    min-height: 155px;
+  }
+}
+
+.text {
+  @include font(14px, 400, 1.29, 0);
+  color: $gray-color-03;
+  @include tablet {
+    @include font(16px, 400, 1.5, 0);
+  }
+}

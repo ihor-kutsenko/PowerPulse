@@ -1,1 +1,56 @@
 @import '../../../sass/styles.scss';
+
+.container {
+  margin-top: 40px;
+  padding: 16px 8px 16px 16px;
+  max-width: 335px;
+  height: 335px;
+  max-height: 1064px;
+  overflow-y: hidden;
+  border-radius: $border-radius;
+  border: $border-input;
+  background: rgba(239, 237, 232, 0.05);
+
+  @include tablet {
+    margin-top: 0px;
+    max-width: 704px;
+    height: 240px;
+  }
+  @include desktop {
+    min-width: 826px;
+  }
+
+  &_scroll {
+    padding-bottom: 8px;
+    max-height: 1032px;
+    overflow-y: auto;
+    @include tablet {
+      max-height: 210px;
+    }
+    &::-webkit-scrollbar {
+      width: 6px;
+      border-radius: $border-radius;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: $border-radius;
+      background: $gray-color-02;
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: $border-radius;
+    }
+  }
+}
+
+.title_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 22px;
+  @include tablet {
+    margin-bottom: 16px;
+  }
+}
+.title {
+  @include font(14px, 400, 1.29, 0);
+  color: $gray-color-05;
+}
