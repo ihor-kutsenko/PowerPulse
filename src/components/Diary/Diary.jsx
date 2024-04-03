@@ -10,13 +10,15 @@ const Diary = () => {
       <div className={styles.wrapper_diary}>
         <div className={styles.wrapper_calendar}>
           <Title text="Diary" className={styles.title} />
-          <div>Calendar</div>
+          <div className={styles.calendar}>Calendar</div>
         </div>
 
         <div className={styles.section_diary}>
           <DayDashboard />
-          <DayProducts />
-          <DayExercises />
+          <div>
+            <DayProducts />
+            <DayExercises />
+          </div>
         </div>
       </div>
     </>

@@ -3,10 +3,37 @@
 .wrapper_diary {
   display: flex;
   flex-direction: column;
+  @include tablet {
+    position: relative;
+  }
 }
 
 .wrapper_calendar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.calendar {
+  position: absolute;
+  top: -10px;
+  right: 0px;
+}
+
+.section_diary {
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    position: relative;
+  }
+
+  @include desktop {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 32px;
+  }
 }

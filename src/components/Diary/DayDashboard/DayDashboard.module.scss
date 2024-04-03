@@ -3,14 +3,10 @@
 .dashboard_wrapper {
   margin-top: 40px;
   @include tablet {
-    margin-top: 64px;
     max-width: 532px;
-    // order: 2;
   }
   @include desktop {
-    margin-top: 48px;
     max-width: 390px;
-    // order: 3;
   }
 }
 
