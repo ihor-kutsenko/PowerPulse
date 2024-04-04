@@ -22,10 +22,10 @@
 
 .section_diary {
   @include tablet {
+    position: relative;
     display: flex;
     justify-content: space-between;
     flex-direction: column-reverse;
-    position: relative;
   }
 
   @include desktop {
@@ -33,7 +33,6 @@
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: flex-start;
-
     gap: 32px;
   }
 }
