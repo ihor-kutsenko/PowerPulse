@@ -1,6 +1,7 @@
 import AddItemDiaryBtn from 'components/Buttons/AddItemDiaryBtn/AddItemDiaryBtn';
 import EmptyList from '../EmptyList/EmptyList';
 import { PRODUCTS_ROUTE } from 'routes/constants';
+
 import styles from './DayProducts.module.scss';
 
 const DayProducts = () => {

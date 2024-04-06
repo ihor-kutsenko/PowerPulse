@@ -22,9 +22,11 @@
     padding-bottom: 8px;
     max-height: 1032px;
     overflow-y: auto;
+
     @include tablet {
       max-height: 210px;
     }
+
     &::-webkit-scrollbar {
       width: 6px;
       border-radius: $border-radius;

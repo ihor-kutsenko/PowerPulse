@@ -8,6 +8,7 @@ import ExercisesList from './ExercisesList/ExercisesList';
 
 import { EXERCISES_ROUTE } from 'routes/constants';
 import filters from '../../data/filters.json';
+
 import styles from './Exercises.module.scss';
 
 const Exercises = () => {
