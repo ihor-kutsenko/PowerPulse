@@ -1,8 +1,8 @@
-import styles from './UserMenu.module.scss';
 import { Link, useLocation } from 'react-router-dom';
 
 import Svg from 'components/Svg/Svg';
 import LogoutBtn from 'components/Buttons/LogoutBtn/LogoutBtn';
+import styles from './UserMenu.module.scss';
 
 import {
   DIARY_ROUTE,
