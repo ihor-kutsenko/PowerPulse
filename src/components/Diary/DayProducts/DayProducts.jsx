@@ -1,7 +1,9 @@
 import AddItemDiaryBtn from 'components/Buttons/AddItemDiaryBtn/AddItemDiaryBtn';
 import EmptyList from '../EmptyList/EmptyList';
+import ProductsTable from '../ProductsTable/ProductsTable';
 import { PRODUCTS_ROUTE } from 'routes/constants';
 
+import products from '../../../data/dayproducts.json';
 import styles from './DayProducts.module.scss';
 
 const DayProducts = () => {
@@ -15,7 +17,11 @@ const DayProducts = () => {
             titleRoute={PRODUCTS_ROUTE}
           />
         </div>
-        <EmptyList listName={'products'} />
+        {products.length === 0 ? (
+          <EmptyList listName={'products'} />
+        ) : (
+          <ProductsTable products={products} />
+        )}
       </div>
     </div>
   );
