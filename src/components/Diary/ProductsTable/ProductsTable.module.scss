@@ -1,1 +1,160 @@
 @import '../../../sass/styles.scss';
+
+.list {
+  @include desktop {
+    padding-left: 16px;
+  }
+}
+
+.item {
+  &:not(:last-child) {
+    margin-bottom: 40px;
+    @include tablet {
+      margin-bottom: 8px;
+    }
+  }
+
+  &:not(:first-child) .title {
+    @include tablet {
+      display: none;
+    }
+  }
+}
+
+.element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  @include tablet {
+    margin-bottom: 0;
+  }
+}
+
+.table {
+  @include tablet {
+    display: flex;
+    gap: 8px;
+  }
+
+  &_body {
+    @include tablet {
+      display: flex;
+      gap: 8px;
+
+      & .element:first-child .value {
+        width: 205px;
+      }
+    }
+
+    & .value {
+      @include tablet {
+        width: 120px;
+      }
+      @include desktop {
+        width: 170px;
+      }
+    }
+  }
+}
+
+.title {
+  max-width: 70px;
+  @include font(12px, 400, 1.5, 0);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: $orange-1-color;
+
+  &_trash {
+    visibility: hidden;
+  }
+}
+
+.value {
+  padding: 10px 14px;
+  @include font(14px, 400, 1.29, 0);
+  border-radius: $border-radius;
+  border: $border-input;
+  color: $white-color;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  @include tablet {
+    padding: 8px 14px;
+    @include font(16px, 400, 1.5, 0);
+  }
+}
+
+.product_wrapper {
+  display: flex;
+
+  & tr:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+
+  & tr:nth-last-child(n + 3) {
+    margin-right: 16px;
+    @include tablet {
+      margin-right: 8px;
+    }
+  }
+
+  & tr:last-child {
+    margin-left: 8px;
+    @include tablet {
+      margin-left: 12px;
+    }
+  }
+
+  & .value {
+    width: 75px;
+    @include tablet {
+      width: 90px;
+    }
+    @include desktop {
+      width: 105px;
+    }
+  }
+
+  & .element:last-child {
+    width: 24px;
+  }
+}
+
+.recommend {
+  &_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &_yes,
+  &_not {
+    width: 14px;
+    height: 14px;
+    border-radius: 10px;
+    background: #419b09;
+  }
+
+  &_not {
+    background: #e9101d;
+  }
+}
+
+.value_trash {
+  cursor: pointer;
+}
+
+.icon_trash {
+  width: 20px;
+  height: 20px;
+  stroke: $orange-1-color;
+  transition: $transition;
+  @include hover {
+    stroke: #a82b2b;
+    transform: scale(1.1);
+  }
+}

@@ -23,25 +23,25 @@
     "category": "fish",
     "title": "marlin",
     "groupBloodNotAllowed": {
-      "1": false,
-      "2": false,
-      "3": false,
-      "4": false
+      "1": true,
+      "2": true,
+      "3": true,
+      "4": true
     }
   },
   {
     "_id": {
-      "$oid": "5d51694902b2373622ff5e13"
+      "$oid": "5d51694902b2373622ff583d"
     },
     "weight": 100,
-    "calories": 17,
-    "category": "vegetables and herbs",
-    "title": "Salads Belaya Dacha Delicate root",
+    "calories": 130,
+    "category": "dairy",
+    "title": "Cottage cheese Chudo strawberry",
     "groupBloodNotAllowed": {
-      "1": false,
-      "2": false,
-      "3": false,
-      "4": false
+      "1": true,
+      "2": true,
+      "3": true,
+      "4": true
     }
   },
   {
