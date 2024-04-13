@@ -1,7 +1,10 @@
 import AddItemDiaryBtn from 'components/Buttons/AddItemDiaryBtn/AddItemDiaryBtn';
 import EmptyList from '../EmptyList/EmptyList';
+import ExercisesTable from '../ExercisesTable/ExercisesTable';
+
 import { EXERCISES_ROUTE } from 'routes/constants';
 
+import exercises from '../../../data/dayexercises.json';
 import styles from '../DayProducts/DayProducts.module.scss';
 
 const DayExercises = () => {
@@ -15,7 +18,11 @@ const DayExercises = () => {
             titleRoute={EXERCISES_ROUTE}
           />
         </div>
-        <EmptyList listName={'exercises'} />
+        {exercises.length === 0 ? (
+          <EmptyList listName={'exercises'} />
+        ) : (
+          <ExercisesTable exercises={exercises} />
+        )}
       </div>
     </div>
   );
