@@ -1,0 +1,52 @@
+@import '../../sass/styles.scss';
+
+.datePicker {
+  align-items: center;
+  width: 100%;
+  padding: 14px;
+  gap: 10px;
+  line-height: 1.28;
+  border-radius: 12px;
+  border: $border-input;
+  background-color: transparent;
+  color: $white-color;
+  outline: none;
+  transition: border-color $transition;
+}
+
+.containerCalendar {
+  margin-top: 4px;
+  position: relative;
+}
+
+.textCalendarError {
+  margin-top: 4px;
+  position: absolute;
+  font-feature-settings: 'clig' off, 'liga' off;
+  @include font(12px, 400, 1.16, 0.12);
+  color: $error-color;
+}
+
+.datePickerError {
+  border: $border-error;
+}
+
+.customCalendar {
+  background-color: $orange-1-color;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.datePickerSuccess {
+  border: $border-success;
+}
+
+.iconCalendar {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+
+  width: 18px;
+  height: 18px;
+}

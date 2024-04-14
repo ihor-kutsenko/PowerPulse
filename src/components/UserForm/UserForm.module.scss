@@ -75,6 +75,7 @@
 .input {
   &__container {
     width: 100%;
+    margin-bottom: 12px;
     gap: 14px;
 
     @include tablet {
@@ -86,7 +87,6 @@
 
   &__wrapper {
     display: inline-flex;
-    align-items: flex-end;
     margin-bottom: 14px;
     width: 100%;
     gap: 14px;
@@ -106,6 +106,8 @@
 
   &__field {
     margin-top: 4px;
+    margin-bottom: 4px;
+
     align-items: center;
     width: 100%;
     padding: 14px;

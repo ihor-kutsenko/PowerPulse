@@ -1,5 +1,6 @@
 import { Formik, Field, Form } from 'formik';
 
+import Calendar from 'components/Calendar/Calendar';
 import Button from 'components/Buttons/Button';
 import RadioButton from './RadioButton.jsx/RadioButton';
 import ErrorMessages from './ErrorMessages/ErrorMessages';
@@ -158,12 +159,12 @@ const UserForm = () => {
                   <label className={styles.form__labelInput} htmlFor="birthday">
                     Birthday
                   </label>
-                  <Field
-                    className={styles.input__field}
-                    type="date"
-                    name="birthday"
-                    id="birthday"
-                    placeholder=""
+                  <Calendar
+                    minDate={new Date('1900-01-01')}
+                    selected={formik.values.birthday}
+                    onBirthdayChange={date =>
+                      formik.setFieldValue('birthday', date)
+                    }
                   />
                   <ErrorMessages nameField="birthday" />
                 </div>
