@@ -12,6 +12,7 @@
 
 .dashboard_list {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 20px;
   column-gap: 13px;

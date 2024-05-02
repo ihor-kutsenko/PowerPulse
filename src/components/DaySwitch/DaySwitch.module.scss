@@ -1,0 +1,58 @@
+@import '../../sass/styles.scss';
+
+.calendar_input {
+  margin-right: 8px;
+  width: 100px;
+  @include font(18px, 700, 1.11, 0);
+  color: $white-color;
+  background: inherit;
+  outline: none;
+  border: none;
+}
+
+.currentDate {
+  border-radius: 50px;
+  color: $white-color;
+  font-size: 14px;
+}
+
+.daySwitch {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @include tablet {
+    gap: 40px;
+  }
+}
+
+.input_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.icon_calendar {
+  width: 20px;
+  height: 20px;
+}
+
+.icon {
+  &_wrapper {
+    display: flex;
+  }
+
+  &_chevron {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    @include hover {
+      fill-opacity: 0.2;
+    }
+  }
+
+  &_left {
+    transform: scaleX(-1);
+  }
+}
