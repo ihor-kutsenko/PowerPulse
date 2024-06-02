@@ -1,12 +1,16 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import Svg from 'components/Svg/Svg';
 import Button from 'components/Buttons/Button';
 import signUpSchema from 'schema/signUpSchema';
 import styles from './SignUpForm.module.scss';
+import { registrationUser } from 'redux/auth/authOperations';
 
 const SignUpForm = () => {
+  const dispatch = useDispatch();
+
   const [showPassword, setShowPassword] = useState(false);
   const initialValues = {
     name: '',
@@ -15,6 +19,7 @@ const SignUpForm = () => {
   };
 
   const handleSubmit = ({ name, email, password }, { resetForm }) => {
+    dispatch(registrationUser({ name, email, password }));
     resetForm();
   };
   return (
