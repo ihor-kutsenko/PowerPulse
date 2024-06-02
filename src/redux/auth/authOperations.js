@@ -1,4 +1,7 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import notifyOptions from 'utils/NotifyOptions';
+import 'react-toastify/dist/ReactToastify.css';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import {
@@ -24,8 +27,14 @@ export const registrationUser = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const { data } = await axios.post(BACKEND_SIGN_UP_ROUTE, credentials);
+
+      console.log(data);
       // After successful registration, add the token to the HTTP header
       setAuthHeader(data.token);
+
+      toast.success('Your registration is successful!', notifyOptions);
+      console.log(data);
+
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -40,6 +49,9 @@ export const loginUser = createAsyncThunk(
       const { data } = await axios.post(BACKEND_SIGN_IN_ROUTE, credentials);
       // After successful login, add the token to the HTTP header
       setAuthHeader(data.token);
+
+      toast.success('Your login is successful!', notifyOptions);
+
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

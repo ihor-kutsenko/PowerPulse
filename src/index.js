@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { BrowserRouter } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 
 import { store, persistor } from 'redux/store';
 import App from 'App';
@@ -14,6 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter basename="/PowerPulse">
           <App />
+          <ToastContainer />
         </BrowserRouter>
       </PersistGate>
     </Provider>
