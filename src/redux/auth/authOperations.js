@@ -37,6 +37,7 @@ export const registrationUser = createAsyncThunk(
 
       return data;
     } catch (error) {
+      toast.error('Oops... Something went wrong! Try again!', notifyOptions);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -54,6 +55,7 @@ export const loginUser = createAsyncThunk(
 
       return data;
     } catch (error) {
+      toast.error('Oops... Something went wrong! Try again!', notifyOptions);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
