@@ -1,7 +1,13 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://';
+import {
+  BACKEND_SIGN_UP_ROUTE,
+  BACKEND_SIGN_IN_ROUTE,
+  BACKEND_LOGOUT_ROUTE,
+} from 'routes/constants';
+
+axios.defaults.baseURL = 'https://backend-powerpulse.onrender.com';
 
 // Utility to add JWT
 const setAuthHeader = token => {
@@ -17,7 +23,7 @@ export const registrationUser = createAsyncThunk(
   'auth/registrationUser',
   async (credentials, thunkAPI) => {
     try {
-      const { data } = await axios.post('/user/register', credentials);
+      const { data } = await axios.post(BACKEND_SIGN_UP_ROUTE, credentials);
       // After successful registration, add the token to the HTTP header
       setAuthHeader(data.token);
       return data;
@@ -31,7 +37,7 @@ export const loginUser = createAsyncThunk(
   'auth/loginUser',
   async (credentials, thunkAPI) => {
     try {
-      const { data } = await axios.post('/user/login', credentials);
+      const { data } = await axios.post(BACKEND_SIGN_IN_ROUTE, credentials);
       // After successful login, add the token to the HTTP header
       setAuthHeader(data.token);
       return data;
@@ -45,7 +51,7 @@ export const logOutUser = createAsyncThunk(
   'auth/logOutUser',
   async (_, thunkAPI) => {
     try {
-      const { data } = await axios.post('/user/logout');
+      const { data } = await axios.post(BACKEND_LOGOUT_ROUTE);
       // After a successful logout, remove the token from the HTTP header
       clearAuthHeader();
       return data;
