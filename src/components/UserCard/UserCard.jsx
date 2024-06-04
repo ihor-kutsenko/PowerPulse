@@ -1,10 +1,18 @@
+import { useDispatch } from 'react-redux';
 import Avatar from './Avatar/Avatar';
 import Svg from 'components/Svg/Svg';
 import LogoutBtn from 'components/Buttons/LogoutBtn/LogoutBtn';
 import StatisticsCard from 'components/StatisticsCard/StatisticsCard';
 import styles from './UserCard.module.scss';
+import { logOutUser } from 'redux/auth/authOperations';
 
 const UserCard = () => {
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logOutUser());
+  };
+
   return (
     <>
       <div className={styles.avatar_wrapper}>
@@ -30,7 +38,7 @@ const UserCard = () => {
             to diet is relative and tailored to your unique body and goals.
           </p>
         </div>
-        <LogoutBtn className={styles.logout_btn} />
+        <LogoutBtn onClick={handleLogout} className={styles.logout_btn} />
       </div>
     </>
   );

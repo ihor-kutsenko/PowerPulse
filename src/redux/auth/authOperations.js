@@ -7,7 +7,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
   BACKEND_SIGN_UP_ROUTE,
   BACKEND_SIGN_IN_ROUTE,
-  BACKEND_LOGOUT_ROUTE,
+  BACKEND_SIGN_OUT_ROUTE,
 } from 'routes/constants';
 
 axios.defaults.baseURL = 'https://backend-powerpulse.onrender.com';
@@ -65,7 +65,7 @@ export const logOutUser = createAsyncThunk(
   'auth/logOutUser',
   async (_, thunkAPI) => {
     try {
-      const { data } = await axios.post(BACKEND_LOGOUT_ROUTE);
+      const { data } = await axios.post(BACKEND_SIGN_OUT_ROUTE);
       // After a successful logout, remove the token from the HTTP header
       clearAuthHeader();
       return data;

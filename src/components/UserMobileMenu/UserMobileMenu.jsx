@@ -1,3 +1,4 @@
+import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -6,8 +7,11 @@ import LogoutBtn from 'components/Buttons/LogoutBtn/LogoutBtn';
 
 import { DIARY_ROUTE, PRODUCTS_ROUTE, EXERCISES_ROUTE } from 'routes/constants';
 import styles from './UserMobileMenu.module.scss';
+import { logOutUser } from 'redux/auth/authOperations';
 
 const UserMobileMenu = ({ isOpen }) => {
+  const dispatch = useDispatch();
+
   const [menuIsOpen, setMenuIsOpen] = useState(isOpen);
 
   const closeMenu = () => {
@@ -18,6 +22,10 @@ const UserMobileMenu = ({ isOpen }) => {
     if (e.target === e.currentTarget) {
       closeMenu();
     }
+  };
+
+  const handleLogout = () => {
+    dispatch(logOutUser());
   };
 
   useEffect(() => {
@@ -76,7 +84,11 @@ const UserMobileMenu = ({ isOpen }) => {
             Exercises
           </Link>
         </nav>
-        <LogoutBtn className={styles.menu__btnLogout} whiteIcon={true} />
+        <LogoutBtn
+          onClick={handleLogout}
+          className={styles.menu__btnLogout}
+          whiteIcon={true}
+        />
       </div>
     </>
   );
