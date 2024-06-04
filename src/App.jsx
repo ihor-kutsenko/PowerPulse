@@ -1,12 +1,19 @@
 import { Route, Routes } from 'react-router-dom';
-
-import { publicRoutes, privateRoutes } from 'routes/routes';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 
 import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
-
 import SharedLayout from 'components/SharedLayout/SharedLayout';
+import { publicRoutes, privateRoutes } from 'routes/routes';
+import { refreshUser } from 'redux/auth/authOperations';
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
   return (
     <div>
       <Routes>

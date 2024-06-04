@@ -8,6 +8,7 @@ import {
   BACKEND_SIGN_UP_ROUTE,
   BACKEND_SIGN_IN_ROUTE,
   BACKEND_SIGN_OUT_ROUTE,
+  BACKEND_REFRESH_ROUTE,
 } from 'routes/constants';
 
 axios.defaults.baseURL = 'https://backend-powerpulse.onrender.com';
@@ -56,6 +57,24 @@ export const loginUser = createAsyncThunk(
       return data;
     } catch (error) {
       toast.error('Oops... Something went wrong! Try again!', notifyOptions);
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const refreshUser = createAsyncThunk(
+  'auth/refreshUser',
+  async (_, thunkAPI) => {
+    const persistedToken = thunkAPI.getState().auth.token;
+    if (!persistedToken) {
+      // If there is no token, exit without performing any request
+      return thunkAPI.rejectWithValue('Something go wrong...');
+    }
+    try {
+      setAuthHeader(persistedToken);
+      const { data } = await axios.get(BACKEND_REFRESH_ROUTE);
+      return data;
+    } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
   }

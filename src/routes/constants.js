@@ -16,3 +16,4 @@ export const BACKEND_API_BASE_URL = 'http://localhost:5000/api';
 export const BACKEND_SIGN_UP_ROUTE = '/api/users/signup';
 export const BACKEND_SIGN_IN_ROUTE = '/api/users/signin';
 export const BACKEND_SIGN_OUT_ROUTE = '/api/users/signout';
+export const BACKEND_REFRESH_ROUTE = '/api/users/current';
