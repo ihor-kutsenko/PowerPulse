@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import Svg from 'components/Svg/Svg';
 import LogoutBtn from 'components/Buttons/LogoutBtn/LogoutBtn';
@@ -10,9 +11,13 @@ import {
   EXERCISES_ROUTE,
   PROFILE_ROUTE,
 } from 'routes/constants';
+import { logOutUser } from 'redux/auth/authOperations';
 
 const UserMenu = () => {
+  const dispatch = useDispatch();
+
   const { pathname } = useLocation();
+
   const isActive = route => {
     return pathname === route || pathname.includes(`${route}/`)
       ? styles.active
@@ -22,6 +27,11 @@ const UserMenu = () => {
   const avatarLogo = (
     <Svg iconId="icon-avatar" className={styles.icon_avatar} />
   );
+
+  const handleLogout = () => {
+    dispatch(logOutUser());
+  };
+
   return (
     <div className={styles.user_container}>
       <nav className={styles.user_navigation}>
@@ -49,7 +59,7 @@ const UserMenu = () => {
           <Svg iconId="icon-settings" className={styles.icon_settings} />
         </Link>
         <div className={styles.user_avatar}>{avatarLogo}</div>
-        <LogoutBtn className={styles.logout_btn} />
+        <LogoutBtn onClick={handleLogout} className={styles.logout_btn} />
       </div>
     </div>
   );
