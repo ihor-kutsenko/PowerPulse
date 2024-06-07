@@ -68,7 +68,7 @@ export const refreshUser = createAsyncThunk(
     const persistedToken = thunkAPI.getState().auth.token;
     if (!persistedToken) {
       // If there is no token, exit without performing any request
-      return thunkAPI.rejectWithValue('Something go wrong...');
+      return thunkAPI.rejectWithValue('You must be logged in');
     }
     try {
       setAuthHeader(persistedToken);
