@@ -48,16 +48,12 @@ export const loginUser = createAsyncThunk(
   }
 );
 
-export const refreshUser = createAsyncThunk(
-  'auth/refreshUser',
+export const logOutUser = createAsyncThunk(
+  'auth/logOutUser',
   async (_, thunkAPI) => {
-    const persistedToken = token.set(tokenState(thunkAPI));
-    if (!persistedToken) {
-      return thunkAPI.rejectWithValue('You must be logged in');
-    }
     try {
-      token.set(persistedToken);
-      const { data } = await instance.get(BACKEND_REFRESH_ROUTE);
+      const { data } = await instance.post(BACKEND_SIGN_OUT_ROUTE);
+      token.clear();
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -65,12 +61,16 @@ export const refreshUser = createAsyncThunk(
   }
 );
 
-export const logOutUser = createAsyncThunk(
-  'auth/logOutUser',
+export const refreshUser = createAsyncThunk(
+  'auth/refreshUser',
   async (_, thunkAPI) => {
+    const persistedToken = token.set(tokenState());
+    if (!persistedToken) {
+      return thunkAPI.rejectWithValue('You must be logged in');
+    }
     try {
-      const { data } = await instance.post(BACKEND_SIGN_OUT_ROUTE);
-      token.clear();
+      token.set(persistedToken);
+      const { data } = await instance.get(BACKEND_REFRESH_ROUTE);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
