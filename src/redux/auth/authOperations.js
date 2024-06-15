@@ -64,11 +64,11 @@ export const logOutUser = createAsyncThunk(
 export const refreshUser = createAsyncThunk(
   'auth/refreshUser',
   async (_, thunkAPI) => {
-    const persistedToken = token.set(tokenState());
-    if (!persistedToken) {
-      return thunkAPI.rejectWithValue('You must be logged in');
-    }
     try {
+      const persistedToken = tokenState(thunkAPI);
+      if (!persistedToken) {
+        return thunkAPI.rejectWithValue('You must be logged in');
+      }
       token.set(persistedToken);
       const { data } = await instance.get(BACKEND_REFRESH_ROUTE);
       return data;
