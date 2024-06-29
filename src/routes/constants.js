@@ -17,3 +17,4 @@ export const BACKEND_SIGN_UP_ROUTE = '/api/users/signup';
 export const BACKEND_SIGN_IN_ROUTE = '/api/users/signin';
 export const BACKEND_SIGN_OUT_ROUTE = '/api/users/signout';
 export const BACKEND_REFRESH_ROUTE = '/api/users/current';
+export const BACKEND_AVATAR_ROUTE = '/api/users/avatar';
