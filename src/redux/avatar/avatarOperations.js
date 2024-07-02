@@ -7,6 +7,12 @@ import { instance } from 'redux/services/instanceApi';
 import { token, tokenState } from 'redux/services/tokenApi';
 import { BACKEND_AVATAR_ROUTE } from 'routes/constants';
 
+const configAxios = {
+  headers: {
+    'Content-Type': 'multipart/form-data',
+  },
+};
+
 export const uploadAvatar = createAsyncThunk(
   'avatar/uploadAvatar',
   async (file, thunkAPI) => {
@@ -15,13 +21,11 @@ export const uploadAvatar = createAsyncThunk(
       let formData = new FormData();
       formData.append('avatar', file);
 
-      const configAxios = {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      };
-
-      const { data } = await instance.patch(BACKEND_AVATAR_ROUTE, configAxios);
+      const { data } = await instance.patch(
+        BACKEND_AVATAR_ROUTE,
+        formData,
+        configAxios
+      );
       return data;
     } catch (error) {
       toast.error('Oops... Something went wrong! Try again!', notifyOptions);

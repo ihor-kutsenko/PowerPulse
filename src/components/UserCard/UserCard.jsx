@@ -1,13 +1,16 @@
 import { useDispatch } from 'react-redux';
+
 import Avatar from './Avatar/Avatar';
 import Svg from 'components/Svg/Svg';
 import LogoutBtn from 'components/Buttons/LogoutBtn/LogoutBtn';
 import StatisticsCard from 'components/StatisticsCard/StatisticsCard';
-import styles from './UserCard.module.scss';
 import { logOutUser } from 'redux/auth/authOperations';
 
-const UserCard = () => {
+import styles from './UserCard.module.scss';
+
+const UserCard = ({ user }) => {
   const dispatch = useDispatch();
+  const { name, avatarURL } = user;
 
   const handleLogout = () => {
     dispatch(logOutUser());
@@ -16,7 +19,7 @@ const UserCard = () => {
   return (
     <>
       <div className={styles.avatar_wrapper}>
-        <Avatar />
+        <Avatar name={name} avatarURL={avatarURL} />
         <div className={styles.statistics_wrapper}>
           <StatisticsCard
             statisticsName={'Daily calorie intake'}
