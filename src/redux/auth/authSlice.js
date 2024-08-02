@@ -16,21 +16,23 @@ import {
 } from './authReducers';
 import { operationsType } from './authOperationsType';
 
-const initialState = {
+const contactsInitialState = {
   user: {
     email: '',
     name: '',
+    registrationDate: '',
     avatarURL: '',
   },
-  token: null,
+  token: '',
   isLoading: false,
   isLoggedIn: false,
+
   error: null,
 };
 
 export const authSlice = createSlice({
   name: 'auth',
-  initialState: initialState,
+  initialState: contactsInitialState,
   reducers: {
     setAvatarURL: (state, action) => {
       state.user.avatarURL = action.payload;

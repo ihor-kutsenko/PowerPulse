@@ -8,5 +8,3 @@ export const token = {
     instance.defaults.headers['Authorization'] = '';
   },
 };
-
-export const tokenState = thunkAPI => thunkAPI.getState().auth.token;

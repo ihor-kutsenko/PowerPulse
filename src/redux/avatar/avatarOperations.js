@@ -4,20 +4,17 @@ import 'react-toastify/dist/ReactToastify.css';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { instance } from 'redux/services/instanceApi';
-import { token, tokenState } from 'redux/services/tokenApi';
+import { token } from 'redux/services/tokenApi';
 import { BACKEND_AVATAR_ROUTE } from 'routes/constants';
-
-const configAxios = {
-  headers: {
-    'Content-Type': 'multipart/form-data',
-  },
-};
+import { configAxios } from 'redux/services/configAxios';
+import { tokenState } from 'redux/services/tokenState';
 
 export const uploadAvatar = createAsyncThunk(
   'avatar/uploadAvatar',
   async (file, thunkAPI) => {
     try {
       token.set(tokenState(thunkAPI));
+
       let formData = new FormData();
       formData.append('avatar', file);
 
@@ -26,6 +23,7 @@ export const uploadAvatar = createAsyncThunk(
         formData,
         configAxios
       );
+
       return data;
     } catch (error) {
       toast.error('Oops... Something went wrong! Try again!', notifyOptions);

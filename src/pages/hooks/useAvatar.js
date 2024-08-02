@@ -4,7 +4,9 @@ import { selectAvatar } from 'redux/avatar/avatarSelectors';
 const useAvatar = () => {
   const avatar = useSelector(selectAvatar);
 
-  return { avatar };
+  return {
+    avatar,
+  };
 };
 
 export default useAvatar;

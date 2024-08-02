@@ -10,16 +10,16 @@ import styles from './Avatar.module.scss';
 const Avatar = ({ name, avatarURL }) => {
   const dispatch = useDispatch();
 
-  const avatarLogo = (
-    <Svg iconId={'icon-avatar'} className={styles.iconAvatar} />
-  );
-
   const userAvatar = (
     <img
       src={avatarURL}
       alt="Avatar"
       style={{ borderRadius: '100%', width: '100%', height: '100%' }}
     />
+  );
+
+  const avatarLogo = (
+    <Svg iconId={'icon-avatar'} className={styles.iconAvatar} />
   );
 
   const handleChangeAvatar = e => {
@@ -29,7 +29,6 @@ const Avatar = ({ name, avatarURL }) => {
       const objectURL = URL.createObjectURL(blob);
       dispatch(setAvatarURL(objectURL));
     }
-
     dispatch(uploadAvatar(file));
   };
 

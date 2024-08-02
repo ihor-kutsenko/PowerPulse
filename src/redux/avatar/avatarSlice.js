@@ -18,8 +18,8 @@ const avatarSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(uploadAvatar.pending, handlePending)
-      .addCase(uploadAvatar.fulfilled, handleFulfilled)
-      .addCase(uploadAvatar.rejected, handleRejected);
+      .addCase(uploadAvatar.rejected, handleRejected)
+      .addCase(uploadAvatar.fulfilled, handleFulfilled);
   },
 });
 

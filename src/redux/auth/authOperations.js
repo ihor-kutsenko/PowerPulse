@@ -4,7 +4,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { instance } from 'redux/services/instanceApi';
-import { token, tokenState } from 'redux/services/tokenApi';
+import { token } from 'redux/services/tokenApi';
+import { tokenState } from 'redux/services/tokenState';
 import {
   BACKEND_SIGN_UP_ROUTE,
   BACKEND_SIGN_IN_ROUTE,
@@ -18,7 +19,7 @@ export const registrationUser = createAsyncThunk(
     try {
       const { data } = await instance.post(BACKEND_SIGN_UP_ROUTE, credentials);
 
-      token.set(data.token);
+      // token.set(data.token);
 
       toast.success('Your registration is successful!', notifyOptions);
 
@@ -65,11 +66,7 @@ export const refreshUser = createAsyncThunk(
   'auth/refreshUser',
   async (_, thunkAPI) => {
     try {
-      const persistedToken = tokenState(thunkAPI);
-      if (!persistedToken) {
-        return thunkAPI.rejectWithValue('You must be logged in');
-      }
-      token.set(persistedToken);
+      token.set(tokenState(thunkAPI));
       const { data } = await instance.get(BACKEND_REFRESH_ROUTE);
       return data;
     } catch (error) {
