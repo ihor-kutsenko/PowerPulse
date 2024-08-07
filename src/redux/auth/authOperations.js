@@ -19,7 +19,7 @@ export const registrationUser = createAsyncThunk(
     try {
       const { data } = await instance.post(BACKEND_SIGN_UP_ROUTE, credentials);
 
-      // token.set(data.token);
+      token.set(data.token);
 
       toast.success('Your registration is successful!', notifyOptions);
 
@@ -49,12 +49,12 @@ export const loginUser = createAsyncThunk(
   }
 );
 
-export const logOutUser = createAsyncThunk(
-  'auth/logOutUser',
+export const refreshUser = createAsyncThunk(
+  'auth/refreshUser',
   async (_, thunkAPI) => {
     try {
-      const { data } = await instance.post(BACKEND_SIGN_OUT_ROUTE);
-      token.clear();
+      token.set(tokenState(thunkAPI));
+      const { data } = await instance.get(BACKEND_REFRESH_ROUTE);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -62,12 +62,12 @@ export const logOutUser = createAsyncThunk(
   }
 );
 
-export const refreshUser = createAsyncThunk(
-  'auth/refreshUser',
+export const logOutUser = createAsyncThunk(
+  'auth/logOutUser',
   async (_, thunkAPI) => {
     try {
-      token.set(tokenState(thunkAPI));
-      const { data } = await instance.get(BACKEND_REFRESH_ROUTE);
+      const { data } = await instance.post(BACKEND_SIGN_OUT_ROUTE);
+      token.clear();
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

@@ -27,6 +27,14 @@ export const handleFulfilledLogin = (state, { payload }) => {
   state.error = null;
 };
 
+export const handleFulfilledRefresh = (state, { payload }) => {
+  state.user = payload.user;
+  state.token = payload.token;
+  state.isLoggedIn = true;
+  state.isLoading = false;
+  state.isRefreshing = false;
+};
+
 export const handleFulfilledLogOut = state => {
   state.user = null;
   state.token = null;
@@ -34,12 +42,4 @@ export const handleFulfilledLogOut = state => {
   state.isLoggedIn = false;
   state.isRefreshing = false;
   state.error = null;
-};
-
-export const handleFulfilledRefresh = (state, { payload }) => {
-  state.user = payload.user;
-  state.token = payload.token;
-  state.isLoggedIn = true;
-  state.isLoading = false;
-  state.isRefreshing = false;
 };

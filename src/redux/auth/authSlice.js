@@ -26,7 +26,6 @@ const contactsInitialState = {
   token: '',
   isLoading: false,
   isLoggedIn: false,
-
   error: null,
 };
 
