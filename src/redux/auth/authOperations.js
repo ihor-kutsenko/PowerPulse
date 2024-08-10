@@ -11,6 +11,7 @@ import {
   BACKEND_SIGN_IN_ROUTE,
   BACKEND_SIGN_OUT_ROUTE,
   BACKEND_REFRESH_ROUTE,
+  BACKEND_PROFILE_SETTINGS_ROUTE,
 } from 'routes/constants';
 
 export const registrationUser = createAsyncThunk(
@@ -70,6 +71,24 @@ export const logOutUser = createAsyncThunk(
       token.clear();
       return data;
     } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const updateProfileSettings = createAsyncThunk(
+  'auth/updateProfileSettings',
+  async (credentials, thunkAPI) => {
+    try {
+      token.set(tokenState(thunkAPI));
+      const { data } = await instance.put(
+        BACKEND_PROFILE_SETTINGS_ROUTE,
+        credentials
+      );
+      toast.success('Profile settings successfully updated!', notifyOptions);
+      return data;
+    } catch (error) {
+      toast.error('Oops... Something went wrong! Try again!', notifyOptions);
       return thunkAPI.rejectWithValue(error.message);
     }
   }

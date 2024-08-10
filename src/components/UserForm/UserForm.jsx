@@ -1,4 +1,5 @@
 import { Formik, Field, Form } from 'formik';
+import { useDispatch } from 'react-redux';
 
 import Calendar from 'components/Calendar/Calendar';
 import Button from 'components/Buttons/Button';
@@ -11,25 +12,69 @@ import {
   levelOptions,
 } from './RadioButton.jsx/radioOptions';
 
+import useAuth from 'pages/hooks/useAuth';
+import { updateProfileSettings } from 'redux/auth/authOperations';
 import userFormSchema from 'schema/userFormSchema';
 
 import styles from './UserForm.module.scss';
 
 const UserForm = () => {
+  const dispatch = useDispatch();
+  const { user } = useAuth();
+
+  const { name, profileSettings, isLoading } = user;
+  const {
+    height = 0,
+    currentWeight = 0,
+    desiredWeight = 0,
+    blood = 0,
+    sex = '',
+    levelActivity = 0,
+  } = profileSettings || {};
+
+  const birthdayDate = profileSettings
+    ? new Date(profileSettings.birthday)
+    : new Date('2022-01-01');
+
+  const formattedBirthday = `${birthdayDate.getFullYear()}-${String(
+    birthdayDate.getMonth() + 1
+  ).padStart(2, '0')}-${String(birthdayDate.getDate()).padStart(2, '0')}`;
+
   const initialValues = {
-    name: '',
-    email: 'user@example.com',
-    height: '',
-    currentWeight: '',
-    desiredWeight: '',
-    birthday: '',
-    blood: '',
-    sex: '',
-    levelActivity: '',
+    name,
+    email: user.email,
+    height,
+    currentWeight,
+    desiredWeight,
+    birthday: formattedBirthday,
+    blood,
+    sex: sex.toString(),
+    levelActivity,
   };
+
+  const handleSubmit = values => {
+    const data = {
+      name: values.name,
+      profileSettings: {
+        height: values.height,
+        currentWeight: values.currentWeight,
+        desiredWeight: values.desiredWeight,
+        birthday: new Date(values.birthday).toISOString(),
+        blood: values.blood,
+        sex: values.sex,
+        levelActivity: values.levelActivity,
+      },
+    };
+    dispatch(updateProfileSettings(data));
+  };
+
   return (
     <div className={styles.form__container}>
-      <Formik initialValues={initialValues} validationSchema={userFormSchema}>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={userFormSchema}
+        onSubmit={handleSubmit}
+      >
         {formik => (
           <Form>
             {/* Top Field Input */}
@@ -223,7 +268,19 @@ const UserForm = () => {
                 ))}
               </div>
             </div>
-            <Button className={styles.btn_save} type="submit" text="Save" />
+            <Button
+              className={styles.btn_save}
+              type="submit"
+              text="Save"
+              disabled={
+                isLoading ||
+                !formik.isValid ||
+                !formik.dirty ||
+                !formik.values.blood ||
+                !formik.values.sex ||
+                !formik.values.levelActivity
+              }
+            />
           </Form>
         )}
       </Formik>

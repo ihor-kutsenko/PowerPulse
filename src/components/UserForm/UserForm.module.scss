@@ -190,5 +190,8 @@
   @include tablet {
     width: 144px;
     padding: 16px 50px;
+    &:disabled {
+      opacity: 0.5;
+    }
   }
 }

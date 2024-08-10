@@ -43,3 +43,10 @@ export const handleFulfilledLogOut = state => {
   state.isRefreshing = false;
   state.error = null;
 };
+
+export const handleFulfilledUpdateProfileSettings = (state, { payload }) => {
+  state.user = payload.user;
+  state.isLoading = false;
+  state.isLoggedIn = true;
+  state.error = null;
+};

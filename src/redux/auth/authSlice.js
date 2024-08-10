@@ -4,6 +4,7 @@ import {
   loginUser,
   logOutUser,
   refreshUser,
+  updateProfileSettings,
 } from './authOperations';
 import { uploadAvatar } from 'redux/avatar/avatarOperations';
 import {
@@ -13,6 +14,7 @@ import {
   handlePending,
   handleRejected,
   handleFulfilledRefresh,
+  handleFulfilledUpdateProfileSettings,
 } from './authReducers';
 import { operationsType } from './authOperationsType';
 
@@ -22,6 +24,16 @@ const contactsInitialState = {
     name: '',
     registrationDate: '',
     avatarURL: '',
+    profileSettings: {
+      height: '',
+      currentWeight: '',
+      desiredWeight: '',
+      birthday: null,
+      blood: null,
+      levelActivity: null,
+      sex: null,
+      bmr: 0,
+    },
   },
   token: '',
   isLoading: false,
@@ -46,6 +58,10 @@ export const authSlice = createSlice({
       .addCase(uploadAvatar.fulfilled, (state, action) => {
         state.avatarURL = action.payload;
       })
+      .addCase(
+        updateProfileSettings.fulfilled,
+        handleFulfilledUpdateProfileSettings
+      )
       .addMatcher(isAnyOf(...operationsType('pending')), handlePending)
       .addMatcher(isAnyOf(...operationsType('rejected')), handleRejected);
   },
