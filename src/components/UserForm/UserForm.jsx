@@ -34,7 +34,7 @@ const UserForm = () => {
 
   const birthdayDate = profileSettings
     ? new Date(profileSettings.birthday)
-    : new Date('2022-01-01');
+    : new Date('2000-01-01');
 
   const formattedBirthday = `${birthdayDate.getFullYear()}-${String(
     birthdayDate.getMonth() + 1

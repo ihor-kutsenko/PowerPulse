@@ -4,6 +4,7 @@ import { useState, forwardRef } from 'react';
 
 import Svg from 'components/Svg/Svg';
 import DatePickerStyles from './DatePickerStyles';
+import useAuth from 'pages/hooks/useAuth';
 import styles from './Calendar.module.scss';
 
 const CustomInput = forwardRef(
@@ -42,8 +43,13 @@ const CustomInput = forwardRef(
 );
 
 const Calendar = ({ onBirthdayChange }) => {
+  const { user } = useAuth();
+
+  const initialDate = user?.profileSettings?.birthday
+    ? new Date(user.profileSettings.birthday)
+    : new Date('2000-01-01');
   const [calendarOpen, setCalendarOpen] = useState(false);
-  const [selectedDate, setSelectedDate] = useState('');
+  const [selectedDate, setSelectedDate] = useState(initialDate);
   const [validationError, setValidationError] = useState(null);
 
   const toggleCalendar = () => {
