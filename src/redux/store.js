@@ -12,6 +12,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth/authSlice';
 import { avatarReducer } from './avatar/avatarSlice';
+import { exercisesReducer } from './exercises/exercisesSlice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -23,6 +24,7 @@ export const store = configureStore({
   reducer: {
     avatar: avatarReducer,
     auth: persistReducer(authPersistConfig, authReducer),
+    exercises: exercisesReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

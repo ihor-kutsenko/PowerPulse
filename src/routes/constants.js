@@ -19,3 +19,5 @@ export const BACKEND_SIGN_OUT_ROUTE = '/api/users/signout';
 export const BACKEND_REFRESH_ROUTE = '/api/users/current';
 export const BACKEND_AVATAR_ROUTE = '/api/users/avatars';
 export const BACKEND_PROFILE_SETTINGS_ROUTE = '/api/profile-settings';
+export const BACKEND_EXERCISES_ROUTE = '/api/exercises';
+export const BACKEND_EXERCISES_CATEGORY_ROUTE = '/api/exercises/categories';
