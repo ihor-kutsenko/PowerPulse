@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import Title from 'components/Title/Title';
 import ExercisesCategories from './ExercisesCategories/ExercisesCategories';
@@ -7,17 +8,29 @@ import ExercisesSubcategoriesList from './ExercisesSubcategoriesList/ExercisesSu
 import ExercisesList from './ExercisesList/ExercisesList';
 
 import { EXERCISES_ROUTE } from 'routes/constants';
-import filters from '../../data/filters.json';
+import { fetchExercisesCategories } from 'redux/exercises/exercisesOperations';
+// import filters from '../../data/filters.json';
 
 import styles from './Exercises.module.scss';
 
 const Exercises = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const [activeFilter, setActiveFilter] = useState('Body parts');
+  const dispatch = useDispatch();
 
+  const [activeFilter, setActiveFilter] = useState('Body parts');
   const [currentPage, setCurrentPage] = useState(1);
   const [path, setPath] = useState(location.pathname);
+
+  useEffect(() => {
+    dispatch(
+      fetchExercisesCategories({
+        type: activeFilter,
+        page: currentPage,
+        limit: 10,
+      })
+    );
+  }, [dispatch, activeFilter, currentPage]);
 
   const handleFilterClick = filter => {
     setActiveFilter(filter);
@@ -25,8 +38,8 @@ const Exercises = () => {
     navigate(EXERCISES_ROUTE);
   };
 
-  const handleSubcategoryClick = name => {
-    setActiveFilter(name);
+  const handleSubcategoryClick = id => {
+    setActiveFilter(id);
     setCurrentPage(1);
     navigate(EXERCISES_ROUTE);
   };
@@ -53,7 +66,6 @@ const Exercises = () => {
       </div>
       {path === EXERCISES_ROUTE ? (
         <ExercisesSubcategoriesList
-          exercises={filters}
           filter={activeFilter}
           handleFilterClick={handleSubcategoryClick}
           setActiveFilter={setActiveFilter}
@@ -61,7 +73,7 @@ const Exercises = () => {
           setCurrentPage={setCurrentPage}
         />
       ) : (
-        <ExercisesList activeFilter={activeFilter} />
+        <ExercisesList activeFilter={activeFilter} filter={activeFilter} />
       )}
     </>
   );

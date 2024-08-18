@@ -19,7 +19,7 @@ const ExercisesSubcategoriesItem = ({
 
   return (
     <li className={styles.exercises_item} onClick={handleSubcategoryClick}>
-      <Link to={`${EXERCISES_ROUTE}/${_id.$oid}`}>
+      <Link to={`${EXERCISES_ROUTE}/${_id}`}>
         <img src={imgURL} alt={name} className={styles.exercises_img} />
         <div className={styles.container}>
           <h3 className={styles.title}>{capitalizedWord(name)}</h3>

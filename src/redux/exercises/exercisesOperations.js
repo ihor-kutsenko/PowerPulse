@@ -11,11 +11,18 @@ import {
 export const fetchExercisesCategories = createAsyncThunk(
   'exercises/fetchExercisesCategories',
   async (params, thunkAPI) => {
+    // const params = {
+    //     type: 'string', ('Body parts', 'Muscles', 'Equipment')
+    //     page: 'string' || Number,
+    //     limit: 'string' || Number,
+    // }
     try {
       token.set(tokenState(thunkAPI));
+
       const paramsURL = Object.keys(params)
         .map(key => `${key}=${params[key]}`)
         .join('&');
+
       const { data } = await instance.get(
         `${BACKEND_EXERCISES_CATEGORY_ROUTE}?${paramsURL}`
       );
@@ -28,17 +35,19 @@ export const fetchExercisesCategories = createAsyncThunk(
 
 export const fetchExercisesItemsCategories = createAsyncThunk(
   'exercises/fetchExercisesItemsCategories',
-  async ({ params, cancelToken }, thunkAPI) => {
+  async ({ id, page, limit }, thunkAPI) => {
+    //   const params = {
+    //     id: 'string',
+    //     page: 'string' || Number,
+    //     limit: 'string' || Number,
+    // }
     try {
       token.set(tokenState(thunkAPI));
-      const paramsURL = Object.keys(params)
-        .map(key => `${key}=${params[key]}`)
-        .join('&');
+
+      const paramsURL = `id=${id}&page=${page}&limit=${limit}`;
+
       const { data } = await instance.get(
-        `${BACKEND_EXERCISES_ROUTE}?${paramsURL}`,
-        {
-          cancelToken: cancelToken,
-        }
+        `${BACKEND_EXERCISES_ROUTE}?${paramsURL}`
       );
       return data;
     } catch (error) {

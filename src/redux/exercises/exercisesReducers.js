@@ -17,7 +17,9 @@ export const handleFulfilledCategory = (state, { payload }) => {
 
 export const handleFulfilledItemsCategory = (state, { payload }) => {
   state.getMore = payload.data.length > 0;
-  state.itemsCategory.push(...payload.data);
+  // state.itemsCategory.push(...payload.data);
+  state.itemsCategory = payload.data;
+  state.totalRecords = payload.totalRecords;
   state.isLoading = false;
   state.error = null;
 };

@@ -1,12 +1,14 @@
 import ExercisesItem from '../ExercisesItem/ExercisesItem';
 
-import exercises from '../../../data/exercises.json';
-import bg from '../../../images/exercise-list-bg.jpg';
+import useExercise from 'hooks/useExercise';
 
+import bg from '../../../images/exercise-list-bg.jpg';
 import styles from './ExerciseList.module.scss';
 
-const ExercisesList = ({ activeFilter }) => {
-  const filteredExercises = exercises.filter(exercise => {
+const ExercisesList = ({ activeFilter, filter }) => {
+  const { exercisesItemsCategory } = useExercise();
+
+  const filteredExercises = exercisesItemsCategory.filter(exercise => {
     const matchCondition =
       exercise.bodyPart === activeFilter ||
       exercise.equipment === activeFilter ||
@@ -20,7 +22,11 @@ const ExercisesList = ({ activeFilter }) => {
       <div className={styles.list}>
         <div className={styles.exercise_container}>
           {filteredExercises.map(exercise => (
-            <ExercisesItem key={exercise._id.$oid} exercise={exercise} />
+            <ExercisesItem
+              key={exercise._id}
+              exercise={exercise}
+              filter={filter}
+            />
           ))}
         </div>
         <img src={bg} alt="imag" className={styles.img_bg} />
