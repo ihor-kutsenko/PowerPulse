@@ -8,7 +8,7 @@ import SharedLayout from 'components/SharedLayout/SharedLayout';
 import { publicRoutes, privateRoutes } from 'routes/routes';
 import RestrictedRoutes from 'routes/RestrictedRoutes';
 import { refreshUser } from 'redux/auth/authOperations';
-import useAuth from 'pages/hooks/useAuth';
+import useAuth from 'hooks/useAuth';
 import PrivateRoutes from 'routes/PrivateRoutes';
 
 const App = () => {

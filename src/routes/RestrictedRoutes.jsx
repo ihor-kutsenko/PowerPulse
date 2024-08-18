@@ -1,4 +1,4 @@
-import useAuth from 'pages/hooks/useAuth';
+import useAuth from 'hooks/useAuth';
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { PROFILE_ROUTE } from './constants';

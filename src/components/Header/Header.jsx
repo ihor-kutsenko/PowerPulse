@@ -6,7 +6,7 @@ import UserMenu from 'components/UserMenu/UserMenu';
 import BurgerBtn from 'components/Buttons/BurgerBtn/BurgerBtn';
 import UserMobileMenu from 'components/UserMobileMenu/UserMobileMenu';
 
-import useAuth from 'pages/hooks/useAuth';
+import useAuth from 'hooks/useAuth';
 import styles from './Header.module.scss';
 
 const Header = () => {

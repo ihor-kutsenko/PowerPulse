@@ -12,7 +12,7 @@ import {
   PROFILE_ROUTE,
 } from 'routes/constants';
 import { logOutUser } from 'redux/auth/authOperations';
-import useAuth from 'pages/hooks/useAuth';
+import useAuth from 'hooks/useAuth';
 
 const UserMenu = () => {
   const dispatch = useDispatch();

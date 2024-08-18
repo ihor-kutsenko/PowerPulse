@@ -4,7 +4,7 @@ import { useState, forwardRef } from 'react';
 
 import Svg from 'components/Svg/Svg';
 import DatePickerStyles from './DatePickerStyles';
-import useAuth from 'pages/hooks/useAuth';
+import useAuth from 'hooks/useAuth';
 import styles from './Calendar.module.scss';
 
 const CustomInput = forwardRef(

@@ -12,7 +12,7 @@ import {
   levelOptions,
 } from './RadioButton.jsx/radioOptions';
 
-import useAuth from 'pages/hooks/useAuth';
+import useAuth from 'hooks/useAuth';
 import { updateProfileSettings } from 'redux/auth/authOperations';
 import userFormSchema from 'schema/userFormSchema';
 
