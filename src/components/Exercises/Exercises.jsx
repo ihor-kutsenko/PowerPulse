@@ -9,6 +9,7 @@ import ExercisesList from './ExercisesList/ExercisesList';
 
 import { EXERCISES_ROUTE } from 'routes/constants';
 import { fetchExercisesCategories } from 'redux/exercises/exercisesOperations';
+import useItemsPerPage from 'components/Pagination/PaginationHooks';
 // import filters from '../../data/filters.json';
 
 import styles from './Exercises.module.scss';
@@ -21,16 +22,17 @@ const Exercises = () => {
   const [activeFilter, setActiveFilter] = useState('Body parts');
   const [currentPage, setCurrentPage] = useState(1);
   const [path, setPath] = useState(location.pathname);
+  const itemsPerPage = useItemsPerPage();
 
   useEffect(() => {
     dispatch(
       fetchExercisesCategories({
         type: activeFilter,
         page: currentPage,
-        limit: 10,
+        limit: itemsPerPage,
       })
     );
-  }, [dispatch, activeFilter, currentPage]);
+  }, [dispatch, activeFilter, currentPage, itemsPerPage]);
 
   const handleFilterClick = filter => {
     setActiveFilter(filter);

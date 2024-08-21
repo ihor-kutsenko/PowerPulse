@@ -10,7 +10,7 @@ import {
 
 export const fetchExercisesCategories = createAsyncThunk(
   'exercises/fetchExercisesCategories',
-  async (params, thunkAPI) => {
+  async ({ type, page, limit }, thunkAPI) => {
     // const params = {
     //     type: 'string', ('Body parts', 'Muscles', 'Equipment')
     //     page: 'string' || Number,
@@ -19,9 +19,10 @@ export const fetchExercisesCategories = createAsyncThunk(
     try {
       token.set(tokenState(thunkAPI));
 
-      const paramsURL = Object.keys(params)
-        .map(key => `${key}=${params[key]}`)
-        .join('&');
+      // const paramsURL = Object.keys(params)
+      //   .map(key => `${key}=${params[key]}`)
+      //   .join('&');
+      const paramsURL = `type=${type}&page=${page}&limit=${limit}`;
 
       const { data } = await instance.get(
         `${BACKEND_EXERCISES_CATEGORY_ROUTE}?${paramsURL}`

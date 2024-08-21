@@ -5,15 +5,17 @@ import ExercisesSubcategoriesItem from '../ExercisesSubcategoriesItem/ExercisesS
 import Pagination from 'components/Pagination/Pagination';
 import PaginationContainer from 'components/Pagination/PaginationContainer';
 import useItemsPerPage from 'components/Pagination/PaginationHooks';
+
 import { EXERCISES_ROUTE } from 'routes/constants';
+import useExercise from 'hooks/useExercise';
+import {
+  fetchExercisesCategories,
+  fetchExercisesItemsCategories,
+} from 'redux/exercises/exercisesOperations';
 
 import styles from './ExercisesSubcategoriesList.module.scss';
-import { fetchExercisesItemsCategories } from 'redux/exercises/exercisesOperations';
-
-import useExercise from 'hooks/useExercise';
 
 const ExercisesSubcategoriesList = ({
-  // exercises,
   filter,
   handleFilterClick,
   currentPage,
@@ -29,20 +31,13 @@ const ExercisesSubcategoriesList = ({
   const handlePageChange = newPage => {
     setCurrentPage(newPage);
     dispatch(
-      fetchExercisesItemsCategories({
-        id: filter,
+      fetchExercisesCategories({
+        type: filter,
         page: newPage,
         limit: itemsPerPage,
       })
     );
   };
-
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = exercisesCategory.slice(
-    indexOfFirstItem,
-    indexOfLastItem
-  );
 
   const handleSubcategoryClick = id => {
     dispatch(
@@ -58,7 +53,7 @@ const ExercisesSubcategoriesList = ({
   return (
     <PaginationContainer>
       <ul className={styles.exercises_list}>
-        {currentItems.map(item => (
+        {exercisesCategory.map(item => (
           <ExercisesSubcategoriesItem
             key={item._id}
             ExercisesSubcategoriesItem={item}
