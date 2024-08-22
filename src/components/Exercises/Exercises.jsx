@@ -10,7 +10,6 @@ import ExercisesList from './ExercisesList/ExercisesList';
 import { EXERCISES_ROUTE } from 'routes/constants';
 import { fetchExercisesCategories } from 'redux/exercises/exercisesOperations';
 import useItemsPerPage from 'components/Pagination/PaginationHooks';
-// import filters from '../../data/filters.json';
 
 import styles from './Exercises.module.scss';
 

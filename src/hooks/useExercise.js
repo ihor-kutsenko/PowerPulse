@@ -4,7 +4,6 @@ import {
   selectExercisesCategory,
   selectExercisesItemsCategory,
   selectExercisesTotalRecords,
-  selectExercisesGetMore,
   selectExercisesPage,
   selectExercisesIsLoading,
   selectExercisesError,
@@ -14,7 +13,6 @@ const useExercise = () => {
   const exercisesCategory = useSelector(selectExercisesCategory);
   const exercisesItemsCategory = useSelector(selectExercisesItemsCategory);
   const exercisesTotalRecords = useSelector(selectExercisesTotalRecords);
-  const exercisesGetMore = useSelector(selectExercisesGetMore);
   const exercisesPage = useSelector(selectExercisesPage);
   const exercisesIsLoading = useSelector(selectExercisesIsLoading);
   const exercisesError = useSelector(selectExercisesError);
@@ -23,7 +21,6 @@ const useExercise = () => {
     exercisesCategory,
     exercisesItemsCategory,
     exercisesTotalRecords,
-    exercisesGetMore,
     exercisesPage,
     exercisesIsLoading,
     exercisesError,

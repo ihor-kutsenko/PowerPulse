@@ -44,7 +44,7 @@ const ExercisesSubcategoriesList = ({
       fetchExercisesItemsCategories({
         id: id,
         page: 1,
-        limit: 10,
+        limit: 100,
       })
     );
     navigate(`${EXERCISES_ROUTE}/${id}`);

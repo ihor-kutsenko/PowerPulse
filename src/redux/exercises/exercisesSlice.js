@@ -16,7 +16,6 @@ const initialState = {
   itemsCategory: [],
   totalRecords: '',
   page: 1,
-  getMore: false,
   isLoading: false,
   error: null,
 };
@@ -24,14 +23,6 @@ const initialState = {
 const exercisesSlice = createSlice({
   name: 'exercises',
   initialState: initialState,
-  reducers: {
-    setItemsCategory: state => {
-      state.itemsCategory = [];
-    },
-    setPage: (state, { payload }) => {
-      state.page = payload;
-    },
-  },
   extraReducers: builder => {
     builder
       .addCase(fetchExercisesCategories.fulfilled, handleFulfilledCategory)
@@ -45,4 +36,3 @@ const exercisesSlice = createSlice({
 });
 
 export const exercisesReducer = exercisesSlice.reducer;
-export const { setItemsCategory, setPage } = exercisesSlice.actions;
