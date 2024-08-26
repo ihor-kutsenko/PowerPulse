@@ -21,3 +21,5 @@ export const BACKEND_AVATAR_ROUTE = '/api/users/avatars';
 export const BACKEND_PROFILE_SETTINGS_ROUTE = '/api/profile-settings';
 export const BACKEND_EXERCISES_ROUTE = '/api/exercises';
 export const BACKEND_EXERCISES_CATEGORY_ROUTE = '/api/exercises/categories';
+export const BACKEND_PRODUCTS_ROUTE = '/api/products';
+export const BACKEND_PRODUCTS_CATEGORY_ROUTE = '/api/products/categories';
