@@ -1,6 +1,8 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
+
 import { operationsType } from './productsOperationsType';
 import { fetchProducts, fetchProductsCategories } from './productsOperations';
+
 import {
   handleFulfilled,
   handleFulfilledCategory,
