@@ -8,6 +8,7 @@ import {
   BACKEND_PRODUCTS_ROUTE,
 } from 'routes/constants';
 
+// fix
 export const fetchProductsCategories = createAsyncThunk(
   'products/fetchProductsCategories',
   async (_, thunkAPI) => {
