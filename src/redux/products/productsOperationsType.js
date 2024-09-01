@@ -1,7 +1,4 @@
-import {
-  fetchProducts,
-  fetchProductsCategories,
-} from './productsOperations.js';
+import { fetchProducts, fetchProductsCategories } from './productsOperations';
 
 const operationsThunk = [fetchProducts, fetchProductsCategories];
 
