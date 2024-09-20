@@ -1,15 +1,24 @@
-import { useState } from 'react';
+import { forwardRef, useState } from 'react';
 
 import Svg from 'components/Svg/Svg';
-import styles from '../../Exercises/ExercisesItem/ExercisesItem.module.scss';
 import BasicModalWindow from 'components/ModalWindows/BasicModalWindow/BasicModalWindow';
 import AddProduct from 'components/ModalWindows/AddProduct/AddProduct';
 import AddProductSuccess from 'components/ModalWindows/AddProductSuccess/AddProductSuccess';
 
-const ProductsItem = ({ product }) => {
+import useAuth from 'hooks/useAuth';
+
+import styles from '../../Exercises/ExercisesItem/ExercisesItem.module.scss';
+
+const ProductsItem = forwardRef(({ product }, ref) => {
   const [modalSuccess, setModalSuccess] = useState(false);
   const [modalProduct, setModalProduct] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState('');
+
+  const {
+    user: {
+      profileSettings: { blood },
+    },
+  } = useAuth();
 
   const handleModalProduct = () => setModalProduct(!modalProduct);
   const handleModalSuccess = () => setModalSuccess(!modalSuccess);
@@ -18,11 +27,10 @@ const ProductsItem = ({ product }) => {
     setSelectedProduct(data);
   };
 
-  const userBloodGroup = 1;
-  const isRecommended = product.groupBloodNotAllowed[userBloodGroup.toString()];
+  const isRecommended = product.groupBloodNotAllowed[blood];
 
   return (
-    <div className={styles.exercisesItem_wrapper}>
+    <div className={styles.exercisesItem_wrapper} ref={ref}>
       <div className={styles.exercisesItem_topWrapper}>
         <p className={styles.exercisesItem_text}>diet</p>
         {isRecommended ? (
@@ -95,6 +103,6 @@ const ProductsItem = ({ product }) => {
       )}
     </div>
   );
-};
+});
 
 export default ProductsItem;

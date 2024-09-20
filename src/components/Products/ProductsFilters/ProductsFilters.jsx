@@ -1,47 +1,79 @@
-import Svg from 'components/Svg/Svg';
-import categories from '../../../data/productsCategories.json';
-import styles from './ProductsFilters.module.scss';
 import { useFormik } from 'formik';
+import { useDispatch } from 'react-redux';
+import { useEffect, useMemo } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
-const ProductsFilters = ({
-  setSelectedCategory,
-  setSearchTerm,
-  setRecommended,
-}) => {
+import Svg from 'components/Svg/Svg';
+
+import useProduct from 'hooks/useProduct';
+import { fetchProductsCategories } from 'redux/products/productsOperations';
+import { setFilters, setItems } from 'redux/products/productsSlice';
+
+import styles from './ProductsFilters.module.scss';
+
+const ProductsFilters = () => {
+  const dispatch = useDispatch();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const { category, filters } = useProduct();
+
+  const params = useMemo(
+    () => Object.fromEntries([...searchParams]),
+    [searchParams]
+  );
+
+  const isEmptyFilters =
+    filters.search !== '' ||
+    filters.category !== '' ||
+    filters.recommended !== '';
+
+  const isEmptyParams = Object.keys(params).length === 0;
+
   const formik = useFormik({
     initialValues: {
-      search: '',
-      category: '',
-      recommended: '',
+      search: params.search || filters.search,
+      category: params.category || filters.category,
+      recommended: params.recommended || filters.recommended,
     },
+    onSubmit: values => handleSubmit(values),
   });
 
-  const handleSearchChange = event => {
-    formik.setFieldValue('search', event.target.value);
+  useEffect(() => {
+    if (isEmptyParams && isEmptyFilters) {
+      setSearchParams({
+        search: filters.search,
+        category: filters.category,
+        recommended: filters.recommended,
+      });
+    }
+    dispatch(fetchProductsCategories());
+  }, [
+    dispatch,
+    isEmptyFilters,
+    isEmptyParams,
+    filters.search,
+    filters.category,
+    filters.recommended,
+    setSearchParams,
+  ]);
+
+  const handleSubmit = paramsSearch => {
+    setSearchParams(paramsSearch);
+    dispatch(setItems());
+    dispatch(setFilters({ page: 1, ...paramsSearch }));
   };
 
-  const handleCategoryChange = event => {
-    setSelectedCategory(event.target.value);
-  };
-
-  const handleRecommendedChange = event => {
-    setRecommended(event.target.value);
-  };
-
-  const handleSearchClear = () => {
-    formik.setFieldValue('search', '');
-    setSearchTerm('');
-  };
-
-  const handleSearchClick = () => {
-    setSearchTerm(formik.values.search);
-    setSelectedCategory(formik.values.category);
-    setRecommended(formik.values.recommended);
+  const handleChange = e => {
+    formik.handleChange(e);
+    const { initialValues, values } = formik;
+    if (e.target.value !== initialValues[e.target.value]) {
+      const paramsSearch = { ...values, [e.target.name]: e.target.value };
+      handleSubmit(paramsSearch);
+    }
   };
 
   return (
     <>
-      <form className={styles.filterForm}>
+      <form className={styles.filterForm} onSubmit={formik.handleSubmit}>
         <div className={styles.filterForm_SearchWrapper}>
           <input
             type="text"
@@ -49,13 +81,9 @@ const ProductsFilters = ({
             placeholder="Search"
             className={styles.filterForm_SearchField}
             value={formik.values.search}
-            onChange={handleSearchChange}
+            onChange={formik.handleChange}
           />
-          <button
-            className={styles.filterForm_btnSearch}
-            type="button"
-            onClick={handleSearchClick}
-          >
+          <button className={styles.filterForm_btnSearch} type="submit">
             <Svg
               iconId={'icon-Search'}
               className={styles.filterForm_iconSearch}
@@ -65,7 +93,11 @@ const ProductsFilters = ({
           {formik.values.search !== '' && (
             <button
               className={styles.filterForm_btnCancel}
-              onClick={handleSearchClear}
+              type="button"
+              onClick={() => {
+                formik.setFieldValue('search', '');
+                formik.handleSubmit();
+              }}
             >
               <Svg
                 iconId={'icon-close'}
@@ -78,10 +110,10 @@ const ProductsFilters = ({
           <select
             name="category"
             className={styles.filterForm_selectCategory}
-            onChange={handleCategoryChange}
+            onChange={handleChange}
           >
             <option value="">Categories</option>
-            {categories.map(category => (
+            {category.map(category => (
               <option key={category} value={category}>
                 {category}
               </option>
@@ -90,7 +122,7 @@ const ProductsFilters = ({
           <select
             name="recommended"
             className={styles.filterForm_selectRecommended}
-            onChange={handleRecommendedChange}
+            onChange={handleChange}
           >
             <option value="">All</option>
             <option value={true}>Recommended</option>
